@@ -16,8 +16,21 @@ $$\forall z\in\RR^n\, \exists\, x\in P: \|z-x\|\leq R$$
 Then $P$ is called \textbf{delone} set.\\
 \end{definition}
 
-For the $n$-fold rotational symmetry of the quasilettice to appear in the linked number $\beta$, it's construction starts with 
-$$\rho = 2\cos\left(\frac{2\pi}{n}\right) \quad \text{where} \; n\in\ZZ$$
-Such a number is a solution to the equation 
-$$x^m = a_{m-1}x^{m-1}+\dots+a_1x+a_0$$
+For the $n$-fold rotational symmetry of the quasilettice to appear in the linked number $\beta$, it's construction starts with a set of complex equations
+$$z^n=1\qquad \text{for}\, z=1$$
+$$z^{n-1}+\dots+z+1 = 0\qquad \text{for}\, z\neq 1$$
+
+These equations can be for $x=z+\bar{z}$ directly deduced into an algebraic irreducible equation
+\begin{equation}\label{equ_pre_algebraic} 
+x^m = a_{m-1}x^{m-1}+\dots+a_1x+a_0\qquad m\leq\left[\frac{n-1}{2}\right],\, a_i\in\ZZ
+\end{equation} 
+
+Roots of the equation (\ref{equ_pre_algebraic}) have the form 
+$$\rho = \rho_1 = 2\cos\left(\frac{2\pi}{n}\right)$$
+$$\rho_j = 2\cos\left(\frac{2\pi}{n}n_j\right) \qquad 2\leq j\leq m, \, n_j\in\left\{2,\dots,\left[\frac{n-1}{2}\right]\right\}$$
+
+The number $\beta$ is then equal to a linear combination of powers of $\rho$
+$$\beta = \sum_{k=1}^{m-1}{d_k\rho^k}\qquad d_k\in\ZZ$$
+
+
 \end{document}
