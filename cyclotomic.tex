@@ -6,10 +6,10 @@
 In two dimensions a quasicrystal can be viewed as a subset of complex numbers $\Lambda\subset\CC$ following these five properties:
 
 \begin{enumerate}
-\item rotational symmetry: $$\exists\,\zeta = e^{\frac{2\pi i}{n}}:\; \zeta\Lambda = \Lambda$$
+\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda = \Lambda$$
 \item dilation: $$\exists\,\beta\in\RR\setminus\{-1,1\}:\; \beta\Lambda\subset \Lambda$$
-\item uniform discreteness: $$\exists \epsilon_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>\epsilon_1$$
-\item relative density: $$\exists \epsilon_2>0,\; \forall z\in\CC:\; B(z,\epsilon_2)\cap\Lambda \neq \emptyset$$
+\item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
+\item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
 \item finite local complexity: $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
 \end{enumerate}
 
@@ -24,10 +24,38 @@ In the next section we will go through which numbers are associated with a quasi
 \section{Pisot-cyclotomic numbers}
 Pisot-cyclotomic numbers are Pisot and are algebraically related to roots of unity. We will use these numbers in place of $\beta$ from previous section. 
 
-\begin{definition}
-Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$ and its associate extension ring $\ZZ[\rho]$. A Pisot-cyclotomic number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ZZ[\rho]$ such that
+\begin{definition}\label{def_pisotCyclotomic}
+Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$, its associate extension ring $\ZZ[\rho]$ and $m$ order of $\rho$. A Pisot-cyclotomic number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ZZ[\rho]$ such that
 $$\ring = \ZZ[\rho]$$
 \end{definition}
+
+Nontrivial $n$th root of unity $\zeta = e^{2\pi i/n}$ is by definition a solution to equation
+$$\zeta^{n-1}+\zeta^{n-2}+\dots+\zeta+1 = 0$$
+further for $\rho = 2\cos\left(2\pi/n\right)$ it holds
+$$\rho = \zeta + \bar{\zeta}\quad\Rightarrow\quad \zeta^2 = \rho\zeta - 1$$
+Therefore for extension rings $\ZZ[\zeta]$ and $\ZZ[\rho]$ we have
+$$\ZZ[\zeta] = \ZZ[\rho] + \ZZ[\rho]\zeta$$
+and finally for Pisot-cyclotomic $\beta$ associated to $\rho$ we acquire
+$$\ZZ[\zeta] = \ring + \ring\zeta$$
+Such countable ring is of course $n$-fold rotationally invariant
+$$\zeta^k\ZZ[\zeta] = \ZZ[\zeta]\qquad k\in\widehat{n-1}$$
+
+To summarize $\beta$ is a real Pisot and it can be used to decompose $n$-fold rotationally invariant complex ring $\ZZ[\zeta]$ as $\ring + \ring\zeta$. 
+
+We close this section with a list of quadratic $(m=2)$ Pisot-cyclotomic numbers. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cccc}
+$n$ & $\rho$ & $\beta$ & $\zeta$ \\
+\hline
+$5$   & $2 \cos\left(\frac{2\pi}{5}\right)$   & $\frac{1+\sqrt{5}}{2} $    & $e^{2i\pi/5}$ \\
+$8$   & $2 \cos\left(\frac{2\pi}{8}\right)$   & $ 1+\sqrt{2} $      & $e^{2i\pi/8}$ \\
+$12$  & $2 \cos\left(\frac{2\pi}{12}\right)$  & $ 1+\sqrt{3} $     & $e^{2i\pi/12}$ \\
+$12$  & $2 \cos\left(\frac{2\pi}{12}\right)$  & $ 2+\sqrt{3} $                & $e^{2i\pi/12}$ \\
+\end{tabular}
+\caption{Pisot-cyclotomic numbers of degree $2$, of order $n$, associated to $\rho$.}
+\end{table}
 
 %For the $n$-fold rotational symmetry of the quasilettice to appear in the linked number $\beta$, it's construction starts with a set of complex equations
 %$$z^n=1\qquad \text{for}\, z=1$$
