@@ -2,35 +2,48 @@
 
 \begin{document}
 
-Add definition of quasilattice. 
+\section{Quasicrystal}
+In two dimensions a quasicrystal can be viewed as a subset of complex numbers $\Lambda\subset\CC$ following these five properties:
 
-\section{Pysot-Cyclotomic numbers}
-Each quasilattice is intrinsically linked to an algebraic number $\beta$. In this section we describe properties of such numbers as they relate to properties of associated quasilattices. We cover only what is necessary further in this text,  for more information on Pysot-Cyclotomic numbers \cite{}. 
+\begin{enumerate}
+\item rotational symmetry: $$\exists\,\zeta = e^{\frac{2\pi i}{n}}:\; \zeta\Lambda = \Lambda$$
+\item dilation: $$\exists\,\beta\in\RR\setminus\{-1,1\}:\; \beta\Lambda\subset \Lambda$$
+\item uniform discreteness: $$\exists \epsilon_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>\epsilon_1$$
+\item relative density: $$\exists \epsilon_2>0,\; \forall z\in\CC:\; B(z,\epsilon_2)\cap\Lambda \neq \emptyset$$
+\item finite local complexity: $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
+\end{enumerate}
 
-In order to be quasi-periodic, quasilattice needs to be "not too dense and not too sparse", in other words it needs to be a Delone set. 
+\begin{remark}
+Properties 3. and 4. together make quasicrystal to be a Delone set.
+\end{remark}
 
-\begin{definition}[Delone set] 
-Let $P\subset \RR^n$ and $\exists\, R>0, \exists\, r>0$:
-$$\forall x,y\in P,\, x\neq y: r\leq \|x-y\|$$
-$$\forall z\in\RR^n\, \exists\, x\in P: \|z-x\|\leq R$$
-Then $P$ is called \textbf{delone} set.\\
+It stems form these properties alone, that among other constants a quasicrystal is linked to a root of unity $\zeta$ and to a number $\beta\in\RR\setminus\{-1,1\}$. Of course not every pair $(\zeta, \beta)$ is associated with a quasicrystal.
+
+In the next section we will go through which numbers are associated with a quasicrystal and where do they come from. 
+
+\section{Pisot-cyclotomic numbers}
+Pisot-cyclotomic numbers are Pisot and are algebraically related to roots of unity. We will use these numbers in place of $\beta$ from previous section. 
+
+\begin{definition}
+Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$ and its associate extension ring $\ZZ[\rho]$. A Pisot-cyclotomic number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ZZ[\rho]$ such that
+$$\ring = \ZZ[\rho]$$
 \end{definition}
 
-For the $n$-fold rotational symmetry of the quasilettice to appear in the linked number $\beta$, it's construction starts with a set of complex equations
-$$z^n=1\qquad \text{for}\, z=1$$
-$$z^{n-1}+\dots+z+1 = 0\qquad \text{for}\, z\neq 1$$
+%For the $n$-fold rotational symmetry of the quasilettice to appear in the linked number $\beta$, it's construction starts with a set of complex equations
+%$$z^n=1\qquad \text{for}\, z=1$$
+%$$z^{n-1}+\dots+z+1 = 0\qquad \text{for}\, z\neq 1$$
 
-These equations can be for $x=z+\bar{z}$ directly deduced into an algebraic irreducible equation
-\begin{equation}\label{equ_pre_algebraic} 
-x^m = a_{m-1}x^{m-1}+\dots+a_1x+a_0\qquad m\leq\left[\frac{n-1}{2}\right],\, a_i\in\ZZ
-\end{equation} 
+%These equations can be for $x=z+\bar{z}$ directly deduced into an algebraic irreducible equation
+%\begin{equation}\label{equ_pre_algebraic} 
+%x^m = a_{m-1}x^{m-1}+\dots+a_1x+a_0\qquad m\leq\left[\frac{n-1}{2}\right],\, a_i\in\ZZ
+%\end{equation} 
 
-Roots of the equation (\ref{equ_pre_algebraic}) have the form 
-$$\rho = \rho_1 = 2\cos\left(\frac{2\pi}{n}\right)$$
-$$\rho_j = 2\cos\left(\frac{2\pi}{n}n_j\right) \qquad 2\leq j\leq m, \, n_j\in\left\{2,\dots,\left[\frac{n-1}{2}\right]\right\}$$
+%Roots of the equation (\ref{equ_pre_algebraic}) have the form 
+%$$\rho = \rho_1 = 2\cos\left(\frac{2\pi}{n}\right)$$
+%$$\rho_j = 2\cos\left(\frac{2\pi}{n}n_j\right) \qquad 2\leq j\leq m, \, n_j\in\left\{2,\dots,\left[\frac{n-1}{2}\right]\right\}$$
 
-The number $\beta$ is then equal to a linear combination of powers of $\rho$
-$$\beta = \sum_{k=1}^{m-1}{d_k\rho^k}\qquad d_k\in\ZZ$$
+%The number $\beta$ is then equal to a linear combination of powers of $\rho$
+%$$\beta = \sum_{k=1}^{m-1}{d_k\rho^k}\qquad d_k\in\ZZ$$
 
 
 \end{document}

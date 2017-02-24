@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.out
+*.pdf
+*.geany
+*.toc
+*.bbl
+*.blg
+!img/*.pdf
+!img/*/*.pdf
+!img/*/*/*.pdf
+!toReview.pdf

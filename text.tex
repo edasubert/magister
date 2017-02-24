@@ -28,6 +28,8 @@
 \usepackage{pdflscape}
 \usepackage{longtable}
 \usepackage{multicol}
+\usepackage{alltt}
+
 
 
 \usepackage[capbesideposition=inside,facing=yes,capbesidesep=quad]{floatrow}
@@ -47,14 +49,18 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem*{remarkn}{Remark}
+%\newtheorem{remark}{Remark}
+\newtheorem*{remark}{Remark}
+
 
 \newcommand{\ring}{\mathbb{Z}\left[\beta\right]}
-\newcommand{\quasi}[1]{\Sigma\left(#1\right)}
+\newcommand{\field}{\mathbb{Q}(\beta)}
+\newcommand{\quasi}[1]{\Sigma(#1)}
+\newcommand{\widequasi}[1]{\Sigma\left(#1\right)}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\RR}{\mathbb{R}}
-\newcommand{\NN}{\mathbb{N}}
 \newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
 \newcolumntype{d}[1]{ D{:}{:}{-1} }
 
 \begin{document}
