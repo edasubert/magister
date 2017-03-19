@@ -25,12 +25,12 @@ In the next section we will go through which numbers are associated with a quasi
 Pisot-cyclotomic numbers are Pisot and are algebraically related to roots of unity. We will use these numbers in place of $\beta$ from previous section. 
 
 \begin{definition}\label{def_pisotCyclotomic}
-Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$, its associate extension ring $\ZZ[\rho]$ and $m$ order of $\rho$. A \textbf{Pisot-cyclotomic} number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ZZ[\rho]$ such that
+Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$, its extension ring $\ZZ[\rho]$ and $m$ order of $\rho$. A \textbf{Pisot-cyclotomic} number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ZZ[\rho]$ such that
 $$\ring = \ZZ[\rho]$$
 \end{definition}
 
 Nontrivial $n$th root of unity $\zeta = e^{2\pi i/n}$ is by definition a solution to equation
-$$\zeta^{n-1}+\zeta^{n-2}+\dots+\zeta+1 = 0$$
+$$\frac{\zeta^n-1}{\zeta-1} = \zeta^{n-1}+\zeta^{n-2}+\dots+\zeta+1 = 0$$
 further for $\rho = 2\cos\left(2\pi/n\right)$ it holds
 $$\rho = \zeta + \bar{\zeta}\quad\Rightarrow\quad \zeta^2 = \rho\zeta - 1$$
 Therefore for extension rings $\ZZ[\zeta]$ and $\ZZ[\rho]$ we have
@@ -40,14 +40,14 @@ $$\ZZ[\zeta] = \ring + \ring\zeta$$
 Such countable ring is of course $n$-fold rotationally invariant
 $$\zeta^k\ZZ[\zeta] \subset \ZZ[\zeta]\qquad k\in\widehat{n-1}$$
 
-To summarize $\beta$ is a real Pisot and it can be used to decompose $n$-fold rotationally invariant complex ring $\ZZ[\zeta]$ as $\ring + \ring\zeta$. 
+To summarize $\beta$ is real and a Pisot and it can be used to decompose $n$-fold rotationally invariant complex ring $\ZZ[\zeta]$ as $\ring + \ring\zeta$. 
 
-Now we are going to show the link between Galois automorphism of $\rho$ and a cyclic automorphism of $\{1, \zeta, \dots, \zeta^{n-1}\}$.
+%Now we are going to show the link between Galois automorphism of $\rho$ and a cyclic automorphism of $\{1, \zeta, \dots, \zeta^{n-1}\}$.
 
-The conjugate roots of $\rho$ are in the form $\rho_k = 2\cos\left(\frac{2\pi}{n}n_k\right)$ for $k\in \widehat{m}$ where $n_k\leq~\left[\frac{n-1}{2}\right]$ and  $\rho = \rho_1$.
-\\[2cm]
-{\Huge MORE HERE}
-\\[2cm]
+%The conjugate roots of $\rho$ are in the form $\rho_k = 2\cos\left(\frac{2\pi}{n}n_k\right)$ for $k\in \widehat{m}$ where $n_k\leq~\left[\frac{n-1}{2}\right]$ and  $\rho = \rho_1$.
+%\\[2cm]
+%{\Huge MORE HERE}
+%\\[2cm]
 
 %Since by the definition \ref{def_pisotCyclotomic} of the Pisot-cyclotomic number, $\beta\in\ZZ[\rho]$ and $\rho\in\ring$, there exists $d_1, \dots, d_{m-1}, t_1, \dots, t_{m-1}\in \ZZ$ such that: 
 %$$\beta = \sum_{k=1}^{m-1} d_k\rho^k \qquad \text{and}\qquad \rho = \sum_{k=1}^{m-1} t_k\beta^k$$

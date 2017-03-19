@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{Delone set}
+\section{Delone set} % -------------------------------------------------------------------------------------------------
 Delone set is such a set that is both relatively dense and uniformly discrete. In order to characterize exactly what dense and discrete means, we define two parameters for any subset of $\CC^n$. 
 
 \begin{definition}\label{def_deloneSetPacking}
@@ -25,26 +25,151 @@ is called \textbf{covering radius} of the set $D$.
 Union of closed balls of covering radius centered at the points of the set is the entire space $\CC^n$. 
 \end{remark}
 
-\begin{definition}\label{def_deloneSet}
+\begin{definition}\label{def_deloneSet}\leavevmode
+
+\noindent
 $D\subset \CC^n$ which has positive packing radius $R_P$ is \textbf{uniformly discrete}.\\
+\noindent
 $D\subset \CC^n$ which has finite covering radius $R_C$ is \textbf{relatively dense}.\\
+\noindent
 $D\subset \CC^n$ which has both positive packing radius $R_P$ and finite covering radius $R_C$ is a \textbf{Delone set}.
 \end{definition}
 
-\section{number theory}
+\section{Voronoi diagram}\label{sec_voronoi} % ------------------------------------------------------------------------------------------------------
+\begin{definition}
+Let $P\subset \mathbb{R}^n$ be a discrete set and $x\in P$. Then
+$$V_P(x) = \{ y \in \mathbb{R}^n \,|\, \forall z \in P, z\neq x:\, \|y-x\|\leq\|y-z\| \}$$
+is called \textbf{Voronoi polygon} or \textbf{Voronoi cell} or \textbf{Voronoi tile} of $x$ on $P$.
 
-\section{Cut-and-project scheme}\label{sec_cutAndProject}
-We are using cut-and-project scheme to model quasicrystals. Here is a brief introduction into its workings. 
+Voronoi polygon $V_P(x)$ is said to belong to the point $x$ and $x$ is called the \textbf{center} of the Voronoi cell $V_P(x)$. 
+
+When there can be no confusion as to what set $P$ is, it may be omitted: $V(x)$.
+\end{definition}
+
+\begin{definition}
+Let $P\subset \mathbb{R}^n$ be a discrete set. Then set of all Voronoi tiles
+$$\{V(x)\,|\, x\in P\}$$
+is called \textbf{Voronoi diagram} or \textbf{Voronoi tessellation}. 
+\end{definition}
+
+\begin{definition}
+Let $P\subset \mathbb{R}^n$ be a discrete set and $x\in P$. Then
+$$\sup_{y\in V(x)}\lVert y-x\rVert$$
+is called \textbf{radius} of the Voronoi polygon. 
+\end{definition}
+
+\begin{definition}
+Let $P\subset \mathbb{R}^n$ be a discrete set and $x\in P$. Then the set of points of $P$ that directly shape the Voronoi polygon $V_P(x)$:
+$$D_P(x) = \bigcap\, \big\{ Q\subset P\,|\, V_Q(x) = V_P(x) \big\}$$
+is called the \textbf{domain} of $x$ or of $V_P(x)$. 
+\end{definition}
+
+\section{Number theory}\label{sec_numberTheory} % -------------------------------------------------------------------------------------------------
+The study of quasicrystals relies heavily on number theory. Therefore this section list the definitions and their implications that are used further, we will however not show any proofs for our claims.
+\begin{definition}
+Let $P\subset\CC$. Then $P[x]$ denotes the set of polynomials with coefficients in $P$. 
+\end{definition}
+
+\begin{definition}
+Let $f\in\CC[x]$ such that $f(x) = \sum_{k=0}^m{\alpha_kx^k}$. Then $f$ is \textbf{monic polynomial} if $\alpha_m = 1$. 
+\end{definition}
+
+\subsection{Algebraic numbers, minimal polynomial and degree}
+\begin{definition}\leavevmode
+
+\noindent
+Let $\alpha\in\CC$. If there exists monic polynomial $f\in\QQ[x]$ such that $f(\alpha) = 0$, then $\alpha$ is an \textbf{algebraic number}. The set of algebraic numbers is denoted as $\AAA$. 
+
+\noindent
+Let $\beta\in\CC$. If there exists monic polynomial $g\in\ZZ[x]$ such that $g(\beta) = 0$, then $\beta$ is an \textbf{algebraic integer}.  The set of algebraic integers is denoted as $\BB$. 
+
+Such polynomial $f$ or $g$ is then called the \textbf{minimal polynomial} of $\alpha$ or $\beta$ respectively and denoted as $f_\alpha$ or $f_\beta$ respectively
+
+The degree of the polynomial is also regarded as the \textbf{degree of the algebraic number}. 
+\end{definition}
+
+\begin{remark}
+For each algebraic number there exists exactly one minimal polynomial. 
+\end{remark}
+
+\subsection{Galois isomorphism}
+
+\begin{definition}
+The $(m-1)$ other roots of $f_\alpha$ for $\alpha\in\AAA$ of degree $m$ are called \textbf{conjugate roots} of $\alpha$ and denoted as $\alpha',\,\alpha'',\,\dots,\,\alpha^{(m-1)}$. 
+\end{definition}
+
+\begin{remark}
+Consistently with the notation of its conjugate roots, $\alpha$ may be denoted as $\alpha^{(0)}$ or $\alpha^{(m)}$.
+\end{remark}
+
+\begin{definition}
+The ring $\ZZ(\alpha)\subset\CC$: 
+$$\ZZ(\alpha) = \left\{ a_0 + a_1\alpha + a_2\alpha^2 + \dots + a_{m-1}\alpha^{m-1} \left |\; a_i\in\ZZ\right. \right\}$$
+is called the \textbf{extension ring} of the number $\alpha\in\AAA$ of degree $m$.
+\end{definition}
+
+\begin{definition}
+The number field $\QQ(\alpha)\subset\CC$: 
+$$\QQ(\alpha) = \left\{ b_0 + b_1\alpha + b_2\alpha^2 + \dots + b_{m-1}\alpha^{m-1} \left |\; b_i\in\QQ\right. \right\}$$
+is called the \textbf{extension field} of the number $\alpha\in\AAA$ of degree $m$.
+\end{definition}
+
+\begin{definition}
+Let $\alpha\in\AAA$ of degree $m$ and $\alpha',\,\alpha'',\,\dots,\,\alpha^{(m-1)}$ its conjugate roots. Then $\QQ(\alpha),\, \QQ(\alpha'),\,\dots,\, \QQ(\alpha^{(m-1)})$ are isomorphic and the isomorphisms:
+$$\sigma_i(\QQ(\alpha) = \QQ\big(\alpha^{(i)}\big)\qquad i\in\widehat{m-1}$$
+are called \textbf{Galois isomorphisms}.
+\end{definition}
+
+Galois isomorphisms are significant part of the definition of the quasicrystals, so they surely deserve an example. 
+
+The Galois isomorphism $\sigma_0$ is always identity.
+
+In general the Galois isomorphism $\sigma_i$ exchanges $\alpha$ of degree $m$ with its $i$th conjugate root. 
+$$\sigma_i\big(b_0 + b_1\alpha + b_2\alpha^2 + \dots + b_{m-1}\alpha^{m-1}\big) = b_0 + b_1\alpha^{(i)} + b_2\big(\alpha^{(i)}\big)^2 + \dots + b_{m-1}\big(\alpha^{(i)}\big)^{m-1}$$
+
+Since further we will mostly work only with quadratic algebraic numbers (of degree $2$), there will only be two roots and two Galois isomorphisms, identity and $\sigma_1(\alpha) = \alpha'$. Thus it is often denoted only as $'$, as in $(\alpha)' = \sigma_1(\alpha) = \alpha'$.
+
+\subsection{Root of unity, cyclotomic polynomial}
+
+\begin{definition}
+Every $\zeta\in\CC$ such that $\zeta^n-1=0$ for $n\in\NN$ is called \textbf{$n$th root of unity} or just \textbf{root of unity} if $n$ is not given. Minimal $d\in\NN$ for which $\zeta^d-1=0$ is the \textbf{order} of $\zeta$. 
+
+Nontrivial root of unity is a root of unity $\zeta\neq 1$. 
+\end{definition}
+
+\begin{remark}
+Nontrivial root of unity is a root of polynomial $\frac{x^n-1}{x-1}$.
+\end{remark}
+
+\begin{remark}
+$n$th root of unity may be written as $\zeta = e^{2k\pi i/n}$ for $k\in \{0, 1, \dots, n-1\}$.
+\end{remark}
+
+\begin{theorem}
+Degree of $n$th root of unity $\zeta$ is $\varphi(n)$. Where $\varphi$ is the Euler's function.
+\end{theorem}
+
+\subsection{Pisot numbers}
+\begin{definition}
+Let $\beta\in\BB$ be an algebraic integer of degree $m$, $\beta>1$  and for all conjugate roots $\beta',\,\beta'',\,\dots ,\,\beta^{(m-1)}$ it holds
+$$|\beta^{(i)}|<1\qquad \forall\, i\in\widehat{m-1}$$
+Then $\beta$ is called \textbf{Pisot}.
+\end{definition}
+
+As we will see in section \ref{sec_pisotCyclotomic}, Pisot numbers another crucial part of our quasicrystal model. 
+
+\section{Cut-and-project scheme}\label{sec_cutAndProject}% -------------------------------------------------------------------------------------------------
+We are using cut-and-project scheme to model the quasicrystals. Here is a brief introduction into its workings. 
 
 Roughly speaking cut-and-project is a way of selecting a subset from a larger set, in our case this larger set is a $\ring$-module. 
 
 \begin{definition}
 Let $\beta\in\RR$ be Pisot, $\ring$ its extension ring and $\{\mathbf{e}_1, \dots, \mathbf{e}_d\}$ be a basis of $\RR^d$ for $d\in\NN$. 
-$$L = \bigoplus^d_{j=1}\ring \mathbf{e}_j$$
-is $d$ dimensional \textbf{$\ring$-module}.
+$$L = \bigoplus^d_{j=1}\ZZ\, \mathbf{e}_j$$
+is \textbf{crystallographic lattice} in $\RR^d$.
 \end{definition} 
 
-The cut-and-project scheme utilizes $2n$ dimensional $\ring$-module $L\subset\RR^{2n}$ and two more $n$ dimensional subspaces $V_1, V_2\subset\RR^{2n}$. 
+The cut-and-project scheme utilizes $2n$ dimensional crystallographic lattice $L\subset\RR^{2n}$ and two more $n$ dimensional subspaces $V_1, V_2\subset\RR^{2n}$. 
 
 Further we define two projections $\pi_1:\RR^{2n}\rightarrow V_1$ and $\pi_2:\RR^{2n}\rightarrow V_2$ such that $\pi_1|_L$ is injection and $\pi_2(L)$ is dense in $V_2$. 
 
