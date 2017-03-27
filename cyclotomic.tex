@@ -42,17 +42,18 @@ $$\zeta^k\ZZ[\zeta] \subset \ZZ[\zeta]\qquad k\in\widehat{n-1}$$
 
 To summarize $\beta$ is real and a Pisot and it can be used to decompose $n$-fold rotationally invariant complex ring $\ZZ[\zeta]$ as $\ring + \ring\zeta$. 
 
-%Now we are going to show the link between Galois automorphism of $\rho$ and a cyclic automorphism of $\{1, \zeta, \dots, \zeta^{n-1}\}$.
+For further work we will need actual values of Pisot-cyclotomic numbers and so in the next section we will show a method for finding quadratic Pisot-cyclotomic numbers, whose quasicrystals we will later analyze. The method could of course be generalized to different degrees. 
 
-%The conjugate roots of $\rho$ are in the form $\rho_k = 2\cos\left(\frac{2\pi}{n}n_k\right)$ for $k\in \widehat{m}$ where $n_k\leq~\left[\frac{n-1}{2}\right]$ and  $\rho = \rho_1$.
-%\\[2cm]
-%{\Huge MORE HERE}
-%\\[2cm]
+\subsection{Quadratic Pisot-cyclotomic numbers}
+As stated in preliminaries, the degree of root of unity of order $n$ is $\varphi(n)$ (where $\varphi$ is the Euler's function). From the decomposition in the previous section we can easily infer that the degree of $\zeta$ is double of degree of $\beta$ (or $\rho$). Moreover we are looking for $\beta$ of degree $2$. Together we acquire following equation. 
+$$\varphi(n) = 2\cdot 2 = 4$$
+With help from the Euler's product formula we can show that such equation holds only for $n\in\{5,8,10,12\}$. 
 
-%Since by the definition \ref{def_pisotCyclotomic} of the Pisot-cyclotomic number, $\beta\in\ZZ[\rho]$ and $\rho\in\ring$, there exists $d_1, \dots, d_{m-1}, t_1, \dots, t_{m-1}\in \ZZ$ such that: 
-%$$\beta = \sum_{k=1}^{m-1} d_k\rho^k \qquad \text{and}\qquad \rho = \sum_{k=1}^{m-1} t_k\beta^k$$
+For each $n\in\{5,8,10,12\}$ there is $\rho = 2\cos\left(2\pi/n\right)$ and for each such $\rho$ there are $\beta \in \ZZ[\rho]$ following the definition \ref{def_pisotCyclotomic}. 
 
-We close this section with a list of quadratic $(m=2)$ Pisot-cyclotomic numbers. 
+To summarize, quadratic Pisot-cyclotomic numbers $\beta$ can only be associated to quasicrystals with $5$-fold, $8$-fold or $12$-fold rotational symmetries. Even though we are mainly focusing on two dimensional quasicrystals, that is not dictated by the quadratic-ness of $\beta$. Quadratic Pisot-cyclotomic numbers are also associated to arbitrarily dimensional quasicrystals. For example we will also study one dimensional quasicrystals. 
+
+We close this section with a list of quadratic Pisot-cyclotomic numbers (table \ref{tab_quadraticPisotCyclotomic}). 
 
 \begin{table}[h!]
 \centering
@@ -70,23 +71,20 @@ $12$  & $2 \cos\left(\frac{2\pi}{12}\right)$  & $ 2+\sqrt{3} $            & $e^{
 \section{Quasicrystal model}%--------------------------------------------------------------------------------
 There certainly are many ways to acquire a set that follows the properties listed in section \ref{sec_quasicrystalEaseIn}. We utilize the cut-and-project scheme described in section \ref{sec_cutAndProject}. 
 
-%In previous section \ref{sec_pisotCyclotomic} we wrote about Pisot-cyclotomic numbers. Here we are only interested in the quadratic ones listed in table \ref{tab_quadraticPisotCyclotomic}. 
-
-%Each quadratic Pisot-cyclotomic number $\beta$ of order $n$ is associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$) and since it is a root of a quadratic equation, there is also a conjugate root $\beta'$ that is $|\beta'|<1$ (since $\beta$ is Pisot). 
+The cut-and-project scheme requires among others crystallographic lattice $L$, the sets $V_1$ and $V_2$, and suitable projections $\pi_1$ and $\pi_2$ or $\ast$. Finding these is outside of scope of this work. For now we will continue using general notation with the promise of specifying these sets and projections once necessary. 
 
 \begin{definition}\label{def_quasicrystal}
 Let $\beta$ be a Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). 
 
-Further let $M=\ring~+~\ring\zeta$, $M^\ast=\ring[\beta']+\ring[\beta']\sigma(\zeta)$ and projection $\ast:M\rightarrow M^\ast$ be defined as: 
-$$x=x_1+x_2\zeta \rightarrow x^\ast = x_1'+x_2'\zeta^\ast \qquad x_1, x_2\in\ring$$
+Further let $M,\, N\subset \RR^d$ and projection $\ast:M\rightarrow N$ follow the conditions of the cut-and-project scheme.
 
-Lastly let $\Omega\subset V_2$ be bounded with nonempty interior. 
+Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
 
-Then \textbf{$m$ dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
+Then \textbf{$d$ dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\}$$
 \end{definition}
 
-So far the entire theses was purely abstract. To give you an example of what quasicrystal might look like, there is the image \ref{fig_quasicrystalFirstExample} which shows points of a two dimensional quasicrystal.
+So far the entire theses was purely abstract. To give you an example of what quasicrystal might look like, there is the image \ref{fig_quasicrystalFirstExample} which shows finite sections of a two dimensional quasicrystal with $8$-fold rotational symmetry.
 
 \begin{figure}[h]
 \centering
@@ -95,19 +93,83 @@ So far the entire theses was purely abstract. To give you an example of what qua
 \label{fig_quasicrystalFirstExample}
 \end{figure}
 
-We close this section with a list of properties of quasicrystals which are crucial for our analysis but also very obvious from the definition. 
+To validate our quasicrystal model we of course have to show that it follows the properties in section \ref{sec_quasicrystalEaseIn}. However first we list few properties of our model which will help us show that. 
+
+Since such general approach won't be necessary for our work, from now on we limit our scope to only quadratic Pisot-cyclotomic numbers (that greatly simplifies the scaling property). 
 
 \begin{itemize}
-\item $\Omega_1\subset\Omega_2 \quad\Rightarrow\quad \quasi{\Omega_1}\subset\quasi{\Omega_2}$
-\item $\quasi{\Omega_1}\cap\quasi{\Omega_2} \quad=\quad \quasi{\Omega_1\cap\Omega_2}$
-\item $\quasi{\Omega_1}\cup\quasi{\Omega_2} \quad=\quad \quasi{\Omega_1\cup\Omega_2}$
-\item $\quasi{\Omega+x^\ast} \quad=\quad \quasi{\Omega}+x\qquad \text{for}\; x\in M$
+\item Inclusion property: $$\Omega_1\subset\Omega_2 \quad\Rightarrow\quad \quasi{\Omega_1}\subset\quasi{\Omega_2}$$
+\item Union property: $$\quasi{\Omega_1\cup\Omega_2} \,=\, \quasi{\Omega_1}\cup\quasi{\Omega_2}$$
+\item Translation property: $$\quasi{\Omega+x^\ast} \quad=\quad \quasi{\Omega}+x\qquad \text{for}\; x\in M$$
+\item Scaling property: $$\quasi{\beta\Omega} = \beta'\quasi{\Omega}$$
 \end{itemize}
 
-If we limit our scope to quadratic Pisot-cyclotomic numbers, there is another property. 
-\begin{itemize}
-\item $\quasi{\beta\Omega} = \beta'\quasi{\Omega}$
-\end{itemize}
-This last property can be 
+And now to validate our model. 
+
+\begin{enumerate}
+\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda = \Lambda$$
+Rotational symmetry appears in quasicrystal if the window $\Omega$ has the same rotational symmetry.
+\item dilation: $$\exists\,b\in\RR\setminus\{-1,1\}:\; b\Lambda\subset \Lambda$$
+Using the scaling property and the inclusion property:
+$$\beta\quasi{\Omega} = \quasi{\beta'\Omega} \subset \quasi{\Omega}$$
+\item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
+\item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
+The result of cut-and-project scheme is a Delone set if the window $\Omega$ is bounded with nonempty interior. 
+\item finite local complexity: $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
+It has been shown that our model has even this property, however since this work explores this finite complexity it essentially proves this property as well. 
+\end{enumerate}
+
+Having quasicrystal defined and  our model validated, we will present our plan for the analysis. 
+
+\section{General quasicrystal analysis}
+In this section we will outline general method of analysis of any quasicrystal. Later we will use this method to analyze two dimensional and one dimensional quasicrystals. 
+
+Analysis should reveal the structure of the points of the quasicrystal, for us that means listing all Voronoi tiles that appear in the qusicrystal's Voronoi diagram. 
+
+To acquire such list we follow these steps: 
+\begin{enumerate}
+\item \textbf{Acquire arbitrary finite section of the quasicrystal}
+
+In other words this means creating algorithm that for finite section $P\subset\RR^d$ returns $P\cap\quasi{\Omega}$. 
+\item \textbf{Estimate covering radius of the quasicrystal $R_C$}
+
+We are specifically interested in the upper bound $\hat{R}_C$ of the covering radius. 
+\item \textbf{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
+
+Each of these finite sections represents one Voronoi tile that appears in the quasicrystal's voronoi diagram. 
+\item \textbf{Filter the superset to the final list of Voronoi tiles}
+\end{enumerate}
+
+These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and need to be specified for a specific quasicrystal. 
+
+We close this chapter and our general overview of quasicrystals with discussion of window shapes. It is obviously impossible to analyze quasicrystal for arbitrary bounded $\Omega\subset N$ with nonempty interior. There however is a way to limit our scope to few window shapes that in some way represent all possible windows. 
+
+\subsection{Analyzed window shapes}
+We will use the properties of quasicrystals to gradually limit the set of analyzed windows. We start with all of the windows: 
+$$\big\{\Omega\,|\, \Omega\subset N ,\;\text{bounded with nonempty interior}\big\}$$
+
+Thanks to the union property we can limit our scope to a continuous convex bounded windows with nonempty interior since most more complicated windows are unions of continuous convex bounded window with nonempty interior: 
+$$\big\{\Omega\,|\, \Omega\subset N ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
+
+Further thanks to the translation property we can limit our scope to a continuous convex bounded windows with nonempty interior centered around the origin: 
+$$\big\{\Omega-\overline{\Omega}\,|\, \Omega\subset N ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
+where $\overline{\Omega}$ is the arithmetic mean (or "center of mass") of the window $\Omega$. 
+
+Lastly thanks to the scaling property we can limit our scope to a continuous convex bounded windows with nonempty interior centered around the origin of diameter in $(1/\beta,1]$:
+$$\big\{\Omega-\overline{\Omega}\,|\, \Omega\subset N ,\; d(\Omega)\in (1/\beta,1] ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
+where $d(\Omega)$ is the set diameter $d(\Omega) = \sup\{d(x,y)\,|\,x,y\in\Omega\}$
+
+\begin{remark}
+We could of course also pick any other $\beta$ multiple of $(1/\beta,1]$. 
+\end{remark}
+
+Of course even after all this limiting, the set of windows is still infinite. Therefore we will further limit our scope to three basic window shapes: rhombus, regular $n$-gon and a circle. The rhombus is not really a valid window since it is not sufficiently rotationally symmetrical, it is however fundamental to our method, more on this later. The regular $n$-gon represents the simplest window with sufficient rotational symmetry and the circle interesting for its circular symmetry. 
+
+To summarize we will analyze quasicrystals for windows in shape of rhombus, regular $n$-gon and a circle centered around the origin of diameter in $(1/\beta,1]$. Technically there is an infinite amount of these windows as well however as we will see later it is already manageable. 
+
+Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i. e. we will exclude the boundary. The exception is the rhombus (and its one dimensional equivalent -- interval) for reasons we will also explain later. 
+
+Now we have quasicrystal defined, model explored and windows limited. In the next chapter we will finally start the analysis. 
+
 
 \end{document}

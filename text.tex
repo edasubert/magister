@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,twoside]{article}
+\documentclass[a4paper,11pt,twoside]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
@@ -261,11 +261,14 @@
 
 %V~sekci \ref{sec:oneDimension} definujeme jednorozměrné kvazikrystaly a analyzujeme jejich strukturu. Sekce \ref{sec:oneDimensionAlg} shrnuje algoritmy požité při analýze jednorozměrných kvazikrystalů. V~sekci \ref{sec:twoDimension} definujeme dvourozměrné kvazikrystaly a ukážeme jejich souvislost s~jednorozměrnými. Sekce \ref{sec:graphics} shrnuje nabyté poznatky grafickou formou.
 
-\newpage
+\chapter{Preliminaries}
 \subfile{preliminaries}
 %
-\newpage
+\chapter{Quasicrystal}
 \subfile{cyclotomic}
+
+\chapter{Analysis}
+\subfile{oneDimension}
 
 
 %\newpage
