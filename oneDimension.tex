@@ -1,32 +1,186 @@
 \documentclass[text.tex]{subfiles}
 
 \begin{document}
-The first step of analysis of two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific shape of a window it is possible to decompose two dimensional quasicrystal into two one dimensional quasicrystals. We will explain exactly what that means later. However that is the motivation for analysis of the one dimensional quasicrystal. 
+The first step of analysis of the two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific shape of a window it is possible to decompose two dimensional quasicrystal into two one dimensional quasicrystals. We will explain exactly what that means later. However that is the motivation for analysis of the one dimensional quasicrystal. 
 
 \section{One dimensional quasicrystal}
 First we need to specify our general quasicrystal model for one dimension. 
 
-Let $\beta$ be a Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). 
+Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). 
 
-Further let $M = \ring$ extension ring of $\beta$ and $M^\ast = \ring[\beta']$ extension ring of its conjugate root.
+Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of its conjugate root.
 
-The projection $\ast:M\rightarrow M^\ast$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). 
+The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). 
 
-Lastly let $\Omega\subset M^\ast$ be bounded with nonempty interior. 
+Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
 
 Then one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$ is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\} = \big\{ x \in \ring\; |\; x'\in \Omega\big\}$$
 
 To state the obvious, one dimensional quasicrystal is a Delone set of points on a line. 
 
-The one dimensional window shape for which we will analyze is left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
+As hinted before the one dimensional window shape for which we will analyze is left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
 
+As we see in the following breakdown, quasicrystals with different openness or closeness differ only by at most single point. 
 
+\begin{align*}
+\quasi{(c,d)} &= \left\{ 
+	\begin{array}{l l}
+	\quasi{[c,d)} & c \notin \ring\\
+	\quasi{[c,d)}\setminus\{c'\} & c \in \ring
+	\end{array} \right. 
+  \\
+  \quasi{[c,d]} &= \left\{ 
+	\begin{array}{l l}
+	\quasi{[c,d)} & d \notin \ring\\
+	\quasi{[c,d)}\cup\{d'\} & d \in \ring
+	\end{array} \right.
+  \\
+\quasi{(c,d]} &= \left\{ 
+	\begin{array}{l l}
+	\quasi{(c,d)} & d \notin \ring\\
+	\quasi{(c,d)}\cup\{d'\} & d \in \ring
+	\end{array} \right.\\
+\end{align*}
 
-According to our plan, first step of analysis is generating arbitrary finite section of one dimensional quasicrystal. 
+Unfortunately the addition or the removal of the single point causes occurrence of local configurations that appear only once in the entire quasicrystal. That would needlessly complicate our work and therefore we chose to only analyze left-closed right-open interval, which does not suffer from these zero density occurrences. 
+
+According to our plan, first step of the analysis is generating arbitrary finite section of one dimensional quasicrystal. 
 
 \subsection{Arbitrary finite section}
+The picture \ref{fig_onedimensional} illustrates well, what we want to acquire -- the sequence of points on the $x$ axis. For this purpose we define the sequence of the quasicrystal. 
+
+\begin{definition}
+Strictly increasing sequence $(y_n^\Omega)_{n\in \mathbb{Z}}$ defined as $\left\{y_n^\Omega\,|\, n\in\ZZ \right\} = \quasi{\Omega}$ where $\quasi{\Omega}$ is one dimensional quasicrystal is called the \textbf{sequence of the quasicrystal $\quasi{\Omega}$}.
+\end{definition}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.8]
+
+\coordinate (O) at (0,0);
+\coordinate (X) at (10,0);
+\coordinate (Y) at (0,6);
+\coordinate (marX) at (0.4, 0);
+\coordinate (marY) at (0, 0.4);
+\coordinate (marXm) at ($-1*(marX)$);
+\coordinate (marYm) at ($-1*(marY)$);
+
+\coordinate (x1) at (1,1);
+\coordinate (x2) at (3.732,0.2679);
+
+\coordinate (winy1) at (0,1.8);
+\coordinate (winy2) at (0,5.1);
+
+\coordinate (R) at (0.1,0.1);
 
 
+\clip($(Y)+(marY)+(marXm)$) rectangle ($(X)+(marX)+(marYm)$);
+
+% window
+\path [fill,opacity=0.2,thin] ($(winy1)+(marXm)$) -- ($(winy1)+(marX)+(X)$) -- ($(winy2)+(marX)+(X)$) -- ($(winy2)+(marXm)$) -- cycle;
+
+% grid
+\foreach \x in {-5,...,10}
+{
+	
+	\draw [-,thin] ($-10*(x1)+\x*(x2)$) -- ($10*(x1)+\x*(x2)$);
+	\draw [-,thin] ($-10*(x2)+\x*(x1)$) -- ($10*(x2)+\x*(x1)$);
+	
+}
+\foreach \x in {-5,...,10}
+{
+	\foreach \i in {0,...,20}
+	{
+		\filldraw ($-10*(x1)+\x*(x2) + \i*(x1)$) circle (0.04);
+	}
+}
+
+% axis
+\draw [-,ultra thick] ($(X)+(marX)$) -- ($(O) + (marXm)$);
+\draw [-,ultra thick] ($(Y)+(marY)$) -- ($(O) + (marYm)$);
+
+% nodes
+\draw [-,thick,dashed] ($(O) + -1*(3.732,0) + 4*(1,0)$)  -- ($(O) + -1*(x2) + 4*(x1)$);
+%\draw [-,thick,dashed] ($(O) + -1*(0,0.2679) + 4*(0,1)$) -- ($(O) + -1*(x2) + 4*(x1)$);
+\path [fill] ($(O) + -1*(3.732,0) + 4*(1,0) + -1*(R)$) rectangle ($(O) + -1*(3.732,0) + 4*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + -1*(3.732,0) + 5*(1,0)$)  -- ($(O) + -1*(x2) + 5*(x1)$);
+%\draw [-,thick,dashed] ($(O) + -1*(0,0.2679) + 5*(0,1)$) -- ($(O) + -1*(x2) + 5*(x1)$);
+\path [fill] ($(O) + -1*(3.732,0) + 5*(1,0) + -1*(R)$) rectangle ($(O) + -1*(3.732,0) + 5*(1,0) + (R)$);
+
+\draw [-,thick,dashed] ($(O) + 0*(3.732,0) + 2*(1,0)$)  -- ($(O) + 0*(x2) + 2*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 0*(0,0.2679) + 2*(0,1)$) -- ($(O) + 0*(x2) + 2*(x1)$);
+\path [fill] ($(O) + 0*(3.732,0) + 2*(1,0) + -1*(R)$) rectangle ($(O) + 0*(3.732,0) + 2*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 0*(3.732,0) + 3*(1,0)$)  -- ($(O) + 0*(x2) + 3*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 0*(0,0.2679) + 3*(0,1)$) -- ($(O) + 0*(x2) + 3*(x1)$);
+\path [fill] ($(O) + 0*(3.732,0) + 3*(1,0) + -1*(R)$) rectangle ($(O) + 0*(3.732,0) + 3*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 0*(3.732,0) + 4*(1,0)$)  -- ($(O) + 0*(x2) + 4*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 0*(0,0.2679) + 4*(0,1)$) -- ($(O) + 0*(x2) + 4*(x1)$);
+\path [fill] ($(O) + 0*(3.732,0) + 4*(1,0) + -1*(R)$) rectangle ($(O) + 0*(3.732,0) + 4*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 0*(3.732,0) + 5*(1,0)$)  -- ($(O) + 0*(x2) + 5*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 0*(0,0.2679) + 5*(0,1)$) -- ($(O) + 0*(x2) + 5*(x1)$);
+\path [fill] ($(O) + 0*(3.732,0) + 5*(1,0) + -1*(R)$) rectangle ($(O) + 0*(3.732,0) + 5*(1,0) + (R)$);
+
+\draw [-,thick,dashed] ($(O) + 1*(3.732,0) + 2*(1,0)$)  -- ($(O) + 1*(x2) + 2*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 1*(0,0.2679) + 2*(0,1)$) -- ($(O) + 1*(x2) + 2*(x1)$);
+\path [fill] ($(O) + 1*(3.732,0) + 2*(1,0) + -1*(R)$) rectangle ($(O) + 1*(3.732,0) + 2*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 1*(3.732,0) + 3*(1,0)$)  -- ($(O) + 1*(x2) + 3*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 1*(0,0.2679) + 3*(0,1)$) -- ($(O) + 1*(x2) + 3*(x1)$);
+\path [fill] ($(O) + 1*(3.732,0) + 3*(1,0) + -1*(R)$) rectangle ($(O) + 1*(3.732,0) + 3*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 1*(3.732,0) + 4*(1,0)$)  -- ($(O) + 1*(x2) + 4*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 1*(0,0.2679) + 4*(0,1)$) -- ($(O) + 1*(x2) + 4*(x1)$);
+\path [fill] ($(O) + 1*(3.732,0) + 4*(1,0) + -1*(R)$) rectangle ($(O) + 1*(3.732,0) + 4*(1,0) + (R)$);
+
+\draw [-,thick,dashed] ($(O) + 2*(3.732,0) + 2*(1,0)$)  -- ($(O) + 2*(x2) + 2*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 2*(0,0.2679) + 2*(0,1)$) -- ($(O) + 2*(x2) + 2*(x1)$);
+\path [fill] ($(O) + 2*(3.732,0) + 2*(1,0) + -1*(R)$) rectangle ($(O) + 2*(3.732,0) + 2*(1,0) + (R)$);
+\draw [-,thick,dashed] ($(O) + 2*(3.732,0) + 3*(1,0)$)  -- ($(O) + 2*(x2) + 3*(x1)$);
+%\draw [-,thick,dashed] ($(O) + 2*(0,0.2679) + 3*(0,1)$) -- ($(O) + 2*(x2) + 3*(x1)$);
+\path [fill] ($(O) + 2*(3.732,0) + 3*(1,0) + -1*(R)$) rectangle ($(O) + 2*(3.732,0) + 3*(1,0) + (R)$);
+
+\node [above] at (X) {$x$};
+\node [right] at (Y) {$y$};
+
+\node [below right] at (winy1) {$c$};
+\draw [-,thick] ($(winy1) + -1*(0.1,0)$) -- ($(winy1) + (0.1,0)$);
+\node [above right] at (winy2) {$d$};
+\draw [-,thick] ($(winy2) + -1*(0.1,0)$) -- ($(winy2) + (0.1,0)$);
+\end{tikzpicture}
+\caption{Illustration of one-dimensional quasicrystal. The grid is $M\times N$. On the $y$ axis there is a window $\Omega = [c,d)$. The squares on the $x$ axis are points of the quasicrystal $\quasi{\Omega}$. }
+\label{fig_onedimensional}
+\end{figure}
+
+Now we would like to explore the set of all possible distances between two consecutive points of the sequence of the quasicrystal: 
+$$\left\{ y^\Omega_{n+1}-y^\Omega_{n}\,|\, n\in\NN \right\}$$
+
+For that we need an expression for $y^\Omega_n$. Let's start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e. $1$. First we do a little algebraic exercise with the expression for quasicrystal:
+\begin{align*}
+\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right) &= \left\{x\in\ring\,\left|\, x'\in \left[-\frac{1}{2}, \frac{1}{2}\right)\right.\right\}\\
+  &= \left\{a+b\beta\,\left|\, a+b\beta'\in \left[-\frac{1}{2}, \frac{1}{2}\right),\,a,b\in\ZZ\right.\right\}\\
+  &= \left\{a+b\beta\,\left|\, -\frac{1}{2}\leq a+b\beta'<\frac{1}{2},\,a,b\in\ZZ\right.\right\}\\
+  &= \left\{a+b\beta\,\left|\, -\frac{1}{2}-b\beta'\leq a < \frac{1}{2}-b\beta',\,a,b\in\ZZ\right.\right\}\\
+  &= \left\{\left.\left\lceil-\frac{1}{2} -b\beta'\right\rceil + b\beta\,\right|\, b\in\ZZ\right\}\\
+\end{align*}
+
+Thus we can express the sequence of points of the quasicrystal as:
+$$y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_n = \left\lceil-\frac{1}{2} -n\beta'\right\rceil + n\beta$$
+
+And for the set of distances between two consecutive points we have:
+$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}$$
+$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$
+$$\left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$
+Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceils is either $0$ or $1$ and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta + 1\}$. 
+
+With a little thought and with use of the scaling property of a qusicrystal we can expand this to any window of size $\beta^k$ where $k\in\ZZ$. 
+$$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$
+Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta + 1)\right|\right\}$. 
+
+Applying Vieta's formulas we have:
+$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}+\frac{c^k}{\beta^{k}}\right|\right\}$$
+where $c$ is the constant coefficient of $\beta$'s minimal polynomial. 
+
+In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$ and just outside of our scope for window of size $\frac{1}{\beta}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. 
+
+For that we utilize the inclussion property. 
 \end{document}
 
