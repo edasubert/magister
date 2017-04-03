@@ -1,27 +1,31 @@
 \documentclass[text.tex]{subfiles}
 
 \begin{document}
-The first step of analysis of the two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific shape of a window it is possible to decompose two dimensional quasicrystal into two one dimensional quasicrystals. We will explain exactly what that means later. However that is the motivation for analysis of the one dimensional quasicrystal. 
+The first step of analysis of the two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific window shape it is possible to decompose two dimensional quasicrystal into two quasicrystals with one dimensional windows. We will explain exactly what that means later, for now let's explore two dimensional quasicrystals with one dimensional windows. 
+
+By definition the quasicrystal with one dimensional window is a set of points whose Galois isomorphism images fit on a bounded section of a line. Since the Galois isomorphism inverse image of a line is again a line then two dimensional quasicrystal with a line segment for a window is in fact one dimensional (i.e. set of points on a line). 
+
+We present this connection between two dimensional and one dimensional quasicrystal mainly to avoid the need to explicitly define the attributes and show the properties of one dimensional quasicrystal. This way aside from the rotational symmetry all the attributes and all the properties apply to the one dimensional quasicrystal as well. 
+
+To summarize the motivation behind the analysis of one dimensional quasicrystal is the eventual analysis of two dimensional quasicrystal. To take full advantage of previous work we view one dimensional quasicrystal as a special case of two dimensional quasicrystal, that is two dimensional quasicrystal with a line segment for a window. 
 
 \section{One dimensional quasicrystal}
-First we need to specify our general quasicrystal model for one dimension. 
+First we need to show exactly what our model of one dimensional quasicrystal is. As stated before that means specifying the sets and projection for cut-and-project scheme. 
 
-Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). 
+Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. 
 
-Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of its conjugate root.
+Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of $\beta$'s conjugate root.
 
 The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). 
 
 Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
 
-Then one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$ is the set:
+Then model of one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$ is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\} = \big\{ x \in \ring\; |\; x'\in \Omega\big\}$$
 
-To state the obvious, one dimensional quasicrystal is a Delone set of points on a line. 
+Convex bounded one dimensional window is a line segment, which is in one dimension represented by an interval, specifically we will use left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
 
-As hinted before the one dimensional window shape for which we will analyze is left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
-
-As we see in the following breakdown, quasicrystals with different openness or closeness differ only by at most single point. 
+As we see in the following breakdown, quasicrystals with different openness or closeness differ only by at most a single point. 
 
 \begin{align*}
 \quasi{(c,d)} &= \left\{ 

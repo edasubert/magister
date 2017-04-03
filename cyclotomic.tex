@@ -3,19 +3,33 @@
 \begin{document}
 
 \section{Quasicrystal}\label{sec_quasicrystalEaseIn}%---------------------------------------------------
-In two dimensions a quasicrystal can be viewed as a subset of complex numbers $\Lambda\subset\CC$ following these five properties:
+Unfortunately there is so far no established mathematical definition of quasicrystal, in the most basic terms it is just a set that is ordered but not periodic. Therefore we are going to introduce our attributes that a set $\Lambda\subset\CC$ needs to have to be a quasicrystal. 
+
+Although quasicrystals exist in any dimension, we are only interested in two dimensional ones. Thus we specify just for this case which will ease our work. 
+
+First we require $\Lambda$ to be not too dense but also not too discrete. In other words to have uniform discreetness as well as finite density. 
 
 \begin{enumerate}
-\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda = \Lambda$$
-\item dilation: $$\exists\,\beta\in\RR\setminus\{-1,1\}:\; \beta\Lambda\subset \Lambda$$
 \item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
 \item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
-\item finite local complexity: $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
 \end{enumerate}
 
-\begin{remark}
-Properties 3. and 4. together make quasicrystal to be a Delone set.
-\end{remark}
+Next we want finite local complexity. Sometimes this attribute is written as finiteness of a set of intersections of $\Lambda$ with balls centered at any point in $\CC$ of fixed but arbitrary radius:
+$$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
+However since we are going to study the Voronoi diagram of $\Lambda$ we directly require the list of Voronoi tiles of $\Lambda$ to be finite. 
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item finite local complexity: $$\big|\{V(x)-x\,|\, x\in \Lambda\}\big|<\infty$$
+\end{enumerate}
+
+So far we have achieved the orderedness part but even periodic crystallographic lattices have these properties. To break the periodicity we are going to require rotational symmetry and nontrivial dilation.  
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda = \Lambda$$
+\item dilation: $$\exists\,\beta\in\RR\setminus\{-1,1\}:\; \beta\Lambda\subset \Lambda$$
+\end{enumerate}
 
 It stems form these properties alone, that among other constants a quasicrystal is linked to a root of unity $\zeta$ and to a number $\beta\in\RR\setminus\{-1,1\}$. Of course not every pair $(\zeta, \beta)$ is associated with a quasicrystal.
 
@@ -49,9 +63,13 @@ As stated in preliminaries, the degree of root of unity of order $n$ is $\varphi
 $$\varphi(n) = 2\cdot 2 = 4$$
 With help from the Euler's product formula we can show that such equation holds only for $n\in\{5,8,10,12\}$. 
 
-For each $n\in\{5,8,10,12\}$ there is $\rho = 2\cos\left(2\pi/n\right)$ and for each such $\rho$ there are $\beta \in \ZZ[\rho]$ following the definition \ref{def_pisotCyclotomic}. 
+For each $n\in\{5,8,10,12\}$ there is $\rho = 2\cos\left(2\pi/n\right)$ and for each such $\rho$ there are $\beta \in \ZZ[\rho]$ following the definition \ref{def_pisotCyclotomic}. Each of these numbers $\beta$ are associated with the same quasicrystals and so it is sufficient to only pick one representative. 
 
-To summarize, quadratic Pisot-cyclotomic numbers $\beta$ can only be associated to quasicrystals with $5$-fold, $8$-fold or $12$-fold rotational symmetries. Even though we are mainly focusing on two dimensional quasicrystals, that is not dictated by the quadratic-ness of $\beta$. Quadratic Pisot-cyclotomic numbers are also associated to arbitrarily dimensional quasicrystals. For example we will also study one dimensional quasicrystals. 
+Moreover since $2\cos\left(2\pi/5\right) = \frac{\sqrt{5}-1}{2} = \frac{\sqrt{5}+1}{2} -1 = 2\cos\left(2\pi/10\right) - 1$ the extension rings $\ring[2\cos\left(2\pi/5\right)]$ and $\ring[2\cos\left(2\pi/10\right)]$ are identical and by extension the quasicrystals associated are also the same. Therefore we can skip the $5$-fold rotational symmetry. 
+
+To summarize, quadratic Pisot-cyclotomic numbers $\beta$ can only be associated to quasicrystals with $8$-fold, $10$-fold or $12$-fold rotational symmetries. 
+
+Even though we are mainly focusing on two dimensional quasicrystals, that is not dictated by the quadratic-ness of $\beta$. Quadratic Pisot-cyclotomic numbers are also associated to arbitrarily dimensional quasicrystals. 
 
 We close this section with a list of quadratic Pisot-cyclotomic numbers (table \ref{tab_quadraticPisotCyclotomic}). 
 
@@ -60,8 +78,8 @@ We close this section with a list of quadratic Pisot-cyclotomic numbers (table \
 \begin{tabular}{cccc}
 $n$ & $\rho$ & $\beta$ & $\zeta$ \\
 \hline
-$5$   & $2 \cos\left(\frac{2\pi}{5}\right)$   & $\frac{1+\sqrt{5}}{2} $   & $e^{2i\pi/5}$ \\
 $8$   & $2 \cos\left(\frac{2\pi}{8}\right)$   & $ 1+\sqrt{2} $            & $e^{2i\pi/8}$ \\
+$10$   & $2 \cos\left(\frac{2\pi}{5}\right)$   & $\frac{1+\sqrt{5}}{2} $   & $e^{2i\pi/5}$ \\
 $12$  & $2 \cos\left(\frac{2\pi}{12}\right)$  & $ 2+\sqrt{3} $            & $e^{2i\pi/12}$ \\
 \end{tabular}
 \caption{Pisot-cyclotomic numbers of degree $2$, of order $n$, associated to $\rho$.}
@@ -69,22 +87,24 @@ $12$  & $2 \cos\left(\frac{2\pi}{12}\right)$  & $ 2+\sqrt{3} $            & $e^{
 \end{table}
 
 \section{Quasicrystal model}%--------------------------------------------------------------------------------
-There certainly are many ways to acquire a set that follows the properties listed in section \ref{sec_quasicrystalEaseIn}. We utilize the cut-and-project scheme described in section \ref{sec_cutAndProject}. 
+There certainly are many ways to acquire a set that follows the attributes listed in section \ref{sec_quasicrystalEaseIn}. We utilize the cut-and-project scheme described in section \ref{sec_cutAndProject}. 
+
+Even though we specified the two dimensional quasicrystal as subset of $\CC$ it is sometimes preferable to treat it as subset of $\RR^2$; the two coordinates are of course real and imaginary parts. 
 
 The cut-and-project scheme requires among others crystallographic lattice $L$, the sets $V_1$ and $V_2$, and suitable projections $\pi_1$ and $\pi_2$ or $\ast$. Finding these is outside of scope of this work. For now we will continue using general notation with the promise of specifying these sets and projections once necessary. 
 
 \begin{definition}\label{def_quasicrystal}
 Let $\beta$ be a Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). 
 
-Further let $M,\, N\subset \RR^d$ and projection $\ast:M\rightarrow N$ follow the conditions of the cut-and-project scheme.
+Further let $M,\, N\subset \RR^2$ and projection $\ast:M\rightarrow N$ follow the conditions of the cut-and-project scheme.
 
 Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
 
-Then \textbf{$d$ dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
+Then \textbf{model of two dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\}$$
 \end{definition}
 
-So far the entire theses was purely abstract. To give you an example of what quasicrystal might look like, there is the image \ref{fig_quasicrystalFirstExample} which shows finite sections of a two dimensional quasicrystal with $8$-fold rotational symmetry.
+So far the entire theses was purely abstract. To give you an example of what quasicrystal might look like, there is the image \ref{fig_quasicrystalFirstExample} which shows finite section of a two dimensional quasicrystal with $8$-fold rotational symmetry.
 
 \begin{figure}[h]
 \centering
@@ -93,7 +113,7 @@ So far the entire theses was purely abstract. To give you an example of what qua
 \label{fig_quasicrystalFirstExample}
 \end{figure}
 
-To validate our quasicrystal model we of course have to show that it follows the properties in section \ref{sec_quasicrystalEaseIn}. However first we list few properties of our model which will help us show that. 
+To validate our quasicrystal model we of course have to show that it follows the attributes from section \ref{sec_quasicrystalEaseIn}. However first we list few properties of our model which will help us show that. 
 
 Since such general approach won't be necessary for our work, from now on we limit our scope to only quadratic Pisot-cyclotomic numbers (that greatly simplifies the scaling property). 
 
@@ -107,24 +127,24 @@ Since such general approach won't be necessary for our work, from now on we limi
 And now to validate our model. 
 
 \begin{enumerate}
+\item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
+\item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
+The result of the cut-and-project scheme is a Delone set if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
+\item finite local complexity: $$\big|\{V(x)-x\,|\, x\in \Lambda\}\big|<\infty$$
+It has been shown that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
 \item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda = \Lambda$$
 Rotational symmetry appears in quasicrystal if the window $\Omega$ has the same rotational symmetry.
 \item dilation: $$\exists\,b\in\RR\setminus\{-1,1\}:\; b\Lambda\subset \Lambda$$
 Using the scaling property and the inclusion property:
 $$\beta\quasi{\Omega} = \quasi{\beta'\Omega} \subset \quasi{\Omega}$$
-\item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
-\item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
-The result of cut-and-project scheme is a Delone set if the window $\Omega$ is bounded with nonempty interior. 
-\item finite local complexity: $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
-It has been shown that our model has even this property, however since this work explores this finite complexity it essentially proves this property as well. 
 \end{enumerate}
 
-Having quasicrystal defined and  our model validated, we will present our plan for the analysis. 
+Having quasicrystal defined and  our model validated, we shall present our plan for the analysis. 
 
 \section{General quasicrystal analysis}
-In this section we will outline general method of analysis of any quasicrystal. Later we will use this method to analyze two dimensional and one dimensional quasicrystals. 
+In this section we will outline general method of analysis of any quasicrystal. Later we will use this method to analyze two dimensional quasicrystals. 
 
-Analysis should reveal the structure of the points of the quasicrystal, for us that means listing all Voronoi tiles that appear in the qusicrystal's Voronoi diagram. 
+Analysis should reveal the structure of the points of the quasicrystal, for us that means the list of Voronoi tiles for each quasicrystal. 
 
 To acquire such list we follow these steps: 
 \begin{enumerate}
@@ -133,41 +153,43 @@ To acquire such list we follow these steps:
 In other words this means creating algorithm that for finite section $P\subset\RR^d$ returns $P\cap\quasi{\Omega}$. 
 \item \textbf{Estimate covering radius of the quasicrystal $R_C$}
 
-We are specifically interested in the upper bound $\hat{R}_C$ of the covering radius. 
+We are specifically interested in the upper bound $\hat{R}_C$ of the covering radius. This is necessary since on a Delone set Voronoi tile's domain's points can be no further from the center then double of the covering radius. 
 \item \textbf{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
 
 Each of these finite sections represents one Voronoi tile that appears in the quasicrystal's voronoi diagram. 
 \item \textbf{Filter the superset to the final list of Voronoi tiles}
+
+Due to technical constrains the previous step may have created more tiles than actually are in the list of Voronoi tiles and so it needs to be filtered. 
 \end{enumerate}
 
-These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and need to be specified for a specific quasicrystal. 
+These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and we will need to specify them for each quasicrystal. 
 
-We close this chapter and our general overview of quasicrystals with discussion of window shapes. It is obviously impossible to analyze quasicrystal for arbitrary bounded $\Omega\subset N$ with nonempty interior. There however is a way to limit our scope to few window shapes that in some way represent all possible windows. 
+We close this chapter and our general overview of quasicrystals with discussion of window shapes. It is obviously impossible to analyze a quasicrystal for arbitrary bounded $\Omega\subset N$ with nonempty interior. That is however not necessary. Not every two windows generate different quasicrystals, especially since we do not consider translated and/or $\beta$~inflated quasicrystals to be different. 
 
 \subsection{Analyzed window shapes}
 We will use the properties of quasicrystals to gradually limit the set of analyzed windows. We start with all of the windows: 
 $$\big\{\Omega\,|\, \Omega\subset N ,\;\text{bounded with nonempty interior}\big\}$$
 
-Thanks to the union property we can limit our scope to a continuous convex bounded windows with nonempty interior since most more complicated windows are unions of continuous convex bounded window with nonempty interior: 
-$$\big\{\Omega\,|\, \Omega\subset N ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
+To maintain our sanity we first limit our scope to convex bounded windows with nonempty interior. 
+$$\big\{\Omega\,|\, \Omega\subset N ,\;\text{convex bounded with nonempty interior}\big\}$$
 
-Further thanks to the translation property we can limit our scope to a continuous convex bounded windows with nonempty interior centered around the origin: 
-$$\big\{\Omega-\overline{\Omega}\,|\, \Omega\subset N ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
-where $\overline{\Omega}$ is the arithmetic mean (or "center of mass") of the window $\Omega$. 
+Further thanks to the translation property we can limit our scope to convex bounded windows with nonempty interior centered around the origin: 
+$$\big\{\Omega-C_\Omega\,|\, \Omega\subset N ,\;\text{convex bounded with nonempty interior}\big\}$$
+where $C_\Omega$ is the centroid or geometric center of the window $\Omega$. 
 
-Lastly thanks to the scaling property we can limit our scope to a continuous convex bounded windows with nonempty interior centered around the origin of diameter in $(1/\beta,1]$:
-$$\big\{\Omega-\overline{\Omega}\,|\, \Omega\subset N ,\; d(\Omega)\in (1/\beta,1] ,\;\text{continuous convex bounded with nonempty interior}\big\}$$
-where $d(\Omega)$ is the set diameter $d(\Omega) = \sup\{d(x,y)\,|\,x,y\in\Omega\}$
+Lastly thanks to the scaling property we can limit our scope to convex bounded windows with nonempty interior centered around the origin of diameter in $(1/\beta,1]$:
+$$\big\{\Omega-C_\Omega\\,|\, \Omega\subset N ,\; d(\Omega)\in (1/\beta,1] ,\;\text{convex bounded with nonempty interior}\big\}$$
+where $d(\Omega)$ is the set diameter $d(\Omega) = \sup\{d(x,y)\,|\,x,y\in\Omega\}$, where $d(x,y)$ is the distance between $x$ and $y$. 
 
 \begin{remark}
 We could of course also pick any other $\beta$ multiple of $(1/\beta,1]$. 
 \end{remark}
 
-Of course even after all this limiting, the set of windows is still infinite. Therefore we will further limit our scope to three basic window shapes: rhombus, regular $n$-gon and a circle. The rhombus is not really a valid window since it is not sufficiently rotationally symmetrical, it is however fundamental to our method, more on this later. The regular $n$-gon represents the simplest window with sufficient rotational symmetry and the circle interesting for its circular symmetry. 
+Of course even after all this limiting, the set of windows is still infinite. Therefore we will further limit our scope to three basic window shapes: rhombus, regular $n$-gon and a circle. The rhombus is not really a valid window since it is not sufficiently rotationally symmetrical, it is however fundamental to our method, more on this later. The regular $n$-gon represents the simplest window with sufficient rotational symmetry and the circle is interesting for its circular symmetry. 
 
 To summarize we will analyze quasicrystals for windows in shape of rhombus, regular $n$-gon and a circle centered around the origin of diameter in $(1/\beta,1]$. Technically there is an infinite amount of these windows as well however as we will see later it is already manageable. 
 
-Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i. e. we will exclude the boundary. The exception is the rhombus (and its one dimensional equivalent -- interval) for reasons we will also explain later. 
+Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i. e. we will exclude the boundary. The exception is the rhombus for reasons we will also explain later. 
 
 Now we have quasicrystal defined, model explored and windows limited. In the next chapter we will finally start the analysis. 
 
