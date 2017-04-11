@@ -159,32 +159,38 @@ $$\left\{ y^\Omega_{n+1}-y^\Omega_{n}\,|\, n\in\NN \right\}$$
 
 For that we need an expression for $y^\Omega_n$. Let's start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e. $1$. First we do a little algebraic exercise with the expression for quasicrystal:
 \begin{align*}
-\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right) &= \left\{x\in\ring\,\left|\, x'\in \left[-\frac{1}{2}, \frac{1}{2}\right)\right.\right\}\\
-  &= \left\{a+b\beta\,\left|\, a+b\beta'\in \left[-\frac{1}{2}, \frac{1}{2}\right),\,a,b\in\ZZ\right.\right\}\\
+\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right) &= \left\{x\in\ring\,\left|\, x'\in \left[-\frac{1}{2}, \frac{1}{2}\right)\right.\right\}\\%]
+ &= \left\{a+b\beta\,\left|\, a+b\beta'\in \left[-\frac{1}{2}, \frac{1}{2}\right),\,a,b\in\ZZ\right.\right\}\\%]
   &= \left\{a+b\beta\,\left|\, -\frac{1}{2}\leq a+b\beta'<\frac{1}{2},\,a,b\in\ZZ\right.\right\}\\
   &= \left\{a+b\beta\,\left|\, -\frac{1}{2}-b\beta'\leq a < \frac{1}{2}-b\beta',\,a,b\in\ZZ\right.\right\}\\
   &= \left\{\left.\left\lceil-\frac{1}{2} -b\beta'\right\rceil + b\beta\,\right|\, b\in\ZZ\right\}\\
 \end{align*}
 
+
 Thus we can express the sequence of points of the quasicrystal as:
-$$y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_n = \left\lceil-\frac{1}{2} -n\beta'\right\rceil + n\beta$$
+$$y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_n = \left\lceil-\frac{1}{2} -n\beta'\right\rceil + n\beta$$%]$$
 
 And for the set of distances between two consecutive points we have:
-$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}$$
-$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$
-$$\left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$
-Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceils is either $0$ or $1$ and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta + 1\}$. 
+$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}$$%]
+$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
+$$\left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
+Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceils is either $0$ or $-1$ and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta - 1\}$. 
 
 With a little thought and with use of the scaling property of a qusicrystal we can expand this to any window of size $\beta^k$ where $k\in\ZZ$. 
-$$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$
-Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta + 1)\right|\right\}$. 
+$$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$%]
+Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta - 1)\right|\right\}$. %]$$
 
-Applying Vieta's formulas we have:
-$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}+\frac{c^k}{\beta^{k}}\right|\right\}$$
-where $c$ is the constant coefficient of $\beta$'s minimal polynomial. 
+Now we utilize the fact, that $\beta$ is quadratic integer -- i.e. root of polynomial $x^2+bx+c$ for $b,c\in\ZZ$. Thus we can use Vietas's formulas and also $\beta = -b-\frac{c}{\beta}$. 
 
-In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$ and just outside of our scope for window of size $\frac{1}{\beta}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. 
+Applying Vieta's formula ($\beta' = \frac{c}{\beta}$) we have:
+$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}-\frac{c^k}{\beta^{k}}\right|\right\}$$
+And applying $\frac{c}{\beta}=-\beta-b$ we get:
+$$\left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k-(-1)^k(\beta+b)^k\right|\right\} = \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k-(\beta+b)^k\right|\right\}$$
+
+In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta - 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{-b\beta}{c}-1\right|, \left|\frac{-b\beta-\beta}{c} - 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
 
 For that we utilize the inclussion property. 
+
+
 \end{document}
 
