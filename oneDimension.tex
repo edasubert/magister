@@ -189,7 +189,56 @@ $$\left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k-(-1)^
 
 In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta - 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{-b\beta}{c}-1\right|, \left|\frac{-b\beta-\beta}{c} - 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
 
-For that we utilize the inclussion property. 
+For that we utilize the inclusion property. 
+\\[2cm]
+\texttt{\LARGE something about doing individual analysis and cite other sources}
+\\[2cm]
+
+Based on these findings it is already possible to generate a finite section of a one dimensional quasicrystal. 
+\begin{itemize}
+\item $0$ is a fixed point of Galois isomorphism. $0$ is also in every window centered around the origin (i.e. $0$). Therefore $0$ is present in every one dimensional quasicrystal with a window centered around the it. 
+\item We can acquire the next and previous points by identifying a section of a window the Galois isomorphism image of the point is present in and adding or subtracting appropriate distance. 
+\end{itemize}
+
+For summary we outline the algorithm for acquiring arbitrary finite section of a one dimensional quasicrystal a bit more formally. 
+
+\begin{enumerate}
+\item[Input:] window $[-\frac{\ell}{2},\frac{\ell}{2})$; finite interval $[x_1,x_2]$
+\item iterate through the points of the quasicrystal from $0$ until you reach inside $[x_1,x_2]$
+\item continue iterating while saving points in a list \texttt{quasicrystal} until you exit $[x_1,x_2]$
+\item[Output:] the list \texttt{quasicrystal}
+\end{enumerate}
+
+Thus we have accomplished the first step of our analysis. In the next subsection we will follow with the second step: estimating covering radius of the quasicrystal. 
+
+%\begin{definition}
+%\label{def:steppingFunction}
+%Function $f^\Omega: \Omega \to \Omega$ for $\Omega = [-\frac{\ell}{2},\frac{\ell}{2})$ defined as
+%$$f^\Omega ({y^\Omega_{n}}') = {y^\Omega_{n+1}}'$$
+%is called the \textbf{stepping function} of the quasicrystal $\quasi{\Omega}$. 
+%\end{definition}
+
+\subsection{Estimate covering radius of the quasicrystal $R_C$}
+The estimation rather straight forward in the one dimensional case, it will be more complicated for the two dimensional case and we do it here for sake of consistency. 
+
+Our definition of covering radius \ref{def_deloneSetCovering} simplified for one dimension $D\subset\RR$ would be: 
+$$R_C = \inf\left\{ r_2>0\left| \forall x\in\RR:\; B(x,r_2)\cap D \neq \emptyset \right. \right\}$$
+
+So we are looking for the upper bound of the largest possible distance to the nearest point of the quasicrystal from anywhere on the number line. 
+
+As we have already found out in the previous section, there is a maximum distance between two consecutive points of the quasicrystal. Therefore the estimate we are looking for must be the half of the largest distance between two consecutive points. 
+
+$$\hat{R}_C = \frac{1}{2}\max_{n\in\ZZ}\big\{y^\Omega_{n+1}-y^\Omega_n\big\}$$
+
+In the next section we will use this estimate to generate a superset of all finite sections spanning $B(2\hat{R}_C)$. 
+
+\subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
+Now we want to briefly get back to our over all goal and explain the motivation behind this step in greater detail. 
+
+Our goal is to acquire the list of Voronoi tiles in one dimensional quasicrystal. It is possibly quiet unusual to construct a Voronoi diagram on a one dimensional set. Once again we do it for consistency, however it also makes our presentation of results easier (more on that later). 
+
+Voronoi tile in one dimension is a line segment. It starts and ends half way between two consecutive points. Since we already know there is a finite amount of different distances between two consecutive points, there also must be a finite list of Voronoi tiles. 
+
 
 
 \end{document}

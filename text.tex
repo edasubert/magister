@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,twoside]{report}
+\documentclass[a4paper,10pt,twoside]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{thmtools}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 %\usepackage{fullpage}
@@ -46,8 +47,11 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 % Definition Styles
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+\declaretheorem[style=definition,qed=$\lrcorner$,numberwithin=section]{definition}
+
+
 \newtheorem{example}[theorem]{Example}
 \theoremstyle{remark}
 %\newtheorem{remark}{Remark}
@@ -56,7 +60,7 @@
 
 %\newcommand{\ring}{\mathbb{Z}\left[\beta\right]}
 \newcommand{\ring}[1][\beta]{\mathbb{Z}\left[#1\right]}
-\newcommand{\field}{\mathbb{Q}(\beta)}
+\newcommand{\field}[1][\beta]{\mathbb{Q}(#1)}
 \newcommand{\quasi}[1]{\Sigma(#1)}
 \newcommand{\widequasi}[1]{\Sigma\left(#1\right)}
 \newcommand{\CC}{\mathbb{C}}
