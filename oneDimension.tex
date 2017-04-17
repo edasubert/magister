@@ -3,26 +3,22 @@
 \begin{document}
 The first step of analysis of the two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific window shape it is possible to decompose two dimensional quasicrystal into two quasicrystals with one dimensional windows. We will explain exactly what that means later, for now let's explore two dimensional quasicrystals with one dimensional windows. 
 
-By definition the quasicrystal with one dimensional window is a set of points whose Galois isomorphism images fit on a bounded section of a line. Since the Galois isomorphism inverse image of a line is again a line then two dimensional quasicrystal with a line segment for a window is in fact one dimensional (i.e. set of points on a line). 
+By definition the quasicrystal with one dimensional window is a set of points whose star map images fit on a bounded section of a line. Since for a quasicrystal the star map inverse image of a line is again a line then two dimensional quasicrystal with a line segment for a window is in fact one dimensional (i.e. set of points on a line). 
 
 We present this connection between two dimensional and one dimensional quasicrystal mainly to avoid the need to explicitly define the attributes and show the properties of one dimensional quasicrystal. This way aside from the rotational symmetry all the attributes and all the properties apply to the one dimensional quasicrystal as well. 
 
 To summarize the motivation behind the analysis of one dimensional quasicrystal is the eventual analysis of two dimensional quasicrystal. To take full advantage of previous work we view one dimensional quasicrystal as a special case of two dimensional quasicrystal, that is two dimensional quasicrystal with a line segment for a window. 
 
 \section{One dimensional quasicrystal}
-First we need to show exactly what our model of one dimensional quasicrystal is. As stated before that means specifying the sets and projection for cut-and-project scheme. 
+We can simplify our model for the specific case of one dimensional window. The easiest way is to position the window along the line $\{(x,0)|x\in\RR\}$. That will result in a quasicrystal along the same line and thus we arrive to the following special case of the model of two dimensional quasicrystal: 
 
-Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. 
-
-Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of $\beta$'s conjugate root.
-
-The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). 
-
+Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. \\
+Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of $\beta$'s conjugate root. \\
+The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). \\
 Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
 
-Then model of one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$ is the set:
+Then the \textbf{model of one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\} = \big\{ x \in \ring\; |\; x'\in \Omega\big\}$$
-
 Convex bounded one dimensional window is a line segment, which is in one dimension represented by an interval, specifically we will use left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
 
 As we see in the following breakdown, quasicrystals with different openness or closeness differ only by at most a single point. 
@@ -47,12 +43,12 @@ As we see in the following breakdown, quasicrystals with different openness or c
 	\end{array} \right.\\
 \end{align*}
 
-Unfortunately the addition or the removal of the single point causes occurrence of local configurations that appear only once in the entire quasicrystal. That would needlessly complicate our work and therefore we chose to only analyze left-closed right-open interval, which does not suffer from these zero density occurrences. 
+Unfortunately the addition or the removal of the single point causes occurrences of local configurations that appear only once in the entire quasicrystal. That would needlessly complicate our work and therefore we chose to only analyze left-closed right-open interval, which does not suffer from these zero density occurrences. 
 
 According to our plan, first step of the analysis is generating arbitrary finite section of one dimensional quasicrystal. 
 
 \subsection{Arbitrary finite section}
-The picture \ref{fig_onedimensional} illustrates well, what we want to acquire -- the sequence of points on the $x$ axis. For this purpose we define the sequence of the quasicrystal. 
+The picture \ref{fig_onedimensional} illustrates well, what we want to acquire -- the sequence of points on the $M$ axis. For this purpose we define the sequence of the quasicrystal. 
 
 \begin{definition}
 Strictly increasing sequence $(y_n^\Omega)_{n\in \mathbb{Z}}$ defined as $\left\{y_n^\Omega\,|\, n\in\ZZ \right\} = \quasi{\Omega}$ where $\quasi{\Omega}$ is one dimensional quasicrystal is called the \textbf{sequence of the quasicrystal $\quasi{\Omega}$}.
@@ -142,22 +138,22 @@ Strictly increasing sequence $(y_n^\Omega)_{n\in \mathbb{Z}}$ defined as $\left\
 %\draw [-,thick,dashed] ($(O) + 2*(0,0.2679) + 3*(0,1)$) -- ($(O) + 2*(x2) + 3*(x1)$);
 \path [fill] ($(O) + 2*(3.732,0) + 3*(1,0) + -1*(R)$) rectangle ($(O) + 2*(3.732,0) + 3*(1,0) + (R)$);
 
-\node [above] at (X) {$x$};
-\node [right] at (Y) {$y$};
+\node [above] at (X) {$M$};
+\node [right] at (Y) {$N$};
 
 \node [below right] at (winy1) {$c$};
 \draw [-,thick] ($(winy1) + -1*(0.1,0)$) -- ($(winy1) + (0.1,0)$);
 \node [above right] at (winy2) {$d$};
 \draw [-,thick] ($(winy2) + -1*(0.1,0)$) -- ($(winy2) + (0.1,0)$);
 \end{tikzpicture}
-\caption{Illustration of one-dimensional quasicrystal. The grid is $M\times N$. On the $y$ axis there is a window $\Omega = [c,d)$. The squares on the $x$ axis are points of the quasicrystal $\quasi{\Omega}$. }
+\caption{Illustration of one-dimensional quasicrystal. The grid is $M\times N$. On the $N$ axis there is a window $\Omega = [c,d)$. The squares on the $M$ axis are points of the quasicrystal $\quasi{\Omega}$. }
 \label{fig_onedimensional}
 \end{figure}
 
 Now we would like to explore the set of all possible distances between two consecutive points of the sequence of the quasicrystal: 
 $$\left\{ y^\Omega_{n+1}-y^\Omega_{n}\,|\, n\in\NN \right\}$$
 
-For that we need an expression for $y^\Omega_n$. Let's start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e. $1$. First we do a little algebraic exercise with the expression for quasicrystal:
+For that we need an expression for $y^\Omega_n$. Let's start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e. $1$. First we do a little algebraic exercise with the expression for the quasicrystal:
 \begin{align*}
 \Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right) &= \left\{x\in\ring\,\left|\, x'\in \left[-\frac{1}{2}, \frac{1}{2}\right)\right.\right\}\\%]
  &= \left\{a+b\beta\,\left|\, a+b\beta'\in \left[-\frac{1}{2}, \frac{1}{2}\right),\,a,b\in\ZZ\right.\right\}\\%]
@@ -174,54 +170,51 @@ And for the set of distances between two consecutive points we have:
 $$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}$$%]
 $$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
 $$\left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
-Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceils is either $0$ or $-1$ and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta - 1\}$. 
+Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceilings is either $0$ or $\pm1$ (the sign depends on the sign of $\beta'$) and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta \pm 1\}$. We want to be clear that here $\pm 1$ means either $+1$ or $-1$ depending on the sign of $\beta'$, the set of distances between two consecutive points will have two members. 
 
 With a little thought and with use of the scaling property of a qusicrystal we can expand this to any window of size $\beta^k$ where $k\in\ZZ$. 
 $$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$%]
-Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta - 1)\right|\right\}$. %]$$
+Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta \pm 1)\right|\right\}$. %]$$
 
-Now we utilize the fact, that $\beta$ is quadratic integer -- i.e. root of polynomial $x^2+bx+c$ for $b,c\in\ZZ$. Thus we can use Vietas's formulas and also $\beta = -b-\frac{c}{\beta}$. 
+Now we utilize the fact, that $\beta$ is a quadratic integer -- i.e. root of polynomial $x^2+bx+c$ for $b,c\in\ZZ$. Thus we can use Vietas's formulas and also $\beta = -b-\frac{c}{\beta}$. 
 
 Applying Vieta's formula ($\beta' = \frac{c}{\beta}$) we have:
-$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}-\frac{c^k}{\beta^{k}}\right|\right\}$$
+$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}\pm\frac{c^k}{\beta^{k}}\right|\right\}$$
 And applying $\frac{c}{\beta}=-\beta-b$ we get:
-$$\left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k-(-1)^k(\beta+b)^k\right|\right\} = \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k-(\beta+b)^k\right|\right\}$$
+$$\left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k\pm(-1)^k(\beta+b)^k\right|\right\} = \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k\pm(\beta+b)^k\right|\right\}$$
 
-In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta - 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{-b\beta}{c}-1\right|, \left|\frac{-b\beta-\beta}{c} - 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
+In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta \pm 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{b\beta}{c}+1\right|, \left|\frac{b\beta\pm\beta}{c} + 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
 
-For that we utilize the inclusion property. 
-\\[2cm]
-\texttt{\LARGE something about doing individual analysis and cite other sources}
-\\[2cm]
+It is possible to do this expansion for general quadratic Pisot-cyclotomic $\beta$, as for example in \cite{distances}. We analyzed each $\beta$ individually, there however are several outcomes that apply generally and are important for further progress: 
+\begin{itemize}
+\item there are two or three different distances between two consecutive points of a quasicrystal, often denoted from smallest to largest as $S$, $M$ and $L$
+\item the distances vary with different window length
+\item the star map images of points of a quasicrystal that precede a certain distance form an interval
+\end{itemize}
+
+The last outcome is of particular importance for us. In essence it mean that there are one or two dividing points in the window of a quasicrystal that divide it into sections whose star map preimages precede the same distance in the quasicrystal. By extension it is also possible to divide the window by the distance that the points follow. We will explore this concept in greater detail later. 
 
 Based on these findings it is already possible to generate a finite section of a one dimensional quasicrystal. 
 \begin{itemize}
-\item $0$ is a fixed point of Galois isomorphism. $0$ is also in every window centered around the origin (i.e. $0$). Therefore $0$ is present in every one dimensional quasicrystal with a window centered around the it. 
-\item We can acquire the next and previous points by identifying a section of a window the Galois isomorphism image of the point is present in and adding or subtracting appropriate distance. 
+\item $0$ is a fixed point of Galois isomorphism. $0$ is also in every window centered around the origin (i.e. $0$). Therefore $0$ is present in every one dimensional quasicrystal with a window centered around it. 
+\item We can acquire the next and previous points by identifying a section of a window the star map image of the point is present in and adding or subtracting appropriate distance. 
 \end{itemize}
 
 For summary we outline the algorithm for acquiring arbitrary finite section of a one dimensional quasicrystal a bit more formally. 
 
 \begin{enumerate}
 \item[Input:] window $[-\frac{\ell}{2},\frac{\ell}{2})$; finite interval $[x_1,x_2]$
-\item iterate through the points of the quasicrystal from $0$ until you reach inside $[x_1,x_2]$
+\item iterate through the points of the quasicrystal from $0$ until you enter $[x_1,x_2]$
 \item continue iterating while saving points in a list \texttt{quasicrystal} until you exit $[x_1,x_2]$
 \item[Output:] the list \texttt{quasicrystal}
 \end{enumerate}
 
-Thus we have accomplished the first step of our analysis. In the next subsection we will follow with the second step: estimating covering radius of the quasicrystal. 
-
-%\begin{definition}
-%\label{def:steppingFunction}
-%Function $f^\Omega: \Omega \to \Omega$ for $\Omega = [-\frac{\ell}{2},\frac{\ell}{2})$ defined as
-%$$f^\Omega ({y^\Omega_{n}}') = {y^\Omega_{n+1}}'$$
-%is called the \textbf{stepping function} of the quasicrystal $\quasi{\Omega}$. 
-%\end{definition}
+Thus we have accomplished the first step of our analysis. In the next section we will follow with the second step: estimating covering radius of the quasicrystal. 
 
 \subsection{Estimate covering radius of the quasicrystal $R_C$}
-The estimation rather straight forward in the one dimensional case, it will be more complicated for the two dimensional case and we do it here for sake of consistency. 
+The estimation is rather straight forward in the one dimensional case, it will be more complicated for the two dimensional case and we do it here for sake of consistency. 
 
-Our definition of covering radius \ref{def_deloneSetCovering} simplified for one dimension $D\subset\RR$ would be: 
+Our definition of covering radius \ref{def_deloneSetCovering} simplified for one dimensional $D\subset\RR$ would be: 
 $$R_C = \inf\left\{ r_2>0\left| \forall x\in\RR:\; B(x,r_2)\cap D \neq \emptyset \right. \right\}$$
 
 So we are looking for the upper bound of the largest possible distance to the nearest point of the quasicrystal from anywhere on the number line. 
@@ -233,13 +226,1058 @@ $$\hat{R}_C = \frac{1}{2}\max_{n\in\ZZ}\big\{y^\Omega_{n+1}-y^\Omega_n\big\}$$
 In the next section we will use this estimate to generate a superset of all finite sections spanning $B(2\hat{R}_C)$. 
 
 \subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
-Now we want to briefly get back to our over all goal and explain the motivation behind this step in greater detail. 
+We want to briefly get back to our over all goal and explain the motivation behind this step in greater detail. 
 
-Our goal is to acquire the list of Voronoi tiles in one dimensional quasicrystal. It is possibly quiet unusual to construct a Voronoi diagram on a one dimensional set. Once again we do it for consistency, however it also makes our presentation of results easier (more on that later). 
+Our goal is to acquire the list of Voronoi tiles in one dimensional quasicrystal. It is possibly quiet unusual to construct a Voronoi diagram on a one dimensional set. Once again we do it for consistency, however it also makes our presentation of results easier. 
 
-Voronoi tile in one dimension is a line segment. It starts and ends half way between two consecutive points. Since we already know there is a finite amount of different distances between two consecutive points, there also must be a finite list of Voronoi tiles. 
+By Theorem \ref{the_voronoiDomainLimit} the domain of a Voronoi tile is limited by $B(x, 2\hat{R}_C)$ where $x$ is the center of the tile. That is the motivation for this step. 
+
+Now let's continue with the exploration of one dimensional quasicrystal from two sections ago. We are going to create an algorithm that will for given $n\in\NN$ and window $\Omega$ return a list of finite sequences of $n+1$ points each that entail all possible centered $n+1$ points long sequences of consecutive points of the quasicrystal: 
+$$\left\{ (y^\Omega_{i}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor}, y^\Omega_{i+1}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor}, \dots, y^\Omega_{i+n+1}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor} )\,|\, i\in\ZZ \right\}$$
+
+For that we introduce the notion of the stepping function of a quasicrystal. 
+
+\begin{definition}
+\label{def_steppingFunction}
+Let $\Omega = [-\frac{\ell}{2},\frac{\ell}{2})$ for $\ell\in\field$. The \textbf{stepping function} of the quasicrystal $\quasi{\Omega}$ is the function $f^\Omega: \Omega \to \Omega$: 
+$$f^\Omega ({y^\Omega_{n}}') = {y^\Omega_{n+1}}'$$ 
+\end{definition}
+
+\begin{remark}
+Note that the stepping function works with the star map images, not with the points of the quasicrystal. 
+\end{remark}
+
+The stepping function is a piecewise linear function. Each one of the two or three linear segments corresponds to one distance between the consecutive points of the quasicrystal. This aspect is what we are going to use for our algorithm. If we iterate the stepping function (i.e.~$f^\Omega\circ{}f^\Omega$ or $(f^\Omega)^2$) we of course get again a piecewise linear function, this time with more discontinuities. The linear segments now correspond to pairs of the distances between two consecutive points of the quasicrystal. Not only that, there is a linear segment for each possible pair of the distances. There is an illustration of the concept in the Figure \ref{fig_steppingFunction}. 
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\draw [-] (0,5.3) -- (0,0) -- (5.3,0);
+
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (0,3.6395) 			-- (1.3603,5) node [midway, above left] {$M$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (1.3603,2.4263)	-- (2.5735,3.6395) node [midway, above left] {$L$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (2.5735,0) 			-- (5,2.4263) node [midway, above left] {$S$};
+
+\draw [dotted] (0,1.3603) -- (5.3,1.3603);
+\draw [dotted] (0,2.5735) -- (5.3,2.5735);
+\draw [dotted] (0,5) -- (5.3,5);
+
+\draw [dotted] (1.3603,0) -- (1.3603,5.3);
+\draw [dotted] (2.5735,0) -- (2.5735,5.3);
+\draw [dotted] (5,0) -- (5,5.3);
+
+%\node [above left] at (3.325317548/2,3.3373412265) {$D$};
+%\node [above left] at (3.9503175475,1.04968245285) {$C$};
+%\node [above left] at (4.7876587735,0.4246824527/2) {$E$};
+
+\node [below left] at (0,0) {$-\frac{1+\sqrt{2}}{6}$};
+\node [below] at (5,0) {$\frac{1+\sqrt{2}}{6}$};
+\node [left] at (0,5) {$\frac{1+\sqrt{2}}{6}$};
+
+\node [above right] at (5,5) {$f^\Omega$};
+\end{tikzpicture}
+%
+%--------------------------------------------------
+%
+\begin{tikzpicture}
+\draw [-] (0,5.3) -- (0,0) -- (5.3,0);
+
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (0,1.0659) 			-- (1.3603,2.4264) node [midway, above left] {$MS$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (1.3603,3.4923)	-- (1.5075,3.6395) node [midway, above left] {$LL$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (1.5075,0)	    -- (2.5735,1.0659) node [midway, above left] {$LS$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (2.5735,3.6395) -- (3.9338,5) node [midway, above left] {$SM$};
+\draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (3.9338,2.4263) -- (5,3.4923) node [midway, above left] {$SL$};
+
+\draw [dotted] (0,1.3603) -- (5.3,1.3603);
+\draw [dotted] (0,2.5735) -- (5.3,2.5735);
+\draw [dotted] (0,5) -- (5.3,5);
+
+\draw [dotted] (1.3603,0) -- (1.3603,5.3);
+\draw [dotted] (2.5735,0) -- (2.5735,5.3);
+\draw [dotted] (5,0) -- (5,5.3);
+
+%\node [above left] at (3.325317548/2,3.3373412265) {$D$};
+%\node [above left] at (3.9503175475,1.04968245285) {$C$};
+%\node [above left] at (4.7876587735,0.4246824527/2) {$E$};
+
+\node [below left] at (0,0) {$-\frac{1+\sqrt{2}}{6}$};
+\node [below] at (5,0) {$\frac{1+\sqrt{2}}{6}$};
+\node [left] at (0,5) {$\frac{1+\sqrt{2}}{6}$};
+
+\node [above right] at (5,5) {$(f^\Omega)^2$};
+\end{tikzpicture}
+\caption{Example of the stepping function for for $\beta = 1+\sqrt{2}$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. On the left there is just the stepping function and on the right there its second iteration. Letters $S$, $M$, $L$ mark different lengths of distances. }%]$
+\label{fig_steppingFunction}
+\end{figure}
+
+Now the algorithm should be quite obvious. We are going to iterate the stepping function $n$ times and from each finite sequence of the distances construct a finite section of $n+1$ points of the quasicrystal. 
+
+Again we summarize with a more detailed description of the algorithm.
+
+\begin{enumerate}
+\item[Input:] window $[-\frac{\ell}{2},\frac{\ell}{2})$; number $n\in\NN$
+\item save the three linear segments of $f^\Omega(\Omega)$ as intervals in a list \texttt{segments}, mark each with the corresponding distance
+\item repeat $n-1$ times: for each interval $I\in\text{\texttt{segments}}$ save the linear segments of $f^\Omega(I)$, append the marks accordingly
+\item[Output:] list of marks of intervals from \texttt{segments}
+\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{ccccc}
+SLSM & LLSM & SMSM & SMSL & MSLL \\
+% SLSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)+(S)+(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(S)$) circle[radius=0.6];
+\fill ($(S)+(L)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LLSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)+(S)+(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\fill ($(L)+(L)+(S)$) circle[radius=0.6];
+\fill ($(L)+(L)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SMSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)+(S)+(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SMSL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)+(S)+(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MSLL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(L)+(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+
+\begin{tabular}{cccc}
+MSLS & SLLS & LSMS & MSMS \\
+% MSLS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(L)+(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SLLS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)+(L)+(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LSMS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)+(M)+(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\fill ($(L)+(S)+(M)$) circle[radius=0.6];
+\fill ($(L)+(S)+(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MSMS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(M)+(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(M)$) circle[radius=0.6];
+\fill ($(M)+(S)+(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+\caption{Example of the list of sequences of distances for $\beta = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Letters $S$, $M$, $L$ mark different lengths of distances. $S = \beta$, $M = \beta+1$ and $L = 2\beta+1$. Below each sequence of distances is the created finite section of the quasicrystal. }%]$
+\label{fig_finiteSectionsExample}
+\end{figure}
+
+Once we acquire the list of sequences of distances, we easily convert them to sequences of points of quasicrystal. There is an example of the algorithm output and this conversion in the Figure \ref{fig_finiteSectionsExample}. Now it remains to solve for $n$ based on the covering radius estimate $\hat{R}_C$.
+
+We want the finite sections to span $B(2\hat{R}_C)$, in other words we want the finite sections to be at least $4\hat{R}_C$ long. The obvious solution is to run the algorithm for $n=1$ measure the shortest sequence and if it is shorter than $4\hat{R}_C$, increase $n$ by $1$, run the algorithm again and repeat until you acquire not only the $n$ but also the list of the finite sequences of sufficient length. 
+
+It is also beneficial to choose an even $n$, that will result in odd number of points in the finite sections and that will ease the next step. Although it might result in the finite sections being longer than necessary. 
+
+Thus we have accomplished the third step of analysis and we can move on the next final step. 
+
+\subsection{Filter the superset to the final list of Voronoi tiles}
+First we have to turn the list of finite sections from the previous step into a list of Voronoi tiles. Rather simply we just pick a point in each finite section as a center of the Voronoi tile. Here we see the benefit of having an odd number of points, since we can just pick the middle point. Constructing a Voronoi cell is then straight forward. 
 
 
+\begin{figure}[h!]
+\centering
+\begin{tabular}{ccccc}
+SLSM & LLSM & SMSM & SMSL & MSLL \\
+% SLSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)+(S)+(M)$);
+\draw [ultra thick]  ($(S)+0.5*(L)$) -- ($(S)+(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(S)$) circle[radius=0.6];
+\fill ($(S)+(L)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LLSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)+(S)+(M)$);
+\draw [ultra thick]  ($(L)+0.5*(L)$) -- ($(L)+(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\fill ($(L)+(L)+(S)$) circle[radius=0.6];
+\fill ($(L)+(L)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SMSM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)+(S)+(M)$);
+\draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(S)+(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SMSL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)+(S)+(L)$);
+\draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(S)+(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MSLL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(L)+(L)$);
+\draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+
+\begin{tabular}{cccc}
+MSLS & SLLS & LSMS & MSMS \\
+% MSLS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(L)+(S)$);
+\draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)$) circle[radius=0.6];
+\fill ($(M)+(S)+(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SLLS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)+(L)+(S)$);
+\draw [ultra thick]  ($(S)+0.5*(L)$) -- ($(S)+(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(L)$) circle[radius=0.6];
+\fill ($(S)+(L)+(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LSMS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)+(M)+(S)$);
+\draw [ultra thick]  ($(L)+0.5*(S)$) -- ($(L)+(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\fill ($(L)+(S)+(M)$) circle[radius=0.6];
+\fill ($(L)+(S)+(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MSMS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(M)+(S)$);
+\draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\fill ($(M)+(S)+(M)$) circle[radius=0.6];
+\fill ($(M)+(S)+(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+\caption{Example of the Voronois tiles on the list of finite sections of a quasicrystal for $\beta = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
+\label{fig_finiteSectionsVoronoiExample}
+\end{figure}
+
+As we can see in the example in the Figure \ref{fig_finiteSectionsVoronoiExample}, several tiles appear multiple times, that is intrinsic to our method. Now we can simply select unique Voronoi tiles and present the tiles just with their domains (Figure \ref{fig_VoronoiCellsExample}). 
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{ccccc}
+% LS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+\caption{Example of unique Voronois tiles (from Figure \ref{fig_finiteSectionsVoronoiExample}) with their domains from a quasicrystal for $\beta = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
+\label{fig_VoronoiCellsExample}
+\end{figure}
+
+It may seem that the analysis ends here, however even though it did not happen in our example it might happen that the acquired list of Voronoi tiles contains tiles that do not actually appear in the quasicrystal. And so we want to present a method for dealing with such eventuality. 
+
+For demonstration, let's add to our example list two more Voronoi tiles that we will eventually identify and remove (Figure \ref{fig_VoronoiCellsExampleArtificial}). We will regard these added Voronoi tiles as artificial. 
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{ccccc|cc}
+% LS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% MS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% LL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+% SS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(S)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+% ML
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(L)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \\
+\end{tabular}
+\caption{Example of the Voronois tiles with their domains from a quasicrystal for $\beta = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$ with \textbf{two extra} Voronoi tiles that do not appear in the quasicrystal. }%]$
+\label{fig_VoronoiCellsExampleArtificial}
+\end{figure}
+
+Now we will explore the relationship between a Voronoi tile $V(x)$ and the window $\Omega$ of the quasicrystal. For the Voronoi tile to exist in the quasicrystal the star map images of its center $x$ and domain $D(x)$ must fit inside the window $\Omega$. Let's denote the points of the domain as $\{d_1,\dots,d_k\}=D(x)$. 
+$$x^\ast\in\Omega \quad\wedge\quad d_i^\ast\in\Omega \quad\forall i\in \hat{k}$$
+$$q_i = d_i - x \quad\forall i\in\hat{k}$$
+$$x^\ast\in\Omega \quad\wedge\quad x^\ast+q_i^\ast\in\Omega \quad\forall i\in\hat{k}$$
+$$x^\ast\in\Omega \quad\wedge\quad x^\ast\in\Omega-q_i^\ast \quad\forall i\in\hat{k}$$
+$$x^\ast\in\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega$$
+
+This is very important, we have now turned the question whether a Voronoi tile could appear in the quasicrystal into the question whether an intersection of several translated windows is empty. 
+
+Now we can for each of the Voronoi tiles on our list construct such intersection and find out whether it is empty. It just happens that the section of the smallest Voronoi tile is empty (Figure \ref{fig_VoronoiCellsFirstEliminationExample}). 
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(S)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(S)$) circle[radius=0.6];
+\end{tikzpicture}
+\quad$\overset{\ast}{\longrightarrow}$\quad
+\begin{tikzpicture}[scale=1.4]
+\coordinate (O) at (0,0);
+\coordinate (S) at (0.41421,0);
+\coordinate (W) at (0.40237,0); % half
+\coordinate (row) at (0,0.4);
+
+\fill ($(O)$) circle[radius=0.066];
+\fill ($(S)$) circle[radius=0.066];
+\fill ($-1*(S)$) circle[radius=0.066];
+\end{tikzpicture}
+\quad$\overset{\bigcap}{\longrightarrow}$\quad
+\begin{tikzpicture}[scale=1.4]
+\coordinate (O) at (0,0);
+\coordinate (S) at (0.41421,0);
+\coordinate (W) at (0.40237,0); % half
+\coordinate (row) at (0,0.16);
+
+\fill ($(O)$) circle[radius=0.066];
+\fill ($(S)+(row)$) circle[radius=0.066];
+\fill ($-1*(S)+(row)$) circle[radius=0.066];
+
+\draw [thick]  ($-1*(W)$) -- ($(W)$);
+\draw [thick]  ($-1*(W)+(row)-(S)$) -- ($(W)+(row)-(S)$);
+\draw [thick]  ($-1*(W)+(row)+(S)$) -- ($(W)+(row)+(S)$);
+\end{tikzpicture}
+\caption{Example of the elimination of a Voronoi tile by window intersection. This tile would be eliminated. }
+\label{fig_VoronoiCellsFirstEliminationExample}
+\end{figure}
+
+Just for illustration we also show the intersection of one of the tiles that appears in the quasicrystal (Figure \ref{fig_VoronoiCellsFirstNotEliminationExample}). 
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.14]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture}
+\quad$\overset{\ast}{\longrightarrow}$\quad
+\begin{tikzpicture}[scale=1.4]
+\coordinate (O) at (0,0);
+\coordinate (S) at (-0.41421,0);
+\coordinate (M) at (0.58579,0);
+\coordinate (W) at (0.40237,0); % half
+\coordinate (row) at (0,0.4);
+
+\fill ($(O)$) circle[radius=0.066];
+\fill ($-1*(S)$) circle[radius=0.066];
+\fill ($(M)$) circle[radius=0.066];
+\end{tikzpicture}
+\quad$\overset{\bigcap}{\longrightarrow}$\quad
+\begin{tikzpicture}[scale=1.4]
+\coordinate (O) at (0,0);
+\coordinate (S) at (-0.41421,0);
+\coordinate (M) at (0.58579,0);
+\coordinate (W) at (0.40237,0); % half
+\coordinate (row) at (0,0.16);
+
+\fill ($(O)$) circle[radius=0.066];
+\fill ($-1*(S)+(row)$) circle[radius=0.066];
+\fill ($(M)+(row)+(row)$) circle[radius=0.066];
+
+\draw [thick]  ($-1*(W)$) -- ($(W)$);
+\draw [thick]  ($-1*(W)+(row)-(S)$) -- ($(W)+(row)-(S)$);
+\draw [thick]  ($-1*(W)+(row)+(row)+(M)$) -- ($(W)+(row)+(row)+(M)$);
+
+\fill [opacity=0.2] ($-1*(W)+(row)+(row)+(M)$) -- ($(W)+(row)+(row)$) -- ($(W)$) -- ($-1*(W)+(M)$) -- cycle;
+\end{tikzpicture}
+\caption{Example of the elimination of a Voronoi tile by window intersection. This tile would pass. }
+\label{fig_VoronoiCellsFirstNotEliminationExample}
+\end{figure}
+
+The second Voronoi tile we artificially added does however pass this filter. To get the final list of Voronoi tiles of the quasicrystal, we have to again look at the window. 
+
+The intersection we used to eliminate some of the tiles does contain more information. A point of quasicrystal whose star map image fits in the intersection will be surrounded by the corresponding domain: 
+$$x\in\quasi{\Omega} \quad\wedge\quad x^\ast\in\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega \qquad\Rightarrow\qquad x+q_i\in\quasi{\Omega}\quad\forall\,i\in\hat{k}$$
+That however does not yet dictate the Voronoi tile that belongs to the point. The intersections for various Voronoi tiles may overlap. A point of quasicrystal whose star map image fits in multiple intersections will be surrounded by multiple domains and thus the resulting Voronoi tile will be the smallest one of the acceptable ones. 
+
+We illustrate this process with two figures. Figure \ref{fig_windowSectionsExampleList} shows a list of Voronoi tiles with corresponding window intersections. Note that the intersections do overlap. 
+
+Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will indeed be the one that appears in the quasicrystal. 
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{cc}
+% SM
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (-0.40237,0) -- (-0.18342,0);
+\end{tikzpicture} \\
+% MS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (0.18342,0) -- (0.40237,0);
+\end{tikzpicture} \\
+% SL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (-0.40237,0) -- (-0.01184,0);
+\end{tikzpicture} \\
+% LS
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (0.01184,0) -- (0.40237,0);
+\end{tikzpicture} \\
+% ML
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(L)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (0.18342,0) -- (0.23080,0);
+\end{tikzpicture} \\
+% LL
+\begin{tikzpicture}[scale=0.15]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} &
+%
+\begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [ultra thick]  (-0.23080,0) -- (0.23080,0);
+\end{tikzpicture} \\
+\end{tabular}
+\caption{List of Voronoi tiles with corresponding window intersections. The tiles are sorted from top to bottom by increasing size.}
+\label{fig_windowSectionsExampleList}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+% SM
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{1.4em}
+% SM
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(L)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{1.2em}
+% SL
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{0.7em}
+% LL
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{0.7em}
+% LS
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{1.2em}
+% MS
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{1.4em}
+% MS
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)+(S)$);
+\draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(S)+(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\fill ($(S)+(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture} 
+
+\begin{tikzpicture}[scale=18]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (-0.40237,0) -- (-0.18342,0);
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (0.18342,0) -- (0.40237,0);
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (-0.40237,0) -- (-0.01184,0);
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (0.01184,0) -- (0.40237,0);
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (0.18342,0) -- (0.23080,0);
+
+\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (-0.23080,0) -- (0.23080,0);
+\end{tikzpicture} 
+
+\caption{A window of a quasicrystal divided by overlapping intersections from Figure \ref{fig_windowSectionsExampleList}. Voronoi tile above each section shows which Voronoi tile would appear in the quasicrystal. }
+\label{fig_windowSectionsExampleWindow}
+\end{figure}
+
+We can also see that the second artificially added Voronoi tile does not pass this filter since it is bigger than another Voronoi tile whose intersection is a superset of the intersection of the artificial Voronoi tile. It could also happen that its intersection would be covered by multiple intersections of smaller Voronoi tiles. In this context covered means that for each point in the intersection of the artificial Voronoi tile there is an intersections of smaller Voronoi tile that also contains said point. 
+
+All together this last step of the analysis consists of three filters: 
+\begin{enumerate}
+\item Eliminate duplicate Voronoi tiles. 
+\item Eliminate Voronoi tiles whose intersection $\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega$ is empty. 
+\item Eliminate Voronoi tiles whose intersection $\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega$ is covered by intersections of other smaller Voronoi tiles. 
+\end{enumerate}
+
+\subsection*{Corollary}
+Figure \ref{fig_windowSectionsExampleWindow} suggests that we could divide the window of a quasicrystal into sections corresponding to different Voronoi tiles. That is in fact possible and is a nice tool for presenting results. 
+
+\begin{figure}[h!]
+\centering
+
+% SM
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(M)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(M)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{7.5em}
+% SL
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(S)+(L)$);
+\draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(S)$) circle[radius=0.6];
+\fill ($(S)+(L)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{0.7em}
+% LL
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(L)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(L)$) circle[radius=0.6];
+\end{tikzpicture}  \hspace{0.7em}
+% LS
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(L)+(S)$);
+\draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(L)$) circle[radius=0.6];
+\fill ($(L)+(S)$) circle[radius=0.6];
+\end{tikzpicture} \hspace{7.5em}
+% MS
+\begin{tikzpicture}[scale=0.1]
+\coordinate (O) at (0,0);
+\coordinate (S) at (2.41421,0);
+\coordinate (M) at (3.41421,0);
+\coordinate (L) at (5.82843,0);
+
+\draw [dotted] ($(O)$) -- ($(M)+(S)$);
+\draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(S)$);
+\fill ($(O)$) circle[radius=0.6];
+\fill ($(M)$) circle[radius=0.6];
+\fill ($(M)+(S)$) circle[radius=0.6];
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[scale=18]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\draw [|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  (-0.40237,0) -- (-0.18342,0);
+
+\draw [|-|]  (0.18342,0) -- (0.40237,0);
+
+\draw [|-|]  (-0.40237,0) -- (-0.01184,0);
+
+\draw [|-|]  (0.01184,0) -- (0.40237,0);
+
+%\draw [|-|]  (0.18342,0) -- (0.23080,0);
+
+%\draw [|-|]  (-0.23080,0) -- (0.23080,0);
+\end{tikzpicture} 
+
+\caption{A window of a quasicrystal divided into sections corresponding to different Voronoi tiles. }
+\label{fig_windowSectionsExampleWindowFinal}
+\end{figure}
 
 \end{document}
-
