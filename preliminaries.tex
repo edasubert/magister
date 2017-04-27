@@ -3,7 +3,7 @@
 \begin{document}
 
 \begin{definition}
-The set $D\subset \CC^n$ such that all points are isolated: 
+The set $D\subset \CC^n$ such that all points are isolated, that is: 
 $$\forall\, z\in D\;\exists\, \epsilon>0:\, B(z,\epsilon)\cap D = \{z\}$$
 is a \textbf{discrete set}.
 \end{definition}
@@ -26,7 +26,7 @@ $$R_C = \inf\left\{ r_2>0\,\left|\, \forall\, z\in\CC^n:\; B(z,r_2)\cap D \neq \
 \end{definition}
 
 \begin{remark}
-Union of closed balls of covering radius centered at the points of the set is the entire space $\CC^n$. 
+Union of closed balls of covering radius centered at the points of the set covers the entire space $\CC^n$. 
 \end{remark}
 
 \begin{definition}\label{def_deloneSet}
@@ -37,6 +37,8 @@ If $D$ has both positive packing radius $R_P$ and finite covering radius $R_C$ t
 \end{definition}
 
 \section{Voronoi diagram}\label{sec_voronoi} % ------------------------------------------------------------------------------------------------------
+Voronoi diagram is very useful for analysis of local configurations of discrete sets. Since that is essentially the entirety of our work, we define not only the basic Voronoi polygon but also couple nontraditional terms that will ease our work. 
+
 \begin{definition}
 Let $P\subset \mathbb{R}^n$ be a discrete set and $x\in P$. The \textbf{Voronoi polygon} or \textbf{Voronoi cell} or \textbf{Voronoi tile} of $x$ on $P$ is the set: 
 $$V_P(x) = \{ y \in \mathbb{R}^n \,|\, \forall z \in P, z\neq x:\, \|y-x\|\leq\|y-z\| \}$$
@@ -48,7 +50,7 @@ When there can be no confusion as to what set $P$ is, the index $P$ may be omitt
 \end{remark}
 
 \begin{definition}
-Let $P\subset \mathbb{R}^n$ be a discrete set. The \textbf{Voronoi diagram} or \textbf{Voronoi tessellation} is the set: 
+Let $P\subset \mathbb{R}^n$ be a discrete set. The \textbf{Voronoi diagram} or \textbf{Voronoi tessellation} of $P$ is the set: 
 $$\{V(x)\,|\, x\in P\}$$
 \end{definition}
 
@@ -59,11 +61,11 @@ is called the \textbf{list of Voronoi tiles}.
 \end{definition}
 
 \begin{remark}
-The Voronoi diagram can be viewed as an image whereas the list of Voronoi tiles can be viewed as a list of Voronoi polygon shapes. 
+A Voronoi diagram can be viewed as an image whereas a list of Voronoi tiles can be viewed as a list of Voronoi polygon shapes. 
 \end{remark}
 
 \begin{definition}
-Let $P\subset \mathbb{R}^n$ be a discrete set and let $x\in P$. The \textbf{radius} of the Voronoi polygon is the number: 
+Let $P\subset \mathbb{R}^n$ be a discrete set and let $x\in P$. The \textbf{radius} of Voronoi polygon $V(x)$ is the number: 
 $$\sup_{y\in V(x)}\lVert y-x\rVert$$
 \end{definition}
 
@@ -73,10 +75,10 @@ $$D_P(x) = \bigcap\, \big\{ Q\subset P\,|\, V_Q(x) = V_P(x) \big\}$$
 is called the \textbf{domain} of $x$ or of $V_P(x)$. 
 \end{definition}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.36\textwidth]{img/preliminaries/voronoi}
-\caption{Example of Voronoi tile. The set $P$ are all the points $\bullet$, $\circ$ and $\odot$. The polygon is the Voronoi cell belonging to the $\odot$ point. The $\bullet$ points are the domain of the Voronoi polygon (i.e. the $\circ$ points do not affect the shape of the Voronoi polygon).}
+\caption{Example of a Voronoi tile. The set $P$ consists of all the points $\bullet$, $\circ$ and $\odot$. The polygon is the Voronoi cell belonging to the $\odot$ point. The $\bullet$ points are the domain of the Voronoi polygon (i.e. the $\circ$ points do not affect the shape of the Voronoi polygon).}
 \label{fig_voronoiExample}
 \end{figure}
 
@@ -87,7 +89,7 @@ Let $P\subset \mathbb{R}^n$ be a Delone set with covering radius $R_C$ and let $
 $$V(x)\subset \overline{B(x,R_C)}$$
 \end{theorem}
 \begin{proof}
-By definition of the covering radius \ref{def_deloneSetCovering}, for any point $y\in \RR^n\setminus \overline{B(x,R_C)}$ there exists $w\in P$ such that $w\in B(y,R_C)$. Therefore $w$ is closer to $y$ than $x$ and so $y\not\in V(x)$.
+By definition of the covering radius (\ref{def_deloneSetCovering}), for any point $y\in \RR^n\setminus \overline{B(x,R_C)}$ there exists $w\in P$ such that $w\in B(y,R_C)$. Therefore $w$ is closer to $y$ than $x$ and so $y\not\in V(x)$.
 \end{proof}
 
 \begin{theorem}\label{the_voronoiDomainLimit}
@@ -95,29 +97,27 @@ Let $P\subset \mathbb{R}^n$ be a Delone set with covering radius $R_C$ and let $
 $$D(x)\subset B(x,2R_C)$$
 \end{theorem}
 \begin{proof}
-If the points of the domain would be further, the Voronoi tile would not be inside $\overline{B(x,R_C)}$. 
+For $y\in P$ such that $\lVert y-x \rVert \geq 2R_C$ there exists a point $z\in\RR^n$ such that $\lVert y-z\rVert\geq\lVert x-z\rVert \geq R_C$. Thus if $y$ were in $D(x)$ the Voronoi tile would not be inside $\overline{B(x,R_C)}$. 
 \end{proof}
 
-The relationship between the Voronoi polygons and the covering radius is actually even more intricate, as the following theorem shows. 
+The relationship between a Voronoi polygons and the covering radius is actually even more intricate, as the following theorem shows. 
 
-\begin{theorem}
+\begin{theorem}\label{the_voronoiCoveringRadius}
 Let $P\subset \mathbb{R}^n$ be a Delone set with covering radius $R_C$ and let $x\in P$. Then the covering radius $R_C$ is the supremum of the radii of the Voronoi tiles:  
 $$R_C = \sup_{x\in P}\left\{\sup_{y\in V(x)}\lVert y-x\rVert\right\}$$
 \end{theorem}
 \begin{proof}
-Let's denote the supremum of radii $r= \sup_{x\in P}\left\{\sup_{y\in V(x)}\lVert y-x\rVert\right\}$. We have already proven that $r\leq R_C$.
-
-Now assume that $r<R_C$. Then there is a point $y\in\RR^n$ such that $B(y,R_C)~\cap~P~=~\emptyset$ and yet $y\in V(w)$ for some $w\in P$ and thus $\lVert w -y \rVert\leq r$. That is of course a contradiction. 
+Let us denote the supremum of radii $r= \sup_{x\in P}\left\{\sup_{y\in V(x)}\lVert y-x\rVert\right\}$. We have already proved that $r\leq R_C$. Now assume that $r<R_C$. Then there is a point $y\in\RR^n$ such that $B(y,R_C)~\cap~P~=~\emptyset$ and yet $y\in V(w)$ for some $w\in P$ and thus $\lVert w -y \rVert\leq r$. That is of course a contradiction. 
 \end{proof}
 
 \section{Number theory}\label{sec_numberTheory} % -------------------------------------------------------------------------------------------------
-The study of quasicrystals relies heavily on number theory. Therefore this section lists the definitions and their implications that are used further. For proofs of our claims we refer to \cite. 
+The study of quasicrystals relies heavily on number theory. Therefore this section lists definitions and their corollaries that are used further. For proofs of our claims we refer the reader to \cite. 
 \begin{definition}
 Let $P\subset\CC$. The ring of polynomials in $x$ with coefficients in $P$ is denoted by $P[x]$. 
 \end{definition}
 
 \begin{definition}
-Polynomial $f\in\CC[x]$ such that $f(x) = \sum_{k=0}^m{\alpha_kx^k}$ where $\alpha_m = 1$ is a \textbf{monic polynomial}. 
+Polynomial $f\in\CC[x]$ such that $f(x) = \sum_{k=0}^m{\alpha_kx^k}$ for some $m\in\NN$, where $\alpha_m = 1$ is a \textbf{monic polynomial}. 
 \end{definition}
 
 \begin{definition}
@@ -145,7 +145,7 @@ For each algebraic number there exists exactly one minimal polynomial.
 \subsection{Galois isomorphism}
 
 \begin{definition}
-Let $\alpha\in\AAA$ of degree $m$ and $f_\alpha\in\QQ[x]$ be it's minimal polynomial. The $(m-1)$ other roots of $f_\alpha$ are called \textbf{conjugate roots} of $\alpha$ and are denoted as $\alpha^{(1)},\,\alpha^{(2)},\,\dots,\,\alpha^{(m-1)}$. 
+Let $\alpha\in\AAA$ of degree $m$ and $f_\alpha\in\QQ[x]$ be its minimal polynomial. The $(m-1)$ other roots of $f_\alpha$ are called \textbf{conjugate roots} of $\alpha$ and are denoted as $\alpha^{(1)},\,\alpha^{(2)},\,\dots,\,\alpha^{(m-1)}$. 
 \end{definition}
 
 \begin{remark}
@@ -166,19 +166,24 @@ Let $\alpha\in\AAA$ of degree $m$. The \textbf{extension field} of the number $\
 $$\QQ(\alpha) = \left\{ b_0 + b_1\alpha + b_2\alpha^2 + \dots + b_{m-1}\alpha^{m-1} \left |\; b_i\in\QQ\right. \right\}$$
 \end{definition}
 
+\begin{remark}
+Extension ring of $\alpha$ is the smallest ring containing $\alpha$ as well as all integers. 
+Extension field of $\alpha$ is the smallest field containing $\alpha$ as well as all rationals. 
+\end{remark}
+
 \begin{definition}
 Let $\alpha\in\AAA$ of degree $m$ and let $\alpha^{(1)},\,\alpha^{(2)},\,\dots,\,\alpha^{(m-1)}$ be its conjugate roots. Then $\QQ(\alpha),\, \QQ(\alpha'),\,\dots,\, \QQ(\alpha^{(m-1)})$ are isomorphic. The \textbf{Galois isomorphisms} are:
 $$\sigma_i:\,\QQ(\alpha)\to\QQ\big(\alpha^{(i)}\big)\quad\text{induced by}\quad\sigma_i(\alpha) = \alpha^{(i)}\qquad i\in\widehat{m-1}$$
 \end{definition}
 
-Galois isomorphisms play a significant role of the definition of the quasicrystals, so they surely deserve an example. 
+Galois isomorphisms play a significant role in the definition of the quasicrystals, so they surely deserve an example. 
 
 The Galois isomorphism $\sigma_0$ is always identity.
 
 In general the Galois isomorphism $\sigma_i$ exchanges $\alpha$ of degree $m$ with its $i$th conjugate root. 
 $$\sigma_i\big(b_0 + b_1\alpha + b_2\alpha^2 + \dots + b_{m-1}\alpha^{m-1}\big) = b_0 + b_1\alpha^{(i)} + b_2\big(\alpha^{(i)}\big)^2 + \dots + b_{m-1}\big(\alpha^{(i)}\big)^{m-1}$$
 
-Since further we will mostly work only with quadratic algebraic numbers (i.e. of degree $2$), there will only be two roots of a given minimal polynomial and two Galois isomorphisms, namely the identity and $\sigma_1(\alpha) = \alpha'$. Moreover $\alpha'\in\QQ(\alpha)$, thus $\sigma_1$ is an automorphism of the quadratic field $\QQ(\alpha)$ and it is often denoted only as $'$ -- i.e. $\sigma_1(x) = x'$ for $x\in\QQ(\alpha)$.
+Since further we will only work with quadratic algebraic numbers (i.e. of degree $2$), there will only be two roots of a given minimal polynomial, $\alpha$ and $\alpha'$, and two Galois isomorphisms, namely the identity and $\sigma_1(\alpha) = \alpha'$. Moreover, $\alpha'\in\QQ(\alpha)$, thus $\sigma_1$ is an automorphism of the quadratic field $\QQ(\alpha)$ and is often denoted only as $'$ -- i.e. $\sigma_1(x) = x'$ for $x\in\QQ(\alpha)$.
 
 \subsection{Root of unity, cyclotomic polynomial}\label{sec_rootOfUnity}
 
@@ -192,16 +197,16 @@ Nontrivial root of unity is a root of polynomial $\frac{x^n-1}{x-1}$.
 \end{remark}
 
 \begin{remark}
-$n$th root of unity may be written as $\zeta = e^{2k\pi i/n}$ for $k\in \{0, 1, \dots, n-1\}$.
+$n$th root of unity may be written as $\zeta = e^{2k\pi \i/n}$ for $k\in \{0, 1, \dots, n-1\}$.
 \end{remark}
 
 \begin{theorem}
 Degree of $n$th root of unity $\zeta$ is $\varphi(n)$, where $\varphi$ is the Euler function.
 \end{theorem}
 
-Now we would like to look at the Galois isomorphisms of $n$th root of unity $\zeta$ of degree $4$. It will be evident why $4$ later. In accordance to the previous theorem, that means $\varphi(n)=4$. 
+Now we would like to look at the Galois isomorphisms of $n$th root of unity $\zeta$ of degree $4$. It will be evident why $4$ later. By previous theorem, that means $\varphi(n)=4$. 
 
-The three conjugate roots of $\zeta$ are also $n$th roots of unity and as such they are powers of $\zeta$, specifically $\{\zeta^k|k\bot n, k>1\}$. 
+The three conjugate roots of $\zeta$ are also $n$th roots of unity and as such they are powers of $\zeta$, specifically $\{\zeta^k\,|\,k\bot n, k>1\}$. 
 
 Since $k\bot n$ implies $(n-k)\bot n$ and also
 $$\cos\left(\frac{2k\pi}{n}\right) = \cos\left(\frac{2\left(n-k\right)\pi}{n}\right) \quad\text{and}\quad \sin\left(\frac{2k\pi}{n}\right) = -\sin\left(\frac{2\left(n-k\right)\pi}{n}\right)$$
@@ -217,7 +222,7 @@ Then $\beta$ is called \textbf{Pisot} number.
 As we will see in Section \ref{sec_pisotCyclotomic}, Pisot numbers represent another crucial notion to our quasicrystal model. 
 
 \subsection{Vieta's formulas}
-Since we will work a lot with roots of quadratic equations we want to, just for completeness, show the Vieta's formulas in the form that we will use them. 
+Since we will work a lot with roots of quadratic equations we want to, just for completeness, show the Vieta's formulas in the form in which we will use them. 
 
 The roots $x,x'\in\CC$ of quadratic polynomial $ax^2+bx+c$ satisfy: 
 $$x+x'=-\frac{b}{a}\qquad\text{and}\qquad xx'=\frac{c}{a}$$
@@ -225,12 +230,12 @@ $$x+x'=-\frac{b}{a}\qquad\text{and}\qquad xx'=\frac{c}{a}$$
 For a monic quadratic polynomial ($a=1$) we have:
 $$x+x'=-b\qquad\text{and}\qquad xx'=c$$
 
-Lastly since we are interested in expressing one root in terms of the other: 
+We will often want to express one root in terms of the other: 
 $$x=-b-x'\qquad\text{and}\qquad x=\frac{c}{x'}$$
 
 
 \section{Crystallography}\label{sec_crystallography}% -------------------------------------------------------------------------------------------------
-Even though we are further going to work only with quasicrystals, they are often described by their differences from crystals. 
+Even though we are further going to work only with quasicrystals, they are often described by their differences from crystals. Therefore we briefly touch on the very basics of crystallography. 
 
 A lattice is usually used as a model for a crystal. 
 
@@ -245,18 +250,14 @@ There is an important theorem in crystallography, the crystallographic restricti
 Two dimensional lattices are limited to 2-fold, 3-fold, 4-fold, and 6-fold rotational symmetries. 
 \end{theorem}
 
-These rotational symmetries, 2-fold, 3-fold, 4-fold, and 6-fold, are thus referred to as \textbf{crystallographic} rotational symmetries. 
+These rotational symmetries, 2-fold, 3-fold, 4-fold, and 6-fold, are thus called \textbf{crystallographic} rotational symmetries. 
 
-Quasicrystals are of course not bounded by the crystallographic restriction theorem and therefore have different rotational symmetries, we will refer to different rotational symmetries as \textbf{non-crystallographic}.
+Quasicrystals are of course not bounded by the crystallographic restriction theorem and therefore have different rotational symmetries, we will call these different rotational symmetries \textbf{non-crystallographic}.
 
 \section{Cut-and-project scheme}\label{sec_cutAndProject}% -------------------------------------------------------------------------------------------------
-We are using cut-and-project scheme to model the quasicrystals. Here is a brief introduction into its workings. 
+We are using cut-and-project scheme to model the quasicrystals. Here is a brief introduction into its workings. In general, cut-and-project is a specific way of selecting a subset from a larger set.
 
-In general, cut-and-project is a specific way of selecting a subset from a larger set.
-
-The cut-and-project scheme utilizes $m+n$ dimensional lattice $L\subset\RR^{m+n}$, $m$ dimensional subspace $V_1\subset\RR^{m+n}$ and $n$ dimensional subspace $V_2\subset\RR^{m+n}$. 
-
-Further we define two projections $\pi_1:\RR^{m+n}\rightarrow V_1$ and $\pi_2:\RR^{m+n}\rightarrow V_2$ such that $\pi_1|_L$ is injection and $\pi_2(L)$ is dense in $V_2$. 
+The cut-and-project scheme utilizes $m+n$ dimensional lattice $L\subset\RR^{m+n}$, $m$ dimensional subspace $V_1\subset\RR^{m+n}$ and $n$ dimensional subspace $V_2\subset\RR^{m+n}$. Further we define two projections $\pi_1:\RR^{m+n}\rightarrow V_1$ and $\pi_2:\RR^{m+n}\rightarrow V_2$ such that $\pi_1|_L$ is injection and $\pi_2(L)$ is dense in $V_2$. 
 
 These projections are where the 'project' part of the cut-and-project scheme comes from. The 'cut' part comes from a bounded subset $\Omega\subset V_2$ with nonempty interior usually referred to as \textbf{window}. 
 
@@ -264,7 +265,7 @@ All put together the cut-and-project scheme produces a subset $Q\subset \pi_1(L)
 $$Q = \{ \pi_1(x)\; |\; \pi_2(x)\in \Omega,\,  x\in L \}$$
 Put in words the set $Q$ are $\pi_1$ projections of those points of $L$ whose $\pi_2$ projections fit in the window $\Omega$. 
 
-The notation can be somewhat simplified by composing a projection between $\pi_1(L)$ and $\pi_2(L)$~--~$\pi_2\circ\pi^{-1}_1$, usually denoted as $\ast$ and referred to as a \textbf{star map}. $Q$ then becomes:
+The notation can be somewhat simplified by composing a projection between $\pi_1(L)$ and $\pi_2(L)$:~$\pi_2\circ\pi^{-1}_1$, usually denoted as $\ast$ and referred to as the \textbf{star map}. $Q$ then becomes:
 $$Q = \{ x \in V_1\; |\; x^\ast\in \Omega \}$$
 This is the form in which we will use the cut-and-project scheme. 
 \end{document}

@@ -42,14 +42,14 @@
 
 
 % Theorem Styles
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 % Definition Styles
 %\theoremstyle{definition}
 %\newtheorem{definition}[theorem]{Definition}
-\declaretheorem[style=definition,qed=$\lrcorner$,numberwithin=section]{definition}
+\declaretheorem[style=definition,qed=$\lrcorner$,numberwithin=chapter]{definition}
 
 
 \newtheorem{example}[theorem]{Example}
@@ -62,6 +62,7 @@
 \newcommand{\ring}[1][\beta]{\mathbb{Z}\left[#1\right]}
 \newcommand{\field}[1][\beta]{\mathbb{Q}(#1)}
 \newcommand{\quasi}[1]{\Sigma(#1)}
+\newcommand{\quasilist}[1]{\Psi(#1)}
 \newcommand{\widequasi}[1]{\Sigma\left(#1\right)}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\AAA}{\mathbb{A}}
@@ -73,6 +74,8 @@
 \newcolumntype{d}[1]{ D{:}{:}{-1} }
 
 \newcommand{\subspace}{\subset\subset}
+
+\renewcommand{\i}{\mathrm{i}}
 
 
 % table row height
@@ -273,7 +276,15 @@
 
 \chapter{Analysis}
 \subfile{oneDimension}
+\pagebreak
+\subfile{twoDimension}
 
+\chapter{Results}\label{cha_results}
+\subfile{alpha}
+\pagebreak
+\subfile{beta}
+
+\chapter{Computation}
 
 %\newpage
 %\restoregeometry

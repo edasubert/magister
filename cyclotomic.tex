@@ -14,7 +14,7 @@ First we require $\Lambda$ to be not too dense but also not too discrete. In oth
 \item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
 \end{enumerate}
 
-Next we want finite local complexity. Sometimes this attribute is written as finiteness of a set of intersections of $\Lambda$ with balls centered at any point in $\CC$ of fixed but arbitrary radius:
+Next we want finite local complexity. Sometimes this attribute is written as finiteness of the set of intersections of $\Lambda$ with balls of fixed but arbitrary radius centered at any point of $\Lambda$:
 $$\forall\,\rho>0:\;\big|\{\Lambda\cap B(x,\rho)\;|\;\forall x\in\Lambda\}\big| < \infty$$
 However since we are going to study the Voronoi diagram of $\Lambda$ we directly require the list of Voronoi tiles of $\Lambda$ to be finite. 
 
@@ -27,23 +27,23 @@ So far we have achieved the orderedness part but even periodic lattices have the
 
 \begin{enumerate}
 \setcounter{enumi}{3}
-\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n},\,n\not\in\{2,3,4,6\}:\; \zeta\Lambda = \Lambda$$
+\item rotational symmetry: $$\exists\,\zeta = e^{2\pi \i/n},\,n\in\NN\setminus\{2,3,4,6\}:\; \zeta\Lambda = \Lambda$$
 \item dilation: $$\exists\,\beta\in\RR\setminus\{-1,1\}:\; \beta\Lambda\subset \Lambda$$
 \end{enumerate}
 
 It stems form these properties alone, that among other constants a quasicrystal is linked to a root of unity $\zeta$ and to a number $\beta\in\RR\setminus\{-1,1\}$. Of course not every pair $(\zeta, \beta)$ is associated with a quasicrystal.
 
-In the next section we will go through which numbers are associated with a quasicrystal and where do they come from. 
+In the next section we will go through parameters $\zeta$ and $\beta$ which are associated with a quasicrystal and we will explain where do they come from. 
 
 \section{Pisot-cyclotomic numbers}\label{sec_pisotCyclotomic}%--------------------------------------------------------
-Pisot-cyclotomic numbers are Pisot and are algebraically related to roots of unity. We will use these numbers in place of $\beta$ from previous section. 
+Pisot-cyclotomic numbers are Pisot numbers and are algebraically related to roots of unity. We will use these numbers in place of $\beta$ from previous section. 
 
 \begin{definition}\label{def_pisotCyclotomic}
 Let $\rho = 2\cos\left(2\pi/n\right)$ for a given $n>4$, its extension ring $\ring[\rho]$ and $m$ order of $\rho$. A \textbf{Pisot-cyclotomic} number of degree $m$, of order $n$ associated to $\rho$ is a Pisot number $\beta \in \ring[\rho]$ such that
 $$\ring = \ring[\rho]$$
 \end{definition}
 
-Nontrivial $n$th root of unity $\zeta = e^{2\pi i/n}$ is by definition a solution to equation
+Nontrivial $n$th root of unity $\zeta = e^{2\pi \i/n}$ is by definition a solution to equation
 $$\frac{\zeta^n-1}{\zeta-1} = \zeta^{n-1}+\zeta^{n-2}+\dots+\zeta+1 = 0$$
 further for $\rho = 2\cos\left(2\pi/n\right)$ it holds
 $$\rho = \zeta + \bar{\zeta}\quad\Rightarrow\quad \zeta^2 = \rho\zeta - 1$$
@@ -54,22 +54,22 @@ $$\ring[\zeta] = \ring + \ring\zeta$$
 Such countable ring is of course $n$-fold rotationally invariant
 $$\zeta^k\ring[\zeta] \subset \ring[\zeta]\qquad k\in\widehat{n-1}$$
 
-To summarize $\beta$ is real and a Pisot and it can be used to decompose $n$-fold rotationally invariant complex ring $\ring[\zeta]$ as $\ring + \ring\zeta$. 
+To summarize $\beta$ is Pisot (and thus real) and it can be used to decompose $n$-fold rotationally invariant complex ring $\ring[\zeta]$ as $\ring + \ring\zeta$. 
 
 For further work we will need actual values of Pisot-cyclotomic numbers and so in the next section we will show a method for finding quadratic Pisot-cyclotomic numbers, whose quasicrystals we will later analyze. The method could of course be generalized to different degrees. 
 
 \subsection{Quadratic Pisot-cyclotomic numbers}
 \begin{remark}
-Even though we are mainly focusing on two dimensional quasicrystals, that is not dictated by the quadratic-ness of $\beta$. Quadratic Pisot-cyclotomic numbers are also associated to arbitrarily dimensional quasicrystals. 
+Even though we are mainly focusing on two dimensional quasicrystals, that is not dictated by the quadratic-ness of $\beta$. Quadratic Pisot-cyclotomic numbers are also associated to quasicrystals of arbitrary dimension. 
 \end{remark}
 
-As stated in preliminaries, the degree of root of unity of order $n$ is $\varphi(n)$ (where $\varphi$ is the Euler function). From the decomposition in the previous section we can easily infer that the degree of $\zeta$ is double of degree of $\beta$ (or $\rho$). Moreover we are looking for $\beta$ of degree $2$. Together we acquire the following equation. 
+As stated in preliminaries, the degree of root of unity of order $n$ is $\varphi(n)$ (where $\varphi$ is the Euler function). From the decomposition in the previous section we can easily infer that the degree of $\zeta$ is double of degree of $\beta$ (or $\rho$). Moreover, we are looking for $\beta$ of degree $2$. Together we acquire the following equation. 
 $$\varphi(n) = 2\cdot 2 = 4$$
 With help from the Euler product formula we can show that such equation holds only for $n\in\{5,8,10,12\}$. 
 
-For each $n\in\{5,8,10,12\}$ there is $\rho = 2\cos\left(2\pi/n\right)$ and for each such $\rho$ there are $\beta \in \ring[\rho]$ following the definition \ref{def_pisotCyclotomic}. Each of these numbers $\beta$ are associated with the same quasicrystals and so it is sufficient to only pick one representative. 
+For each $n\in\{5,8,10,12\}$ there is $\rho = 2\cos\left(2\pi/n\right)$ and for each such $\rho$ there are $\beta \in \ring[\rho]$ following Definition \ref{def_pisotCyclotomic}. Each of these numbers $\beta$ is associated to the same quasicrystal and so it is sufficient to pick only one representative. 
 
-Moreover since $2\cos\left(2\pi/5\right) = \frac{\sqrt{5}-1}{2} = \frac{\sqrt{5}+1}{2} -1 = 2\cos\left(2\pi/10\right) - 1$ the extension rings $\ring[2\cos\left(2\pi/5\right)]$ and $\ring[2\cos\left(2\pi/10\right)]$ are identical and by extension the quasicrystals associated are also the same. Therefore we can skip the $5$-fold rotational symmetry. 
+Moreover, since $2\cos\left(2\pi/5\right) = \frac{\sqrt{5}-1}{2} = \frac{\sqrt{5}+1}{2} -1 = 2\cos\left(2\pi/10\right) - 1$ the extension rings $\ring[2\cos\left(2\pi/5\right)]$ and $\ring[2\cos\left(2\pi/10\right)]$ are identical and by extension the quasicrystals associated are also the same. Therefore we can skip the $5$-fold rotational symmetry. 
 
 To summarize, quadratic Pisot-cyclotomic numbers $\beta$ can only be associated to quasicrystals with $8$-fold, $10$-fold or $12$-fold rotational symmetries. Table \ref{tab_quadraticPisotCyclotomic} shows a list of quadratic Pisot-cyclotomic numbers interesting for Quasicrystallography. 
 
@@ -86,17 +86,17 @@ $12$ & $2 \cos\left(\frac{2\pi}{12}\right)$ & $ 2+\sqrt{3} $          & $e^{2i\p
 \label{tab_quadraticPisotCyclotomic}
 \end{table}
 
-Now we want to explore the connection between Galois isomorphisms of $\zeta$ and $\beta$. As we have shown here and in Section \ref{sec_rootOfUnity}, for quadratic Pisot-cyclotomic $\beta$ is the associated root of unity $\zeta$ of degree $4$ and among its four Galois isomorphisms are two that do not change the real part of $\zeta$. Consequently they also do not alter $\rho = \zeta +\bar{\zeta} = 2\Re{(\zeta)}$ and by extension neither they alter $\rho$'s extension ring $\ring[\rho]$. By further extension the two Galois isomorphisms of $\zeta$ also do not change $\beta\in\ring=\ring[\rho]$. 
+Now we want to explore the connection between Galois isomorphisms of $\zeta$ and $\beta$. As we have shown here and in Section \ref{sec_rootOfUnity}, for quadratic Pisot-cyclotomic $\beta$ the associated root of unity $\zeta$ is of degree $4$ and among its four Galois isomorphisms there are two that do not change the real part of $\zeta$. Consequently they also do not alter $\rho = \zeta +\bar{\zeta} = 2\Re{(\zeta)}$ and by extension neither they alter $\rho$'s extension ring $\ring[\rho]$. By further extension these two Galois isomorphisms of $\zeta$ also do not change $\beta\in\ring=\ring[\rho]$. 
 
 It turns out that the other two Galois isomorphisms of $\zeta$ do change $\beta$ to its conjugate root $\beta'$, these two are important for our model of the quasicrystal, which we will present in the next section. 
 
 \section{Quasicrystal model}%--------------------------------------------------------------------------------
 There certainly are many ways to acquire a set that follows the attributes listed in Section \ref{sec_quasicrystalEaseIn}. We utilize the cut-and-project scheme described in Section \ref{sec_cutAndProject}. 
 
-Even though we showed the two dimensional quasicrystal as subset of $\CC$ it is sometimes preferable to treat it as subset of $\RR^2$; the two coordinates are of course real and imaginary parts. Further we will mark the complex variants with ${}^\CC$. 
+Even though we showed the two dimensional quasicrystal as a subset of $\CC$ it is sometimes preferable to treat it as subset of $\RR^2$; the two coordinates are of course real and imaginary parts. Further we will mark the complex variants with ${}^\CC$. 
 
 \begin{definition}\label{def_quasicrystal}
-Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi i/n}$). \\
+Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi \i/n}$). \\
 Further let $\ast^\CC$ be a Galois isomorphism of $\zeta$, such that $\beta^{\ast^\CC} = \beta'$ and let the real variant $\ast:\RR^2\to\RR^2$ be defined as $(x,y)^\ast = (\Re{\big((x+iy)^{\ast^\CC}\big)}, \Im{\big((x+iy)^{\ast^\CC}\big)})$. \\
 Let $v_1, v_2\in\RR^2$:
 $$v_1=(1,0)\quad\text{and}\quad v_2 = (\Re{(\zeta)}, \Im{(\zeta)})$$
@@ -132,7 +132,7 @@ And now to validate our model.
 The result of the cut-and-project scheme is a Delone set if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
 \item finite local complexity: $$\big|\{V(x)-x\,|\, x\in \Lambda\}\big|<\infty$$
 It has been shown that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
-\item rotational symmetry: $$\exists\,\zeta = e^{2\pi i/n}:\; \zeta\Lambda^\CC = \Lambda^\CC$$
+\item rotational symmetry: $$\exists\,\zeta = e^{2\pi \i/n}:\; \zeta\Lambda^\CC = \Lambda^\CC$$
 Rotational symmetry appears in quasicrystal if the window $\Omega$ has the same rotational symmetry.
 \item dilation: $$\exists\,b\in\RR\setminus\{-1,1\}:\; b\Lambda\subset \Lambda$$
 Using the scaling property and the inclusion property:
@@ -162,7 +162,15 @@ Each of these finite sections represents one Voronoi tile that appears in the qu
 Due to technical constrains the previous step may have created more tiles than actually are in the list of Voronoi tiles and so it needs to be filtered. 
 \end{enumerate}
 
-These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and we will need to specify them for each quasicrystal. 
+There is also a sort of a fifth step of the analysis that is no longer fixed on a single window of certain size, but explores the changes in the quasicrystal with changing window size. 
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item \textbf{Establish the period of each Voronoi tile}
+
+A Voronoi tile generally appears in quasicrystals for whole interval of window sizes. Goal of this step is to establish the endpoints of such interval. 
+\end{enumerate}
+
+These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and we will need to specify them for each specific quasicrystal. 
 
 We close this chapter and our general overview of quasicrystals with discussion of window shapes. It is obviously impossible to analyze a quasicrystal for arbitrary bounded $\Omega\subset N$ with nonempty interior. That is however not necessary. Not every two windows generate different quasicrystals, especially since we do not consider translated and/or $\beta$~inflated quasicrystals to be different. 
 
@@ -192,6 +200,4 @@ To summarize we will analyze quasicrystals for windows in shape of rhombus, regu
 Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i. e. we will exclude the boundary. The exception is the rhombus for reasons we will also explain later. 
 
 Now we have quasicrystal defined, model explored and windows limited. In the next chapter we will finally start the analysis. 
-
-
 \end{document}
