@@ -19,7 +19,7 @@
 \usepackage{multirow}
 \usepackage{dcolumn}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows, calc, intersections}
+\usetikzlibrary{shapes.geometric, arrows, calc, intersections, decorations.pathmorphing}
 \usepackage{subfiles}
 \usepackage[ruled,czech]{algorithm2e}
 \usepackage[figuresright]{rotating}
@@ -271,20 +271,27 @@
 \chapter{Preliminaries}
 \subfile{preliminaries}
 %
+\cleardoublepage
 \chapter{Quasicrystal}
 \subfile{cyclotomic}
 
+\cleardoublepage
 \chapter{Analysis}
 \subfile{oneDimension}
 \pagebreak
 \subfile{twoDimension}
 
+\cleardoublepage
 \chapter{Results}\label{cha_results}
+\subfile{results}
+\pagebreak
 \subfile{alpha}
 \pagebreak
 \subfile{beta}
 
+\cleardoublepage
 \chapter{Computation}
+\subfile{computation}
 
 %\newpage
 %\restoregeometry

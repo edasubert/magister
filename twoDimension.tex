@@ -6,7 +6,7 @@ Now that we have analyzed quasicrystals with one dimensional windows and perhaps
 
 First we recapitulate various components of our quasicrystal model (in its entirety in Definition \ref{def_quasicrystal}). 
 
-Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. Further let $\ast^\CC$ be an appropriate Galois isomorphism of $\zeta = e^{2\pi \i/n}$ and let its real variant $\ast:\RR^2\to\RR^2$ be defined as $(x,y)^\ast = (\Re{\big((x+iy)^{\ast^\CC}\big)}, \Im{\big((x+iy)^{\ast^\CC}\big)})$. \\
+Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. Further, let $\ast:\RR^2\to\RR^2$ be defined as $(x,y)^\ast = (\Re{\big((x+iy)^{\ast^\CC}\big)}, \Im{\big((x+iy)^{\ast^\CC}\big)})$ where $\ast^\CC$ is an appropriate Galois isomorphism of $\zeta = e^{2\pi \i/n}$. 
 Let $v_1, v_2\in\RR^2$:
 $$v_1=(1,0)\quad\text{and}\quad v_2 = (\Re{(\zeta)}, \Im{(\zeta)})$$
 and let $M = \ring v_1+\ring v_2$ and $N = \ring v_1^\ast+\ring v_2^\ast$.
@@ -34,7 +34,7 @@ As we hinted before we will analyze two dimensional quasicrystals just for sever
 \begin{definition}
 Let $\Omega\subset\RR^2$:\\
 $\Omega = Iv_1^\ast+Iv_2^\ast$ where $I$ is a left-closed right-open interval is a \textbf{rhombic window}. \\
-$\Omega = \{\}$ is a \textbf{$n$-gonal window}. \\ 
+$\Omega$ equal to the convex hull of $\big\{\big(\cos(2k\pi/n),\sin(2k\pi/n)\big)\big| k = 0,\dots,n-1 \big\}$ for $n\in\NN$ is a \textbf{$n$-gonal window}. \\ 
 $\Omega = \{x\in\RR^2\,|\,\lVert x \rVert < R\}$ where $R>0$ is a \textbf{circular window}.
 \end{definition}
 
@@ -150,7 +150,7 @@ any missing Voronoi tile's intersections would overlap the current ones and thus
 \centering
 \includegraphics[width=0.4\textwidth]{img/2D/cover}
 \caption{Example of a octagonal window covered by intersections of only sixteen Voronoi tiles including the two from Figure \ref{fig_quasicrystalExampleIntersection} (there are many more in the quasicrystal). }
-\label{fig_quasicrystalExampleOctagon}
+\label{fig_quasicrystalExampleOctagonWindow}
 \end{figure}
 
 \begin{figure}[h!]
@@ -162,7 +162,7 @@ any missing Voronoi tile's intersections would overlap the current ones and thus
 \begin{minipage}{0.4\textwidth}
 \includegraphics[width=\textwidth]{img/2D/intersection03}
 \end{minipage}
-\caption{Example of a Voronoi tile whose intersection would overlap one of the intersections in Figure \ref{fig_quasicrystalExampleOctagon} and it indeed has smaller radius than the two considered Voronoi tiles in Figure \ref{fig_quasicrystalExampleIntersection}. }
+\caption{Example of a Voronoi tile whose intersection would overlap one of the intersections in Figure \ref{fig_quasicrystalExampleOctagonWindow} and it indeed has smaller radius than the two considered Voronoi tiles in Figure \ref{fig_quasicrystalExampleIntersection}. }
 \label{fig_quasicrystalExampleIntersection02}
 \end{figure}
 
@@ -184,7 +184,7 @@ Once we calculate $a$ we can acquire all possible finite sections of a quasicrys
 \centering
 \includegraphics[width=0.7\textwidth]{img/2D/compositionFinite}
 \caption{Example of the composition of a finite section of a quasicrystal with a rhombic window from two finite section of a quasicrystal with one dimensional window. The circle has radius $2\hat{R}_C$. }
-\label{fig_quasicrystalExampleOctagon}
+\label{fig_quasicrystalExampleComposition}
 \end{figure}
 
 That completes acquiring a list of all possible finite sections of a qusicrystal with a rhombic window, the easy part of this step. Now we have to use the inclusion property to somehow turn this list of all possible finite sections of a qusicrystal with a rhombic window to a list of all possible finite sections of a qusicrystal with any window. 
@@ -208,7 +208,7 @@ The algorithm should now be quite clear. For each $V_i\in\{V_1,\dots,V_m\}$ and 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.24\textwidth]{img/2D/cropByFiniteSection}
-\caption{Example of how a new Voronoi tile is created from the incomplete list of Voronoi tiles and the list of finite sections. The first Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection} and the finite sections from Figure \ref{fig_quasicrystalExampleOctagon} to create the Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection02} by adding two points of the finite section. }
+\caption{Example of how a new Voronoi tile is created from the incomplete list of Voronoi tiles and the list of finite sections. The first Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection} and the finite sections from Figure \ref{fig_quasicrystalExampleComposition} to create the Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection02} by adding two points of the finite section. }
 \label{fig_quasicrystalExampleNewTile}
 \end{figure}
 

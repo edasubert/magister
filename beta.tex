@@ -37,16 +37,16 @@ $\frac{1}{\beta_{12}} = 4-\beta_{12}$, $\frac{\beta_{12} - 2}{\beta_{12}} = 2\be
 	\bottomrule
 \end{tabular}\normalsize
 %\caption{All possible distances between two consecutive points of the sequence of the quasicrystal with a window of the given size.}
-\label{table:spaces}
+\label{tab_12fold}
 \end{center}
 \end{table}
 
-\subsection{Distances}
-Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voronoi tiles and Figure \ref{fig_12fold1DTiles} shows corresponding Voronoi tiles for selected window sizes. The window sizes in the Figure \ref{fig_12fold1DTiles} correspond
+\subsection{Voronoi tiles and their periods}
+Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voronoi tiles and Figure \ref{fig_12fold1DTiles} shows corresponding Voronoi tiles for selected window sizes. The period can be read from Figure \ref{fig_12fold1DTiles} by looking up in which list does the tile first appear and then in which it disappears.
 
 \begin{figure}[h!]
 \centering
-\begin{tikzpicture}[scale=6.5]
+\begin{tikzpicture}[scale=6.2]
 \clip(-1,0) rectangle (1,-1.05);
 
 \coordinate (O) at (0,0);
@@ -796,7 +796,8 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
   \fill ($-1*(left)+(trans)$) circle[radius=0.6];
   \fill ($(right)+(trans)$) circle[radius=0.6];
 \end{tikzpicture} 
-
+\caption{List of Voronoi tiles corresponding to sections of various windows. }
+\label{fig_12fold1DTiles}
 \end{figure}
 
 

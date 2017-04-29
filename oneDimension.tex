@@ -1,27 +1,27 @@
 \documentclass[text.tex]{subfiles}
 
 \begin{document}
-The first step of analysis of the two dimensional quasicrystal is to create algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific window shape it is possible to decompose two dimensional quasicrystal into two quasicrystals with one dimensional windows. We will explain exactly what that means later, for now let's explore two dimensional quasicrystals with one dimensional windows. 
+The first step of analysis of a two dimensional quasicrystal is to create an algorithm for acquiring arbitrary finite section of the quasicrystal. That is however not so simple. Luckily there is a workaround. Using specific window shape it is possible to decompose two dimensional quasicrystal into two quasicrystals with one dimensional windows. We will explain exactly what that means later, for now let us explore two dimensional quasicrystals with one dimensional windows. 
 
-By definition the quasicrystal with one dimensional window is a set of points whose star map images fit on a bounded section of a line. Since the star map inverse image of a line is again a line then two dimensional quasicrystal with a line segment for a window is in fact one dimensional (i.e. set of points on a line). 
+By definition a quasicrystal with one dimensional window is a set of points whose star map images fit into a bounded section of a line. Since the star map inverse image of a line is again a line then two dimensional quasicrystal with a line segment for a window is in fact one dimensional (i.e.\ set of points on a line). 
 
-We present this connection between two dimensional and one dimensional quasicrystal mainly to avoid the need to explicitly define the attributes and show the properties of one dimensional quasicrystal. This way aside from the rotational symmetry all the attributes and all the properties apply to the one dimensional quasicrystal as well. 
+We present this connection between two dimensional and one dimensional quasicrystal mainly to avoid the need to explicitly define the attributes and to show the properties of one dimensional quasicrystals. This way aside from the rotational symmetry all the attributes and all the properties apply to the one dimensional quasicrystal as well. 
 
-To summarize the motivation behind the analysis of one dimensional quasicrystal is the eventual analysis of two dimensional quasicrystal. To take full advantage of previous work we view one dimensional quasicrystal as a special case of two dimensional quasicrystal, that is two dimensional quasicrystal with a line segment for a window. 
+To summarize: the motivation behind the analysis of one dimensional quasicrystal is the eventual analysis of two dimensional quasicrystal. To take full advantage of previous work we view one dimensional quasicrystal as a special case of two dimensional quasicrystal, that is two dimensional quasicrystal with a line segment for a window. 
 
 \section{One dimensional quasicrystal}
 We can simplify our model for the specific case of one dimensional window. The easiest way is to position the window along the line $\{(x,0)|x\in\RR\}$. That will result in a quasicrystal along the same line and thus we arrive to the following special case of the model of two dimensional quasicrystal: 
 
-Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. \\
-Further let $M = \ring$ extension ring of $\beta$ and $N = \ring[\beta']$ extension ring of $\beta$'s conjugate root. \\
-The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). \\
-Lastly let $\Omega\subset N$ be bounded with nonempty interior. 
+Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$. 
+Further, let $M = \ring$ be the extension ring of $\beta$ and $N = \ring[\beta']$ the extension ring of $\beta$'s conjugate root. 
+The projection $\ast:M\rightarrow N$ is the Galois isomorphism $\sigma_1$ (often denoted as $'$). 
+Lastly, let $\Omega\subset N$ be bounded with nonempty interior. 
 
 Then the \textbf{model of one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\} = \big\{ x \in \ring\; |\; x'\in \Omega\big\}$$
 Convex bounded one dimensional window is a line segment, which is in one dimension represented by an interval, specifically we will use left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
 
-As we see in the following breakdown, quasicrystals with different openness or closeness differ only by at most a single point. 
+As we see in the following breakdown, quasicrystals with different openness or closeness of the window differ only by at most a single point. 
 
 \begin{align*}
 \quasi{(c,d)} &= \left\{ 
@@ -43,12 +43,12 @@ As we see in the following breakdown, quasicrystals with different openness or c
 	\end{array} \right.\\
 \end{align*}
 
-Unfortunately the addition or the removal of the single point causes occurrences of local configurations that appear only once in the entire quasicrystal. That would needlessly complicate our work and therefore we chose to only analyze left-closed right-open interval, which does not suffer from these zero density occurrences. 
+Unfortunately the addition or the removal of a single point causes occurrences of local configurations that appear only once in the entire quasicrystal. That would needlessly complicate our work and therefore we chose to only analyze left-closed right-open interval, which does not suffer from these zero density occurrences. 
 
-According to our plan, first step of the analysis is generating arbitrary finite section of one dimensional quasicrystal. 
+According to our plan, the first step of the analysis is generating arbitrary finite section of one dimensional quasicrystal. 
 
-\subsection{Arbitrary finite section}
-The picture \ref{fig_onedimensional} illustrates well, what we want to acquire -- the sequence of points on the $M$ axis. For this purpose we define the sequence of the quasicrystal. 
+\subsection{Arbitrary finite section}\label{sec_1DfiniteSection}
+Figure \ref{fig_onedimensional} illustrates well, what we want to acquire -- the sequence of points on the $M$ axis. For this purpose we define the sequence of the quasicrystal. 
 
 \begin{definition}
 Strictly increasing sequence $(y_n^\Omega)_{n\in \mathbb{Z}}$ defined as $\left\{y_n^\Omega\,|\, n\in\ZZ \right\} = \quasi{\Omega}$ where $\quasi{\Omega}$ is one dimensional quasicrystal is called the \textbf{sequence of the quasicrystal $\quasi{\Omega}$}.
@@ -153,7 +153,7 @@ Strictly increasing sequence $(y_n^\Omega)_{n\in \mathbb{Z}}$ defined as $\left\
 Now we would like to explore the set of all possible distances between two consecutive points of the sequence of the quasicrystal: 
 $$\left\{ y^\Omega_{n+1}-y^\Omega_{n}\,|\, n\in\NN \right\}$$
 
-For that we need an expression for $y^\Omega_n$. Let's start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e. $1$. First we do a little algebraic exercise with the expression for the quasicrystal:
+For that we need an expression for $y^\Omega_n$. Let us start with the simplest window: $[-\frac{1}{2}, \frac{1}{2})$. The key here is the length of the window -- i.e.\ $1$. First we do a little algebraic exercise with the expression for the quasicrystal:
 \begin{align*}
 \Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right) &= \left\{x\in\ring\,\left|\, x'\in \left[-\frac{1}{2}, \frac{1}{2}\right)\right.\right\}\\%]
  &= \left\{a+b\beta\,\left|\, a+b\beta'\in \left[-\frac{1}{2}, \frac{1}{2}\right),\,a,b\in\ZZ\right.\right\}\\%]
@@ -167,36 +167,42 @@ Thus we can express the sequence of points of the quasicrystal as:
 $$y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_n = \left\lceil-\frac{1}{2} -n\beta'\right\rceil + n\beta$$%]$$
 
 And for the set of distances between two consecutive points we have:
-$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}$$%]
-$$\left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
-$$\left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}$$%]
-Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceilings is either $0$ or $\pm1$ (the sign depends on the sign of $\beta'$) and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta \pm 1\}$. We want to be clear that here $\pm 1$ means either $+1$ or $-1$ depending on the sign of $\beta'$, the set of distances between two consecutive points will have two members. 
+\begin{align*}
+\left\{\left. y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_{n+1}-y^{\left[-\frac{1}{2}, \frac{1}{2}\right)}_{n}\,\right|\, n\in\NN \right\} &= \left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil + (n+1)\beta - \left\lceil-\frac{1}{2} -n\beta'\right\rceil - n\beta \,\right|\, n\in\ZZ\right\}\\
+&= \left\{ \left.\left\lceil-\frac{1}{2} -(n+1)\beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}\\
+&= \left\{ \left.\left\lceil-\frac{1}{2} -n\beta' - \beta'\right\rceil - \left\lceil-\frac{1}{2} -n\beta'\right\rceil + \beta \,\right|\, n\in\ZZ\right\}
+\end{align*}%]$$%
+Because $\beta$ is Pisot we have $|\beta'|<1$. Therefore the difference between the ceilings is either $0$ or $\pm1$ (the sign depends on the sign of $\beta'$) and the set of distances between two consecutive points thus collapses to simple $\{\beta, \beta \pm 1\}$. We want to be clear that here $\pm 1$ means either $+1$ or $-1$ depending on the sign of $\beta'$, the set of distances between two consecutive points will have two elements. 
 
-With a little thought and with use of the scaling property of a qusicrystal we can expand this to any window of size $\beta^k$ where $k\in\ZZ$. 
-$$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$%]
-Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points $\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta \pm 1)\right|\right\}$. %]$$
+With a little thought and with the use of the scaling property of a qusicrystal we can expand this to any window of size $\beta^k$ where $k\in\ZZ$. 
+$$\Sigma\left(\beta\left[-\frac{1}{2}, \frac{1}{2}\right)\right) = \beta'\Sigma\left(\left[-\frac{1}{2}, \frac{1}{2}\right)\right)$$%]$$asd%
+Thus for window $\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)$ we have the set of distances between two consecutive points:
+$$\left\{\left. y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n+1}-y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n}\,\right|\, n\in\NN \right\} =\left\{\left|(\beta')^k\beta\right|, \left|(\beta')^k(\beta \pm 1)\right|\right\}$$ %]$
 
-Now we utilize the fact, that $\beta$ is a quadratic integer -- i.e. root of polynomial $x^2+bx+c$ for $b,c\in\ZZ$. Thus we can use Vietas's formulas and also $\beta = -b-\frac{c}{\beta}$. 
+Now we utilize the fact, that $\beta$ is a quadratic integer -- i.e.\ root of polynomial $x^2+bx+c$ for $b,c\in\ZZ$. Thus we can use Vietas's formulas and also $\beta = -b-\frac{c}{\beta}$. 
 
 Applying Vieta's formula ($\beta' = \frac{c}{\beta}$) we have:
-$$\left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}\pm\frac{c^k}{\beta^{k}}\right|\right\}$$
+$$\left\{\left. y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n+1}-y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n}\,\right|\, n\in\NN \right\} = \left\{\left|\frac{c^k}{\beta^{k-1}}\right|, \left|\frac{c^k}{\beta^{k-1}}\pm\frac{c^k}{\beta^{k}}\right|\right\}$$%]$$
 And applying $\frac{c}{\beta}=-\beta-b$ we get:
-$$\left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k\pm(-1)^k(\beta+b)^k\right|\right\} = \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k\pm(\beta+b)^k\right|\right\}$$
+\begin{align*}
+\left\{\left. y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n+1}-y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n}\,\right|\, n\in\NN \right\} &= \left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k\pm(-1)^k(\beta+b)^k\right|\right\} \\
+&= \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k\pm(\beta+b)^k\right|\right\}
+\end{align*}%]$$
 
 In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta \pm 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{b\beta}{c}+1\right|, \left|\frac{b\beta\pm\beta}{c} + 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
 
-It is possible to do this expansion for general quadratic Pisot-cyclotomic $\beta$, as for example in \cite{distances}. We analyzed each $\beta$ individually, however there are several outcomes that apply generally and are important for further progress: 
+It is possible to do this expansion for a general quadratic Pisot-cyclotomic $\beta$, as for example in \cite{distances}. We analyzed each $\beta$ individually, however there are several facts that apply generally and are important for further progress: 
 \begin{itemize}
 \item there are two or three different distances between two consecutive points of a quasicrystal, often denoted from smallest to largest as $S$, $M$ and $L$
 \item the distances vary with different window length
-\item the star map images of points of a quasicrystal that precede a certain distance form an interval
+\item the star map images of points of a quasicrystal that precede certain distance form an interval
 \end{itemize}
 
-The last outcome is of particular importance for us. In essence it mean that there are one or two dividing points in the window of a quasicrystal that divide it into sections whose star map preimages precede the same distance in the quasicrystal. By extension it is also possible to divide the window by the distance that the points follow. We will explore this concept in greater detail later. 
+The last statement is of particular importance to us. In essence it means that there are one or two dividing points in the window of a quasicrystal that divide it into sections whose star map preimages precede the same distance in the quasicrystal. By extension it is also possible to divide the window by the distance that precede the preimage in the quasicrystal. We will explore this concept in greater detail later. 
 
 Based on these findings it is already possible to generate a finite section of a one dimensional quasicrystal. 
 \begin{itemize}
-\item $0$ is a fixed point of Galois isomorphism. $0$ is also in every window centered around the origin (i.e. $0$). Therefore $0$ is present in every one dimensional quasicrystal with a window centered around it. 
+\item $0$ is a fixed point of Galois isomorphism. $0$ is also in every window centered around the origin (i.e.\ $0$). Therefore $0$ is present in every one dimensional quasicrystal with a window centered around it. 
 \item We can acquire the next and previous points by identifying a section of a window the star map image of the point is present in and adding or subtracting appropriate distance. 
 \end{itemize}
 
@@ -209,15 +215,15 @@ For summary we outline the algorithm for acquiring arbitrary finite section of a
 \item[Output:] the list \texttt{quasicrystal}
 \end{enumerate}
 
-Thus we have accomplished the first step of our analysis. In the next section we will follow with the second step: estimating covering radius of the quasicrystal. 
+Thus we have accomplished the first step of our analysis. In the next section we will follow with the second step: estimating the covering radius of quasicrystal. 
 
-\subsection{Estimate covering radius of the quasicrystal $R_C$}
-The estimation is rather straight forward for the one dimensional case, it will be more complicated for the two dimensional case and we do it here for sake of consistency. 
+\subsection{Estimate the covering radius $R_C$ of the quasicrystal}
+The estimation is rather straight forward for the one dimensional case, it will be more complicated for the two dimensional case and we do it here for the sake of consistency. 
 
 Our definition of covering radius \ref{def_deloneSetCovering} simplified for one dimensional $D\subset\RR$ would be: 
 $$R_C = \inf\left\{ r_2>0\left| \forall x\in\RR:\; B(x,r_2)\cap D \neq \emptyset \right. \right\}$$
 
-So we are looking for the upper bound of the largest possible distance to the nearest point of the quasicrystal from anywhere in $\RR$. 
+So we are looking for the upper bound on the largest possible distance to the nearest point of the quasicrystal from anywhere in $\RR$. 
 
 As we have already found out in the previous section, there is a maximum distance between two consecutive points of the quasicrystal. Therefore the estimate we are looking for must be the half of the largest distance between two consecutive points. 
 
@@ -228,11 +234,11 @@ In the next section we will use this estimate to generate a superset of all fini
 \subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
 We want to briefly get back to our over all goal and explain the motivation behind this step in greater detail. 
 
-Our goal is to acquire the list of Voronoi tiles in one dimensional quasicrystal. It is possibly quiet unusual to construct a Voronoi diagram on a one dimensional set. Once again we do it for consistency, however it also makes the presentation of results easier. 
+Our goal is to acquire the list of Voronoi tiles in one dimensional quasicrystal. It is possibly quite unusual to construct a Voronoi diagram on a one dimensional set. Once again we do it for consistency, however it also makes the presentation of results easier. 
 
 By Theorem \ref{the_voronoiDomainLimit} the domain of a Voronoi tile is limited by $B(x, 2\hat{R}_C)$ where $x$ is the center of the tile. By constructing a Voronoi tile in every finite section spanning $B(2\hat{R}_C)$, we construct a Voronoi tile for every possible domain and by extension we have constructed every possible Voronoi tile. That is the motivation for this step. 
 
-Now let's continue with the exploration of one dimensional quasicrystal from two sections ago. We are going to create an algorithm that will for given $n\in\NN$ and window $\Omega$ return a list of finite sequences of $n+1$ points each, that entail all possible centered $n+1$ points long sequences of consecutive points of the quasicrystal: 
+Now let us continue with the exploration of one dimensional quasicrystal from Section \ref{sec_1DfiniteSection}. We are going to create an algorithm that will for given $n\in\NN$ and window $\Omega$ return a list of finite sequences of $n+1$ points each, that entail all possible centered $n+1$ points long sequences of consecutive points of the quasicrystal (each sequence is centered around its middle point $y^\Omega_{i+\lfloor\frac{n}{2}\rfloor}$): 
 $$\left\{ (y^\Omega_{i}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor}, y^\Omega_{i+1}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor}, \dots, y^\Omega_{i+n+1}-y^\Omega_{i+\lfloor\frac{n}{2}\rfloor} )\,|\, i\in\ZZ \right\}$$
 
 For that we introduce the notion of the stepping function of a quasicrystal. 
@@ -306,7 +312,7 @@ The stepping function is a piecewise linear function. Each one of the two or thr
 
 \node [above right] at (5,5) {$(f^\Omega)^2$};
 \end{tikzpicture}
-\caption{Example of the stepping function for $\beta_8 = 1+\sqrt{2}$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. On the left there is just the stepping function and on the right there its second iteration. Letters $S$, $M$, $L$ mark different lengths of distances. }%]$
+\caption{Example of the stepping function for $\beta_8 = 1+\sqrt{2}$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. On the left there is just the stepping function and on the right there is its second iteration. Letters $S$, $M$, $L$ mark different lengths of distances. }%]$
 \label{fig_steppingFunction}
 \end{figure}
 
@@ -460,9 +466,9 @@ MSLS & SLLS & LSMS & MSMS \\
 \label{fig_finiteSectionsExample}
 \end{figure}
 
-Once we acquire the list of sequences of distances, we easily convert them to sequences of points of quasicrystal. There is an example of the algorithm output and this conversion in Figure \ref{fig_finiteSectionsExample}. Now it remains to solve for $n$ based on the covering radius estimate $\hat{R}_C$.
+Once we acquire the list of sequences of distances, we easily convert them to sequences of points of the quasicrystal. There is an example of the algorithm output and this conversion in Figure \ref{fig_finiteSectionsExample}. Now it remains to establish $n$ such that the sequences of points of the quasicrystal have sufficient length.
 
-We want the finite sections to span $B(2\hat{R}_C)$, in other words we want the finite sections to be at least $4\hat{R}_C$ long. The obvious solution is to run the algorithm for $n=1$ measure the shortest sequence and if it is shorter than $4\hat{R}_C$, increase $n$ by $1$, run the algorithm again and repeat until you acquire not only the $n$ but also the list of the finite sequences of sufficient length. 
+We want the finite sections to span $B(2\hat{R}_C)$, in other words we want the finite sections to be at least $4\hat{R}_C$ long. The obvious solution is to run the algorithm for $n=1$ measure the shortest sequence and if it is shorter than $4\hat{R}_C$, increase $n$ by $1$, run the algorithm again and repeat until we acquire not only the $n$ but also the list of the finite sequences of sufficient length. 
 
 It is also beneficial to choose an even $n$, that will result in odd number of points in the finite sections and that will ease the next step. Although it might result in the finite sections being longer than necessary. 
 
@@ -695,9 +701,9 @@ As we can see in the example in Figure \ref{fig_finiteSectionsVoronoiExample}, s
 \label{fig_VoronoiCellsExample}
 \end{figure}
 
-It may seem that the analysis ends here, however even though it did not happen in our example it might happen that the acquired list of Voronoi tiles contains tiles that do not actually appear in the quasicrystal. And so we want to present a method for dealing with such eventuality. 
+It may seem that the analysis ends here, however even though it did not happen in our example it might happen for two dimensional window that the acquired list of Voronoi tiles contains tiles that do not actually appear in the quasicrystal. We want to present our method for dealing with such eventuality here, since it is much easier to understand with one dimensional Voronoi tiles but is directly applicable to two dimensional Voronoi tiles as well. 
 
-For demonstration, let's add to our example list two more Voronoi tiles that we will eventually identify and remove (Figure \ref{fig_VoronoiCellsExampleArtificial}). We will regard these added Voronoi tiles as artificial. 
+For demonstration, let us add to our example list two more Voronoi tiles that we will eventually identify and remove (Figure \ref{fig_VoronoiCellsExampleArtificial}). We will regard these added Voronoi tiles as artificial. 
 
 \begin{figure}[h!]
 \centering
@@ -798,10 +804,10 @@ For demonstration, let's add to our example list two more Voronoi tiles that we 
 \label{fig_VoronoiCellsExampleArtificial}
 \end{figure}
 
-Now we will explore the relationship between a Voronoi tile $V(x)$ and the window $\Omega$ of the quasicrystal. For the Voronoi tile to exist in the quasicrystal the star map images of its center $x$ and domain $D(x)$ must fit inside the window $\Omega$. Let's denote the points of the domain as $\{d_1,\dots,d_k\}=D(x)$. 
+Now we will explore the relationship between a Voronoi tile $V(x)$ and the window $\Omega$ of the quasicrystal. For the Voronoi tile to exist in the quasicrystal the star map images of its center $x$ and domain $D(x)$ must fit inside the window $\Omega$. Let us denote the points of the domain as $\{d_1,\dots,d_k\}=D(x)$. 
 $$x^\ast\in\Omega \quad\wedge\quad d_i^\ast\in\Omega \quad\forall i\in \hat{k}$$
-$$q_i = d_i - x \quad\forall i\in\hat{k}$$
-$$x^\ast\in\Omega \quad\wedge\quad x^\ast+q_i^\ast\in\Omega \quad\forall i\in\hat{k}$$
+For centered domain $q_i = d_i - x,\;\forall i\in\hat{k}$ we get:
+%$$x^\ast\in\Omega \quad\wedge\quad x^\ast+q_i^\ast\in\Omega \quad\forall i\in\hat{k}$$
 $$x^\ast\in\Omega \quad\wedge\quad x^\ast\in\Omega-q_i^\ast \quad\forall i\in\hat{k}$$
 $$x^\ast\in\Omega|_{V(x)} \overset{\text{def}}{=}\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega$$
 
@@ -917,7 +923,7 @@ The second Voronoi tile we artificially added does however pass this filter. To 
 
 The intersection we used to eliminate some of the tiles contains more information. A point of quasicrystal whose star map image fits in the intersection will be surrounded by the corresponding domain: 
 $$x\in\quasi{\Omega} \quad\wedge\quad x^\ast\in\bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega \qquad\Rightarrow\qquad x+q_i\in\quasi{\Omega}\quad\forall\,i\in\hat{k}$$
-That however does not yet dictate the Voronoi tile that belongs to the point $x$. The intersections for various Voronoi tiles may overlap. A point of quasicrystal whose star map image fits in multiple intersections will be surrounded by multiple domains and thus the resulting Voronoi tile will be the smallest one of the acceptable ones. 
+That however does not yet define the Voronoi tile that belongs to the point $x$. The intersections for various Voronoi tiles may overlap. A point of quasicrystal whose star map image fits in multiple intersections will be surrounded by multiple domains and thus the resulting Voronoi tile will be the smallest one of the acceptable ones. 
 
 We illustrate this process with two figures. Figure \ref{fig_windowSectionsExampleList} shows a list of Voronoi tiles with corresponding window intersections. Note that the intersections do overlap. 
 
@@ -925,13 +931,28 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 
 \begin{figure}[h!]
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{ccc}
+& & \begin{tikzpicture}[scale=6]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\node at ($0.5*(-0.40237,0)+0.5*(-0.23080,0)$) {$I_1$};
+\node at ($0.5*(-0.23080,0)+0.5*(-0.18342,0)$) {$I_2$};
+\node at ($0.5*(-0.18342,0)+0.5*(-0.01184,0)$) {$I_3$};
+\node at (O) {$I_4$};
+\node at ($0.5*(0.18342,0)+0.5*(0.01184,0)$) {$I_5$};
+\node at ($0.5*(0.23080,0)+0.5*(0.18342,0)$) {$I_6$};
+\node at ($0.5*(0.40237,0)+0.5*(0.23080,0)$) {$I_7$};
+\end{tikzpicture} \\
+$D_1$ &
 % SM
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)-(M)$) rectangle ($(1,1)+(S)+(L)$);
 
 \draw [dotted] ($(O)$) -- ($(S)+(M)$);
 \draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
@@ -944,15 +965,27 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (-0.40237,0) -- (-0.18342,0);
 \end{tikzpicture} \\
+$D_2$ &
 % MS
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)-(S)$) rectangle ($(1,1)+(M)+(L)$);
 
 \draw [dotted] ($(O)$) -- ($(M)+(S)$);
 \draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(S)$);
@@ -965,15 +998,27 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (0.18342,0) -- (0.40237,0);
 \end{tikzpicture} \\
+$D_3$ &
 % SL
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)-(M)$) rectangle ($(1,1)+(S)+(L)$);
 
 \draw [dotted] ($(O)$) -- ($(S)+(L)$);
 \draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(L)$);
@@ -986,15 +1031,27 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (-0.40237,0) -- (-0.01184,0);
 \end{tikzpicture} \\
+$D_4$ &
 % LS
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)$) rectangle ($(1,1)+(L)+(L)$);
 
 \draw [dotted] ($(O)$) -- ($(L)+(S)$);
 \draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
@@ -1007,15 +1064,27 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (0.01184,0) -- (0.40237,0);
 \end{tikzpicture} \\
+$D_5$ &
 % ML
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)-(S)$) rectangle ($(1,1)+(M)+(L)$);
 
 \draw [dotted] ($(O)$) -- ($(M)+(L)$);
 \draw [ultra thick]  ($0.5*(M)$) -- ($(M)+0.5*(L)$);
@@ -1028,15 +1097,27 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (0.18342,0) -- (0.23080,0);
 \end{tikzpicture} \\
+$D_6$ &
 % LL
 \begin{tikzpicture}[scale=0.15]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(-1,-1)$) rectangle ($2*(L)+(1,1)$);
 
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
@@ -1049,7 +1130,16 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [dotted,-]  ($-1*(W)$) -- ($(W)$);
+\node at (-0.40237,0) {\tiny$|$};
+\node at ( 0.40237,0) {\tiny$|$};
+\node at (-0.23080,0) {\tiny$|$};
+\node at ( 0.23080,0) {\tiny$|$};
+\node at (-0.18342,0) {\tiny$|$};
+\node at ( 0.18342,0) {\tiny$|$};
+\node at (-0.01184,0) {\tiny$|$};
+\node at ( 0.01184,0) {\tiny$|$};
+
 \draw [ultra thick]  (-0.23080,0) -- (0.23080,0);
 \end{tikzpicture} \\
 \end{tabular}
@@ -1066,19 +1156,25 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
 
+\clip($(S)-(L)-(1,-5)$) rectangle ($(S)+(L)+(1,-1)$);
+\node [above] at (S) {\scriptsize $D_1\cup D_3$};
+
 \draw [dotted] ($(O)$) -- ($(S)+(L)$);
 \draw [ultra thick]  ($0.5*(S)$) -- ($(S)+0.5*(M)$);
 \fill ($(O)$) circle[radius=0.6];
 \fill ($(S)$) circle[radius=0.6];
 \fill ($(S)+(M)$) circle[radius=0.6];
 \fill ($(S)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{1.4em}
+\end{tikzpicture} \hspace{0em}
 % SM
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(L)-(L)-(6,-5)$) rectangle ($(L)+(L)+(6,-1)$);
+\node [above] at (L) {\scriptsize $D_1\cup D_3\cup D_6$};
 
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(M)$);
@@ -1087,7 +1183,7 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \fill ($(M)+(L)$) circle[radius=0.6];
 \fill ($(L)$) circle[radius=0.6];
 \fill ($(L)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{1.2em}
+\end{tikzpicture} \hspace{0em}
 % SL
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
@@ -1095,13 +1191,16 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
 
+\clip($(L)-(L)-(1,-5)$) rectangle ($(L)+(L)+(1,-1)$);
+\node [above] at (L) {\scriptsize $D_3\cup D_6$};
+
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($(M)+0.5*(S)$) -- ($(M)+(S)+0.5*(L)$);
 \fill ($(O)$) circle[radius=0.6];
 \fill ($(M)$) circle[radius=0.6];
 \fill ($(L)$) circle[radius=0.6];
 \fill ($(L)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{0.7em}
+\end{tikzpicture} \hspace{0.1em}
 % LL
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
@@ -1109,12 +1208,15 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
 
+\clip($(L)-(L)-(1,-5)$) rectangle ($(L)+(L)+(1,-1)$);
+\node [above] at (L) {\scriptsize $D_6$};
+
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(L)$);
 \fill ($(O)$) circle[radius=0.6];
 \fill ($(L)$) circle[radius=0.6];
 \fill ($(L)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{0.7em}
+\end{tikzpicture} \hspace{0.1em}
 % LS
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
@@ -1122,19 +1224,25 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
 
+\clip($(L)-(L)-(1,-5)$) rectangle ($(L)+(L)+(1,-1)$);
+\node [above] at (L) {\scriptsize $D_4\cup D_6$};
+
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($0.5*(L)$) -- ($(L)+0.5*(S)$);
 \fill ($(O)$) circle[radius=0.6];
 \fill ($(L)+(S)$) circle[radius=0.6];
 \fill ($(L)$) circle[radius=0.6];
 \fill ($(L)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{1.2em}
+\end{tikzpicture} \hspace{0em}
 % MS
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(L)-(L)-(6,-5)$) rectangle ($(L)+(L)+(6,-1)$);
+\node [above] at (L) {\scriptsize $D_2\cup D_4\cup D_5\cup D_6$};
 
 \draw [dotted] ($(O)$) -- ($(L)+(L)$);
 \draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(L)+0.5*(S)$);
@@ -1143,13 +1251,16 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \fill ($(S)$) circle[radius=0.6];
 \fill ($(L)$) circle[radius=0.6];
 \fill ($(L)+(L)$) circle[radius=0.6];
-\end{tikzpicture} \hspace{1.4em}
+\end{tikzpicture} \hspace{0em}
 % MS
 \begin{tikzpicture}[scale=0.1]
 \coordinate (O) at (0,0);
 \coordinate (S) at (2.41421,0);
 \coordinate (M) at (3.41421,0);
 \coordinate (L) at (5.82843,0);
+
+\clip($(L)-(L)-(1,-5)$) rectangle ($(L)+(L)+(1,-1)$);
+\node [above] at (L) {\scriptsize $D_2\cup D_4$};
 
 \draw [dotted] ($(O)$) -- ($(M)+(S)+(S)$);
 \draw [ultra thick]  ($(S)+0.5*(M)$) -- ($(S)+(M)+0.5*(S)$);
@@ -1163,30 +1274,33 @@ Figure \ref{fig_windowSectionsExampleWindow} shows that the smallest tile will i
 \coordinate (O) at (0,0);
 \coordinate (W) at (0.40237,0); % half
 
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
+\draw [|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (-0.40237,0) -- (-0.18342,0);
-
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (0.18342,0) -- (0.40237,0);
-
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (-0.40237,0) -- (-0.01184,0);
-
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (0.01184,0) -- (0.40237,0);
-
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (0.18342,0) -- (0.23080,0);
-
-\draw [dotted,|-|]  ($-1*(W)$) -- ($(W)$);
 \draw [|-|]  (-0.23080,0) -- (0.23080,0);
+\end{tikzpicture} 
+
+\begin{tikzpicture}[scale=18]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\node at ($0.5*(-0.40237,0)+0.5*(-0.23080,0)$) {$I_1$};
+\node at ($0.5*(-0.23080,0)+0.5*(-0.18342,0)$) {$I_2$};
+\node at ($0.5*(-0.18342,0)+0.5*(-0.01184,0)$) {$I_3$};
+\node at (O) {$I_4$};
+\node at ($0.5*(0.18342,0)+0.5*(0.01184,0)$) {$I_5$};
+\node at ($0.5*(0.23080,0)+0.5*(0.18342,0)$) {$I_6$};
+\node at ($0.5*(0.40237,0)+0.5*(0.23080,0)$) {$I_7$};
 \end{tikzpicture} 
 
 \caption{A window of a quasicrystal divided by overlapping intersections from Figure \ref{fig_windowSectionsExampleList}. Voronoi tile above each section shows which Voronoi tile would appear in the quasicrystal. }
 \label{fig_windowSectionsExampleWindow}
 \end{figure}
 
-We can also see that the second artificially added Voronoi tile does not pass this filter since it is bigger than another Voronoi tile whose intersection is a superset of the intersection of the artificial Voronoi tile. It could also happen that its intersection would be covered by multiple intersections of smaller Voronoi tiles. In this context covered means that for each point in the intersection of the artificial Voronoi tile there is an intersections of smaller Voronoi tile that also contains said point. 
+We can also see that the second artificially added Voronoi tile with the domain $D_5$  does not pass this filter since it is bigger than other Voronoi tiles (with domains $D_2$ and $D_4$) whose intersections are supersets of the intersection of the artificial Voronoi tile. It could also happen that the intersection would be covered by multiple intersections of smaller Voronoi tiles. In this context covered means that for each point in the intersection of the artificial Voronoi tile there is an intersections of smaller Voronoi tile that also contains said point. 
 
 
 That brings us to the idea that we could divide the window of a quasicrystal into sections corresponding to different Voronoi tiles. Each intersection $\Omega|_{V(x)}$ just needs to be adjusted by intersections of smaller Voronoi tiles $U$: 
@@ -1281,6 +1395,17 @@ This division is illustrated by Figure \ref{fig_windowSectionsExampleWindowFinal
 %\draw [|-|]  (-0.23080,0) -- (0.23080,0);
 \end{tikzpicture} 
 
+\begin{tikzpicture}[scale=18]
+\coordinate (O) at (0,0);
+\coordinate (W) at (0.40237,0); % half
+
+\node at ($0.5*(-0.40237,0)+0.5*(-0.18342,0)$) {$I_1\cup I_2$};
+\node at ($0.5*(-0.18342,0)+0.5*(-0.01184,0)$) {$I_3$};
+\node at (O) {$I_4$};
+\node at ($0.5*(0.18342,0)+0.5*(0.01184,0)$) {$I_5$};
+\node at ($0.5*(0.40237,0)+0.5*(0.18342,0)$) {$I_6\cup I_7$};
+\end{tikzpicture} 
+
 \caption{A window of a quasicrystal divided into sections corresponding to different Voronoi tiles. }
 \label{fig_windowSectionsExampleWindowFinal}
 \end{figure}
@@ -1299,26 +1424,28 @@ As per usual there are many ways to solve this. The method presented here is aga
 
 Now assume we have a window $\Omega$ and the list of Voronoi tiles of the quasicrystal $\quasi{\Omega}$: $\quasilist{\Omega} = \{V_1,\dots,V_k\}$ for $k\in\NN$. 
 
-Our method relies on the ability to calculate area of the section of the window of the quasicrystal that corresponds to a certain Voronoi tile $V\in\quasilist{\Omega}$: 
-$$\Phi(V) = \Omega|_{V}\setminus\bigcup_{U\in\quasilist{\Omega}:|U|<|V|}\Omega|_{U}$$
-Due to constraints of specific windows, that might not be possible or practical directly. However, if we are able to calculate the area of $\Omega|_{V}$ (i.e. the area of the intersection of several translated windows $\Omega$), we can use the inclusion--exclusion principle to calculate area of the union. Let us denote the list of Voronoi tiles smaller than $V\in\quasilist{\Omega}$ as $Q_V = \{U\in\quasilist{\Omega}:|U|<|V|\}$ and $A(\cdot)$ the area calculation. 
+Our method relies on our ability to calculate area of the section of the window of the quasicrystal that corresponds to a certain Voronoi tile $V\in\quasilist{\Omega}$: 
+$$\Phi(V) = \Omega|_{V}\setminus\bigcup_{\substack{U\in\quasilist{\Omega}\\|U|<|V|}}\Omega|_{U}$$
+Due to constraints of specific windows, it might not be possible or practical to directly calculate area of union of intersections. However, if we are able to calculate the area of $\Omega|_{V}$ (i.e.\ the area of the intersection of several translated windows $\Omega$), we can use the inclusion--exclusion principle to calculate area of the union. Let us denote the list of Voronoi tiles smaller than $V\in\quasilist{\Omega}$ as $Q_V = \{U\in\quasilist{\Omega}:|U|<|V|\}$. We will use $A(\cdot)$ to mark when we calculate the area of a set. 
 \begin{multline*}
-A\left(\bigcup_{U\in Q_V}\Omega|_{U}\right) = \sum_{U\in Q_V}A(\Omega|_U) - \sum_{U,W\in Q_V:|U|<|W|}A(\Omega|_U\,\cap\;\Omega|_W)\\
-+\sum_{U,W,R\in Q_V:|U|<|W|<|R|}A(\Omega|_U\,\cap\;\Omega|_W\,\cap\;\Omega|_R) - \dots + (-1)^{|Q_V|-1}A\left(\bigcap_{U\in Q_V} \Omega|_U\right)
+A\left(\bigcup_{U\in Q_V}\Omega|_{U}\right) = \sum_{U\in Q_V}A\big(\Omega|_U\big) - \sum_{\substack{U,W\in Q_V\\ |U|<|W|}}A\big(\Omega|_U\,\cap\;\Omega|_W\big)\\
++\sum_{\substack{U,W,R\in Q_V\\ |U|<|W|<|R|}}A\big(\Omega|_U\,\cap\;\Omega|_W\,\cap\;\Omega|_R\big) - \dots + (-1)^{|Q_V|-1}A\left(\bigcap_{U\in Q_V} \Omega|_U\right)
 \end{multline*}
-It might look a bit complicated but it is an algorithmic way for calculating an area of a union through addition and subtraction of areas of intersections, which we found as generally easier than directly calculating the area of the union. Thus we are now capable of calculating the area of $\Phi(V)$ for any $V\in\quasilist{\Omega}$. 
+It might look a bit complicated but it is an algorithmic way for calculating an area of the union through addition and subtraction of areas of intersections, which we found as generally easier than directly calculating the area of the union. Thus we are now capable of calculating the area of $\Phi(V)$ for any $V\in\quasilist{\Omega}$. 
 
-Now we shall use this capability to find the infimum $\omega_1\in\RR$ of window $\Omega$ sizes such that the Voronoi tile $V$ appears in the quasicrystal and the supremum $\omega_2\in\RR$ of window $\Omega$ sizes such that the Voronoi tile $V$ appears in the quasicrystal:
+We can of course scale a window $\Omega$ by $\omega\in\RR$: $\omega\Omega$. If $|\Omega|=1$ we can regard $\omega$ as the size of window $\omega\Omega$. Thus further in this section we will assume $|\Omega|=1$. 
+
+Now we shall use the capability to calculate area of a union to find the infimum $\omega_1\in\RR$ of window $\Omega$ sizes such that the Voronoi tile $V$ appears in the corresponding quasicrystal and the supremum $\omega_2\in\RR$ of window $\Omega$ sizes such that the Voronoi tile $V$ appears in the corresponding quasicrystal:
 $$\omega_1 = \inf\{\omega\in\RR \,|\, V\in\quasilist{\omega\Omega}\} \qquad \omega_2 = \sup\{\omega\in\RR \,|\, V\in\quasilist{\omega\Omega}\}$$
 This of course means that the Voronoi tile $V$ might not appear in quasicrystals $\quasi{\omega_1\Omega}$ and $\quasi{\omega_2\Omega}$. 
 
-The intersection $\Omega|_V$ is created by translating several windows $\Omega$ by the star map images of $V$'s domain. Here the important aspect is, that the domain of $V$ as well as the star map images are independent of $\Omega$. So we can easily explore how does the area of $(\omega\Omega)|_V$ change with changing $\omega\in\RR$:
+The intersection $\Omega|_V$ is created by translating several windows $\Omega$ by the star map images of $V$'s domain. Here the important aspect is that the domain of $V$ as well as the star map images are independent of $\Omega$. So we can easily explore how does the area of $(\omega\Omega)|_V$ change with $\omega\in\RR$:
 $$(\omega\Omega)|_V = \bigcap\limits_{i\in\hat{k}}(\omega\Omega-q_i^\ast)\cap\omega\Omega$$
 where $\{q_1,\dots,q_k\}$ is the domain of $V$. The important aspect here is that the area of the intersection changes with the same rate as the area of $\omega\Omega$. 
 
 Thus we can reverse engineer the formula for calculating $A((\omega\Omega)|_V)$ from $\omega$ and find $\omega_1$ as the largest $\omega$ for which the area $A((\omega\Omega)|_V)$ is zero. 
 
-Similarly thanks to the inclusion--exclusion principle we can reverse engineer the formula for calculating $A(\Phi(V))$ for variable window size and find $\omega_2$ as the smallest $\omega>\omega_1$ for which the area $A(\Phi(V))$ is zero. In this case however a greater care is necessary, since $A(\Phi(V))$ for increasing window size first increases and only after certain window size starts decreasing and it is the rate of this decrease that we are interested in. 
+Similarly thanks to the inclusion--exclusion principle we can reverse engineer the formula for calculating $A(\Phi(V))$ for variable window size and find $\omega_2$ as the smallest $\omega>\omega_1$ for which the area $A(\Phi(V))$ is zero. In this case however a greater care is necessary, since $A(\Phi(V))$ for increasing window size first increases and only after a certain window size it starts to decrease and it is the rate of this decrease that we are interested in. 
 
 \subsubsection{Example in one dimension}
 To show our method we will calculate $\omega_1$ and $\omega_2$ for this Voronoi tile $V$ from our example: 
@@ -1342,7 +1469,7 @@ To show our method we will calculate $\omega_1$ and $\omega_2$ for this Voronoi 
 \end{figure}
 
 We will use $\beta_8 = 1+\sqrt{2}$ to denote the Pisot-cyclotomic number that the quasicrystal is associated to. 
-Let $\Omega = [\frac{1}{2}, \frac{1}{2})$ be interval of length $1$ and $\omega\in\RR$. Obviously an interval's length changes linearly with its length. Thus we will assume following formula for the area of interval intersection: 
+Let $\Omega = [\frac{1}{2}, \frac{1}{2})$ be interval of length $1$ and $\omega\in\RR$. Obviously an interval's size changes linearly with its length. Thus we will assume following formula for the area of interval intersection: 
 $$A = a(\omega+d) \quad\text{for}\quad a,d\in\RR$$
 If we know two pairs of $\omega$ and area of corresponding interval intersection, we can calculate $a$ and $d$:
 $$(x_1,A_1) \qquad (x_2,A_2)$$
@@ -1418,14 +1545,14 @@ Thus according to our method the Voronoi tile $V$ first appears in quasicrystals
 \node [right] at ($(0.55000,0)+2*(trans04)$) {$1$};
 
 \end{tikzpicture} 
-\caption{The section $\Phi(V)$ for Voronoi tile in Figure \ref{fig_calculatingPeriodExample01} for window sizes in $[10-4\beta_8, 1]$. Horizontal slices represent the window of each size and the rhombus show the increasing and decreasing size of the section $\Phi(V)$. }
+\caption{The section $\Phi(V)$ for Voronoi tile in Figure \ref{fig_calculatingPeriodExample01} for window sizes in $[10-4\beta_8, 1]$. Horizontal slices represent the window of each size and the rhombus show the increasing and decreasing size of the section $\Phi(V)$. Note that $10-4\beta_8$ is outside the interval $(\frac{1}{\beta_8},1]$. }
 \label{fig_calculatingPeriodExample02}
 \end{figure}
 
 \subsubsection{Easier method for one dimensional quasicrystals}
-For the case of one dimensional quasicrystal we can calculate $\omega_1$ and $\omega_2$ for each Voronoi tile at the same time thanks to the stepping function. We have already used the stepping function to generate a superset of all finite sections for given window. There we have discovered that the stepping function's and its iteration's discontinuities divide the window by corresponding finite sections of distances between two consecutive points of the quasicrystal. Now we want to explore how these discontinuities and the finite sections of distances between two consecutive points evolve with changing window size. 
+For the case of one dimensional quasicrystal we can calculate $\omega_1$ and $\omega_2$ for each Voronoi tile at the same time thanks to the stepping function. We have already used the stepping function to generate a superset of all finite sections for a given window. There we have discovered that the stepping function's and its iteration's discontinuities divide the window by corresponding finite sections of distances between two consecutive points of the quasicrystal. Now we want to explore how these discontinuities and the finite sections of distances between two consecutive points evolve with changing window size. 
 
-If we plot the discontinuities as a function of the size of the window (Figure \ref{fig_steppingFunctionDiscontinuities}), we observe that there are window sizes with very different divisions then their surroundings (marked with dotted line). 
+If we plot the points of discontinuity as a function of the size of the window (Figure \ref{fig_steppingFunctionDiscontinuities}), we observe that there are window sizes having divisions very different to divisions of windows with similar size. These are marked with dotted line in Figure \ref{fig_steppingFunctionDiscontinuities}. 
 
 \begin{figure}[h!]
 \centering
@@ -1504,13 +1631,79 @@ If we plot the discontinuities as a function of the size of the window (Figure \
 \label{fig_steppingFunctionDiscontinuities}
 \end{figure}
 
-Now we describe the concept a bit more formally. Let us denote $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ the discontinuities of the $n$th iteration of the stepping function $(f^{\omega\Omega})^n$ as functions of the window size $\omega\in(1/\beta,1]$, where $|\Omega|=1$. As we see in Figure \ref{fig_steppingFunctionDiscontinuities}, these functions also have discontinuities and are also piece-wise linear. (The discontinuity in Figure \ref{fig_steppingFunctionDiscontinuities} is $3-\beta_8$ and for the second iteration also $2\beta_8-4$.) 
+Now we describe the concept a bit more formally. Let us denote $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ the points discontinuity of the $n$th iteration of the stepping function $(f^{\omega\Omega})^n$ as functions of the window size $\omega\in(1/\beta,1]$, where $|\Omega|=1$. As we see in Figure \ref{fig_steppingFunctionDiscontinuityFunctions}, these functions also have discontinuities and are also piece-wise linear. (In Figure \ref{fig_steppingFunctionDiscontinuityFunctions} the linear segments are divided by $3-\beta_8$ and for the second iteration also $2\beta_8-4$.) 
 
-For sake of clarity: we have denoted the discontinuities of the $n$th iteration of the stepping function as functions $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ that themselves do have discontinuities. 
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=5]
 
-The point of this confusing exercise is the following: inside their segments linearity the functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ divide the window in the same number of sections corresponding to the same lists of sequences of distances and the windows of sizes where at least one of the functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ is discontinuous are divided in smaller number of sections corresponding to unique list of sequences of distances. 
+\clip(-0.8,0) rectangle (2.8,-1.05);
 
-As we have observed in our examples (and as is quiet obvious) each Voronoi tile corresponds uniquely to only a pair of distances (i.e. a sequence of distances of length two). Thus the discontinuities of $d_{2,1}(\omega),\dots, d_{2,k}(\omega)$ are a union of the $\omega_1$s and $\omega_2$s for each Voronoi tile that appears in a quasicrystal with sindow size in $(1/\beta,1]$. 
+\coordinate (O) at (0,0);
+% stepping function
+\draw [opacity=0.4] (-0.51500,-1.03000) -- (O) -- (0.51500,-1.03000);
+
+\coordinate (trans01) at (0,-0.20711);
+\coordinate (trans02) at (0,-0.29289);
+\coordinate (trans03) at (0,-0.41421);
+\coordinate (trans04) at (0,-0.50000);
+
+\draw [dotted]  ($(-0.20711,0)+2*(trans01)$) -- ($(1.75000,0)+2*(trans01)$);
+\draw [dotted]  ($(-0.29289,0)+2*(trans02)$) -- ($(1.75000,0)+2*(trans02)$);
+\draw [dotted]  ($(0.78579,0)+2*(trans03)$) -- ($(1.75000,0)+2*(trans03)$);
+\draw [dotted]  ($(-0.50000,0)+2*(trans04)$) -- ($(1.75000,0)+2*(trans04)$);
+
+\draw (-0.20711,-0.41422) -- (-0.50000,-1) node [midway,left] {\tiny $d_{1,1}$};
+\draw (0.20711,-0.41422) -- (0.50000,-1) node [midway,left] {\tiny $d_{1,4}$};
+\draw [dashed] ($(0.20711,0)+2*(trans01)$) -- ($(-0.08579,0)+2*(trans04)$) node [midway,left] {\tiny $d_{1,3}$};
+\draw [decorate, decoration={snake,amplitude=1pt}] ($(0.03553,0)+2*(trans01)$) -- ($(0.12132,0)+2*(trans02)$) node [midway,left] {\tiny $d_{1,2}$};
+\draw [decorate, decoration={snake,amplitude=1pt}] ($(-0.29289,0)+2*(trans02)$) -- ($(-0.08579,0)+2*(trans04)$) node [midway,left] {\tiny $d_{1,2}$};
+
+
+
+% first iteration of stepping function
+\draw [opacity=0.4] (0.68500,-1.03000) -- (1.2,0) -- (1.71500,-1.03000);
+
+\coordinate (trans01) at (0.6,-0.20711);
+\coordinate (trans02) at (0.6,-0.29289);
+\coordinate (trans03) at (0.6,-0.41421);
+\coordinate (trans04) at (0.6,-0.50000);
+
+\draw (0.99289,-0.41422) -- (0.70000,-1) node [midway,left] {\tiny $d_{2,1}$};
+\draw (1.40711,-0.41422) -- (1.70000,-1) node [midway,left] {\tiny $d_{2,6}$};
+
+\draw [decorate, decoration={snake,amplitude=1pt}] ($(-0.20711,0)+2*(trans01)$) -- ($(-0.12132,0)+2*(trans02)$) node [midway,left] {\tiny $d_{2,2}$};
+\draw [decorate, decoration={snake,amplitude=1pt}] ($(-0.29289,0)+2*(trans02)$) -- ($(-0.08579,0)+2*(trans04)$) node [midway,left] {\tiny $d_{2,2}$};
+
+\draw [dashed] ($(-0.03553,0)+2*(trans01)$) -- ($(-0.12132,0)+2*(trans02)$) -- node [midway,left] {\tiny $d_{2,3}$} ($(0,0)+2*(trans03)$) -- ($(-0.08579,0)+2*(trans04)$);
+
+\draw [dotted] ($(0.03553,0)+2*(trans01)$) -- ($(0.12132,0)+2*(trans02)$) -- node [midway,left] {\tiny $d_{2,4}$} ($(0,0)+2*(trans03)$) -- ($(0.08579,0)+2*(trans04)$);
+
+\draw [decorate, decoration={coil,amplitude=1pt,segment length=4pt}] ($(0.12132,0)+2*(trans02)$) -- ($(0.20711,0)+2*(trans01)$) node [midway,left] {\tiny $d_{2,5}$};
+\draw [decorate, decoration={coil,amplitude=1pt,segment length=4pt}] ($(0.08579,0)+2*(trans04)$) -- ($(0.29289,0)+2*(trans02)$) node [midway,left] {\tiny $d_{2,5}$};
+
+
+\node [right] at ($(0.55000,0)+2*(trans01)$) {$\frac{1}{\beta_8}$};
+\node [right] at ($(0.55000,0)+2*(trans02)$) {$3-\beta_8$};
+\node [right] at ($(0.55000,0)+2*(trans03)$) {$2\beta_8-4$};
+\node [right] at ($(0.55000,0)+2*(trans04)$) {$1$};
+
+\node [right] at (0.3,-0.05) {$n=1$};
+\node [right] at (1.5,-0.05) {$n=2$};
+\end{tikzpicture} 
+\caption{Plots of functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ for $n=1$ and $n=2$. }
+\label{fig_steppingFunctionDiscontinuityFunctions}
+\end{figure}
+
+%For sake of clarity: we have denoted the discontinuities of the $n$th iteration of the stepping function as functions $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ that themselves do have discontinuities. 
+
+The point of this confusing exercise is the following: 
+\begin{itemize}
+\item inside their segments of linearity the functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ divide the window in the same number of sections corresponding to the same lists of sequences of distances 
+\item the windows of sizes where at least one of the functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ ends its segment of linearity are divided in smaller number of sections corresponding to unique list of sequences of distances
+\end{itemize} 
+
+As we have observed in our examples in previous section, each Voronoi tile corresponds uniquely to only a pair of distances (i.e.\ a sequence of distances of length two). Thus it is sufficient to only do one iteration of the stepping function $(f^\Omega)^2$ and the ends of linear segments of $d_{2,1}(\omega),\dots, d_{2,k}(\omega)$ are a union of the $\omega_1$s and $\omega_2$s for each Voronoi tile that appears in a quasicrystal with sindow size in $(1/\beta,1]$. 
 
 That concludes our analysis of one dimensional quasicrystals. Next we will continue with the analysis of quasicrystals with two dimensional windows. Results of our analysis applied to one dimensional quasicrystals can be seen in Chapter \ref{cha_results}. 
 \end{document}

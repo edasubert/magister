@@ -1,0 +1,15 @@
+\documentclass[text.tex]{subfiles}
+
+\begin{document}
+It is hopefully not at all surprising that we have not made all the necessary calculations by hand, instead we have used a computer. We will not delve into the code here since it is literal transcription of the methods and algorithms we have described, just with many more lines. There however is one key tool that made it all possible: precise arithmetic in $\field$. 
+
+It is possible to implement a custom number type that does calculations precisely in field $\field$ without rounding errors. Since we have only used quadratic $\beta$, the field $\field$ has the following simple form: 
+$$\field = \left\{\left. \frac{a+b\beta}{c} \right| a,b,c\in\ZZ \right\}$$
+In other words we can represent $x\in\field$ with just three integers and since integer arithmetic is precise then even $\field$ arithmetic is precise. 
+
+Equipped with this key tool we have implemented objects for points, point sets, Voronoi tiles, windows and others with necessary properties and methods. All together we were then able to literally transcribe all the formulas and algorithms from our method of analysis. 
+
+The code is available online, but it is a result of three years of rapid prototyping, so enter at your own risk. 
+
+\url{https://github.com/edasubert/quasicrystal}
+\end{document}

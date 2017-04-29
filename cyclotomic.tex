@@ -93,20 +93,31 @@ It turns out that the other two Galois isomorphisms of $\zeta$ do change $\beta$
 \section{Quasicrystal model}%--------------------------------------------------------------------------------
 There certainly are many ways to acquire a set that follows the attributes listed in Section \ref{sec_quasicrystalEaseIn}. We utilize the cut-and-project scheme described in Section \ref{sec_cutAndProject}. 
 
-Even though we showed the two dimensional quasicrystal as a subset of $\CC$ it is sometimes preferable to treat it as subset of $\RR^2$; the two coordinates are of course real and imaginary parts. Further we will mark the complex variants with ${}^\CC$. 
+Even though we showed the two dimensional quasicrystal as a subset of $\CC$ it is sometimes preferable to treat it as a subset of $\RR^2$. Thus we present two definitions of our model of a quasicrystal, one in $\CC$ (Definition \ref{def_quasicrystalComplex}) and one in $\RR^2$ (Definition \ref{def_quasicrystal}). 
+
+\begin{definition}\label{def_quasicrystalComplex}
+Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi \i/n}$). 
+Further, let $\ast^\CC$ be a Galois isomorphism of $\zeta$, such that $\beta^{\ast^\CC} = \beta'$. 
+Let  $M^\CC = \ring+\ring\zeta$ and $N^\CC=\ring[\zeta^{\ast^\CC}]$.
+Lastly, let $\Omega^\CC\subset N^\CC$ be bounded with nonempty interior. 
+The \textbf{complex model of two dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega^\CC$} is the set:
+$$\quasi{\Omega^\CC} = \{ x \in M^\CC\; |\; x^{\ast^\CC}\in \Omega^\CC\}$$
+\end{definition}
+
+Following Definition \ref{def_quasicrystal} uses objects defined in Definition \ref{def_quasicrystalComplex}. 
 
 \begin{definition}\label{def_quasicrystal}
-Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi \i/n}$). \\
-Further let $\ast^\CC$ be a Galois isomorphism of $\zeta$, such that $\beta^{\ast^\CC} = \beta'$ and let the real variant $\ast:\RR^2\to\RR^2$ be defined as $(x,y)^\ast = (\Re{\big((x+iy)^{\ast^\CC}\big)}, \Im{\big((x+iy)^{\ast^\CC}\big)})$. \\
+Let $n\in\NN\setminus\{2,3,4,6\}$. Let $\beta$ be a quadratic Pisot-cyclotomic number of order $n$, associated to $\rho = 2\cos\left(2\pi/n\right)$ (and $\zeta = e^{2\pi \i/n}$). 
+Further, let $\ast:\RR^2\to\RR^2$ be defined as $(x,y)^\ast = (\Re{\big((x+iy)^{\ast^\CC}\big)}, \Im{\big((x+iy)^{\ast^\CC}\big)})$. 
 Let $v_1, v_2\in\RR^2$:
 $$v_1=(1,0)\quad\text{and}\quad v_2 = (\Re{(\zeta)}, \Im{(\zeta)})$$
-and for the complex variant $M^\CC = \ring+\ring\zeta$ let the real variant be $M = \ring v_1+\ring v_2$, similarly for $N^\CC=\ring[\zeta^{\ast^\CC}]$ let $N = \ring v_1^\ast+\ring v_2^\ast$.\\
-Lastly let $\Omega\subset N$ be bounded with nonempty interior. \\
+Let $M = \ring v_1+\ring v_2$ and similarly let $N = \ring v_1^\ast+\ring v_2^\ast$.
+Lastly, let $\Omega\subset N$ be bounded with nonempty interior. 
 The \textbf{model of two dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\}$$
 \end{definition}
 
-So far the entire theses was purely abstract. To give you an example of what a quasicrystal might look like, there is the image \ref{fig_quasicrystalFirstExample} which shows finite section of a two dimensional quasicrystal with $8$-fold rotational symmetry.
+So far the entire theses was purely abstract. To illustrate what a quasicrystal might look like, there is Figure \ref{fig_quasicrystalFirstExample} which shows finite section of a two dimensional quasicrystal with $8$-fold rotational symmetry.
 
 \begin{figure}[h]
 \centering
@@ -115,13 +126,13 @@ So far the entire theses was purely abstract. To give you an example of what a q
 \label{fig_quasicrystalFirstExample}
 \end{figure}
 
-To validate our quasicrystal model we of course have to show that it follows the attributes from Section \ref{sec_quasicrystalEaseIn}. However first we list few properties of our model which will help us show that. 
+To validate our quasicrystal model we of course have to show that it follows the attributes from Section \ref{sec_quasicrystalEaseIn}. However first we list few properties of our model which will help us show the validity of our model. 
 
 \begin{itemize}
 \item Inclusion property: $$\Omega_1\subset\Omega_2 \quad\Rightarrow\quad \quasi{\Omega_1}\subset\quasi{\Omega_2}$$
 \item Union property: $$\quasi{\Omega_1\cup\Omega_2} \,=\, \quasi{\Omega_1}\cup\quasi{\Omega_2}$$
-\item Translation property: $$\quasi{\Omega+x^\ast} \quad=\quad \quasi{\Omega}+x\qquad \text{for}\; x\in M$$
-\item Scaling property: $$\quasi{\beta\Omega} = \beta'\quasi{\Omega}$$
+\item Translation property: $$\quasi{\Omega+x^\ast} \,=\, \quasi{\Omega}+x\qquad \text{for}\; x\in M$$
+\item Scaling property: $$\quasi{\beta\Omega} \,=\, \beta'\quasi{\Omega}$$
 \end{itemize}
 
 And now to validate our model. 
@@ -129,9 +140,9 @@ And now to validate our model.
 \begin{enumerate}
 \item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
 \item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
-The result of the cut-and-project scheme is a Delone set if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
+The result of the cut-and-project scheme is a Delone set \cite{Lagarias} if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
 \item finite local complexity: $$\big|\{V(x)-x\,|\, x\in \Lambda\}\big|<\infty$$
-It has been shown that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
+It has been shown \cite{Lagarias} that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
 \item rotational symmetry: $$\exists\,\zeta = e^{2\pi \i/n}:\; \zeta\Lambda^\CC = \Lambda^\CC$$
 Rotational symmetry appears in quasicrystal if the window $\Omega$ has the same rotational symmetry.
 \item dilation: $$\exists\,b\in\RR\setminus\{-1,1\}:\; b\Lambda\subset \Lambda$$
@@ -142,7 +153,7 @@ $$\beta\quasi{\Omega} = \quasi{\beta'\Omega} \subset \quasi{\Omega}$$
 Having quasicrystal defined and  our model validated, we shall present our plan for the analysis. 
 
 \section{General quasicrystal analysis}
-In this section we will outline general method of analysis of any quasicrystal. Later we will use this method to analyze two dimensional quasicrystals. 
+In this section we will outline a general method of analysis of any quasicrystal. Later we will use this method to analyze two dimensional quasicrystals. 
 
 Analysis should reveal the structure of the points of the quasicrystal, for us that means the list of Voronoi tiles for each quasicrystal. 
 
@@ -150,16 +161,16 @@ To acquire such list we follow these steps:
 \begin{enumerate}
 \item \textbf{Acquire arbitrary finite section of the quasicrystal}
 
-In other words this means creating algorithm that for finite section $P\subset\RR^d$ returns $P\cap\quasi{\Omega}$. 
-\item \textbf{Estimate covering radius of the quasicrystal $R_C$}
+In other words this means creating an algorithm that for a finite section $P\subset\RR^d$ returns $P\cap\quasi{\Omega}$. 
+\item \textbf{Estimate the covering radius $R_C$ of the quasicrystal}
 
-We are specifically interested in the upper bound $\hat{R}_C$ of the covering radius. This is necessary since on a Delone set Voronoi tile's domain's points can be no further from the center then double of the covering radius. 
-\item \textbf{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
+We are specifically interested in the upper bound $\hat{R}_C$ of the covering radius. This is necessary since in a Delone set Voronoi tile's domain's points can be no further from the center then double of the covering radius. 
+\item \textbf{Generate a superset of all finite sections spanning $B(2\hat{R}_C)$}
 
 Each of these finite sections represents one Voronoi tile that appears in the quasicrystal's voronoi diagram. 
 \item \textbf{Filter the superset to the final list of Voronoi tiles}
 
-Due to technical constrains the previous step may have created more tiles than actually are in the list of Voronoi tiles and so it needs to be filtered. 
+Due to technical constrains previous step may have created more tiles than there actually are in the list of Voronoi tiles and so it needs to be filtered. 
 \end{enumerate}
 
 There is also a sort of a fifth step of the analysis that is no longer fixed on a single window of certain size, but explores the changes in the quasicrystal with changing window size. 
@@ -170,7 +181,7 @@ There is also a sort of a fifth step of the analysis that is no longer fixed on 
 A Voronoi tile generally appears in quasicrystals for whole interval of window sizes. Goal of this step is to establish the endpoints of such interval. 
 \end{enumerate}
 
-These steps are general enough to analyze any quasicrystal associated with any Pisot-cyclotomic number and in any dimension. Unfortunately they are also too general and we will need to specify them for each specific quasicrystal. 
+These steps are general enough to analyze any quasicrystal linked to any Pisot-cyclotomic number and in any dimension. Unfortunately, they are also too general and we will need to specify them for each specific quasicrystal. 
 
 We close this chapter and our general overview of quasicrystals with discussion of window shapes. It is obviously impossible to analyze a quasicrystal for arbitrary bounded $\Omega\subset N$ with nonempty interior. That is however not necessary. Not every two windows generate different quasicrystals, especially since we do not consider translated and/or $\beta$~inflated quasicrystals to be different. 
 
@@ -197,7 +208,7 @@ Of course even after all this limiting, the set of windows is still infinite. Th
 
 To summarize we will analyze quasicrystals for windows in shape of rhombus, regular $n$-gon and a circle centered around the origin of diameter in $(1/\beta,1]$. Technically there is an infinite amount of these windows as well however as we will see later it is already manageable. 
 
-Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i. e. we will exclude the boundary. The exception is the rhombus for reasons we will also explain later. 
+Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i.e.\ we will exclude the boundary. The exception is the rhombus for reasons we will also explain later. 
 
 Now we have quasicrystal defined, model explored and windows limited. In the next chapter we will finally start the analysis. 
 \end{document}
