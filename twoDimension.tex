@@ -173,7 +173,7 @@ $$\Omega = \bigcup\limits_{i\in\hat{m}}\Omega|_{V_i} \qquad\Rightarrow\qquad \ha
 
 Improving the covering radius estimate in this way was absolutely vital to our work. 
 
-\subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}
+\subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}\label{sec_2DsupersetFiniteSections}
 This step is also solved by the rhombus decomposition and the inclusion property. Previously we have developed an algorithm to acquire all possible finite sections of a quasicrystal with one dimensional window spanning a given length. If we compose each pair of these into finite sections of a quasicrystal with rhombic window, we acquire a list of all possible finite sections spanning a rhombic area. Thus the length given to the algorithm to acquire all possible finite sections of a quasicrystal with one dimensional window must be the length of an edge of a rhombus circumscribed to $B(2\hat{R}_C)$. 
 
 Finding a formula to calculate the length of an edge of the rhombus $a$ circumscribed to $B(2\hat{R}_C)$ from $\hat{R}_C$ is just a trigonometric exercise and we won't cover it here. The formula is: 
@@ -228,7 +228,7 @@ Unlike with one dimensional quasicrystals where we have picked left-closed right
 
 First what exactly are these zero density configurations and where do they come from. For a particular window $\Omega$ and a particular Voronoi tile $V$ it may happen that the intersection $\Omega|_V$ is just a single point. Such Voronoi tile would appear in the quasicrystal $\quasi{\Omega}$ only once. Additionally for the $n$-gonal window it may happen that a particular Voronoi tile has the intersection of a line segment. Such Voronoi tile would appear in the quasicrystal only countably infinitely many times along a line. Such Voronoi tiles are called Voronoi tiles of zero density and their domains are the zero density configurations. 
 
-Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only after add the rest them to the list of Voronoi tiles. 
+Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 (Section \ref{sec_2DsupersetFiniteSections}) and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only after add the rest them to the list of Voronoi tiles. 
 
 \subsection{Establish the period of each Voronoi tile}
 Here we also use the general method described in Section \ref{sec_1DperiodOfVoronoiTile}. It differs only in the rate of growth of the area of the window, so we only illustrate the process with an example. 
