@@ -19,7 +19,7 @@ Lastly, let $\Omega\subset N$ be bounded with nonempty interior.
 
 Then the \textbf{model of one dimensional quasicrystal linked to irrationality $\beta$ and window $\Omega$} is the set:
 $$\quasi{\Omega} = \{ x \in M\; |\; x^\ast\in \Omega\} = \big\{ x \in \ring\; |\; x'\in \Omega\big\}$$
-Convex bounded one dimensional window is a line segment, which is in one dimension represented by an interval, specifically we will use left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1/\beta,1]$. 
+Convex bounded one dimensional window is a line segment, which is in one dimension represented by an interval, specifically we will use left-closed right-open interval $\Omega = \big[-\frac{\ell}{2}, \frac{\ell}{2}\big)$ where $\ell\in (1,\beta]$. 
 
 As we see in the following breakdown, quasicrystals with different openness or closeness of the window differ only by at most a single point. 
 
@@ -186,10 +186,10 @@ $$\left\{\left. y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n+1}-y^{
 And applying $\frac{c}{\beta}=-\beta-b$ we get:
 \begin{align*}
 \left\{\left. y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n+1}-y^{\left[-\frac{\beta^k}{2}, \frac{\beta^k}{2}\right)}_{n}\,\right|\, n\in\NN \right\} &= \left\{\left|(-1)^k\beta(\beta+b)^k\right|, \left|(-1)^k\beta(\beta+b)^k\pm(-1)^k(\beta+b)^k\right|\right\} \\
-&= \left\{\left|\beta(\beta+b)^k\right|, \left|\beta(\beta+b)^k\pm(\beta+b)^k\right|\right\}
+&= \left\{\left|\beta(\beta+b)^k\right|, \left|(\beta\pm 1)(\beta+b)^k\right|\right\}
 \end{align*}%]$$
 
-In the scope of our interest we now know the set of distances between two consecutive points for window of size $1$: $\{\beta, \beta \pm 1\}$ and just outside of our scope for window of size $\frac{1}{\beta}$:~$\left\{\left|\frac{b\beta}{c}+1\right|, \left|\frac{b\beta\pm\beta}{c} + 1\right|\right\}$. Now we need to expand this knowledge to the entire interval $(\frac{1}{\beta},1]$. %]
+In the scope of our interest we now know the set of distances between two consecutive points for window of size $\beta$: $\left\{\left|\beta^2+b\beta\right|, \left|(\beta\pm 1)(\beta+b)\right|\right\}$ and just outside of our scope for window of size $1$:~$\{\beta, \beta \pm 1\}$. Now we need to expand this knowledge to the entire interval $(1,\beta]$. %]
 
 It is possible to do this expansion for a general quadratic Pisot-cyclotomic $\beta$, as for example in \cite{distances}. We analyzed each $\beta$ individually, however there are several facts that apply generally and are important for further progress: 
 \begin{itemize}
@@ -257,7 +257,7 @@ The stepping function is a piecewise linear function. Each one of the two or thr
 
 \begin{figure}[h!]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.98]
 \draw [-] (0,5.3) -- (0,0) -- (5.3,0);
 
 \draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (0,3.6395) 			-- (1.3603,5) node [midway, above left] {$M$};
@@ -276,16 +276,16 @@ The stepping function is a piecewise linear function. Each one of the two or thr
 %\node [above left] at (3.9503175475,1.04968245285) {$C$};
 %\node [above left] at (4.7876587735,0.4246824527/2) {$E$};
 
-\node [below left] at (0,0) {$-\frac{1+\sqrt{2}}{6}$};
-\node [below] at (5,0) {$\frac{1+\sqrt{2}}{6}$};
-\node [left] at (0,5) {$\frac{1+\sqrt{2}}{6}$};
+\node [below left] at (0,0) {$-\frac{3+2\sqrt{2}}{6}$};
+\node [below] at (5,0) {$\frac{3+2\sqrt{2}}{6}$};
+\node [left] at (0,5) {$\frac{3+2\sqrt{2}}{6}$};
 
 \node [above right] at (5,5) {$f^\Omega$};
 \end{tikzpicture}
 %
 %--------------------------------------------------
 %
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.98]
 \draw [-] (0,5.3) -- (0,0) -- (5.3,0);
 
 \draw [thick,*-o,shorten <=-3pt,shorten >=-3pt] (0,1.0659) 			-- (1.3603,2.4264) node [midway, above left] {$MS$};
@@ -306,13 +306,13 @@ The stepping function is a piecewise linear function. Each one of the two or thr
 %\node [above left] at (3.9503175475,1.04968245285) {$C$};
 %\node [above left] at (4.7876587735,0.4246824527/2) {$E$};
 
-\node [below left] at (0,0) {$-\frac{1+\sqrt{2}}{6}$};
-\node [below] at (5,0) {$\frac{1+\sqrt{2}}{6}$};
-\node [left] at (0,5) {$\frac{1+\sqrt{2}}{6}$};
+\node [below left] at (0,0) {$-\frac{3+2\sqrt{2}}{6}$};
+\node [below] at (5,0) {$\frac{3+2\sqrt{2}}{6}$};
+\node [left] at (0,5) {$\frac{3+2\sqrt{2}}{6}$};
 
 \node [above right] at (5,5) {$(f^\Omega)^2$};
 \end{tikzpicture}
-\caption{Example of the stepping function for $\beta_8 = 1+\sqrt{2}$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. On the left there is just the stepping function and on the right there is its second iteration. Letters $S$, $M$, $L$ mark different lengths of distances. }%]$
+\caption{Example of the stepping function for $\beta_8 = 1+\sqrt{2}$ and window $\Omega = \left[-\frac{3+2\sqrt{2}}{6},\frac{3+2\sqrt{2}}{6}\right)$. On the left there is just the stepping function and on the right there is its second iteration. Letters $S$, $M$, $L$ mark different lengths of distances. }%]$
 \label{fig_steppingFunction}
 \end{figure}
 
@@ -462,7 +462,7 @@ MSLS & SLLS & LSMS & MSMS \\
 \fill ($(M)+(S)+(M)+(S)$) circle[radius=0.6];
 \end{tikzpicture} \\
 \end{tabular}
-\caption{Example of the list of sequences of distances for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Letters $S$, $M$, $L$ mark different lengths of distances. $S = \beta_8$, $M = \beta_8+1$ and $L = 2\beta_8+1$. Below each sequence of distances is the created finite section of the quasicrystal. }%]$
+\caption{Example of the list of sequences of distances for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{3+2\sqrt{2}}{6},\frac{3+2\sqrt{2}}{6}\right)$. Letters $S$, $M$, $L$ mark different lengths of distances. $S = 1$, $M = \beta_8-1$ and $L = \beta_8$. Below each sequence of distances is the created finite section of the quasicrystal. }%]$
 \label{fig_finiteSectionsExample}
 \end{figure}
 
@@ -622,7 +622,7 @@ MSLS & SLLS & LSMS & MSMS \\
 \fill ($(M)+(S)+(M)+(S)$) circle[radius=0.6];
 \end{tikzpicture} \\
 \end{tabular}
-\caption{Example of the Voronois tiles on the list of finite sections of the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
+\caption{Example of the Voronois tiles on the list of finite sections of the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{3+2\sqrt{2}}{6},\frac{3+2\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
 \label{fig_finiteSectionsVoronoiExample}
 \end{figure}
 
@@ -697,7 +697,7 @@ As we can see in the example in Figure \ref{fig_finiteSectionsVoronoiExample}, s
 \fill ($(S)+(L)$) circle[radius=0.6];
 \end{tikzpicture} \\
 \end{tabular}
-\caption{Example of unique Voronois tiles (from Figure \ref{fig_finiteSectionsVoronoiExample}) with their domains from the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
+\caption{Example of unique Voronois tiles (from Figure \ref{fig_finiteSectionsVoronoiExample}) with their domains from the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{3+2\sqrt{2}}{6},\frac{3+2\sqrt{2}}{6}\right)$. Voronoi tiles are represented by the thick line. }%]$
 \label{fig_VoronoiCellsExample}
 \end{figure}
 
@@ -800,7 +800,7 @@ For demonstration, let us add to our example list two more Voronoi tiles that we
 \fill ($(M)+(L)$) circle[radius=0.6];
 \end{tikzpicture} \\
 \end{tabular}
-\caption{Example of the Voronois tiles with their domains from the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{1+\sqrt{2}}{6},\frac{1+\sqrt{2}}{6}\right)$ with \textbf{two extra} Voronoi tiles that do not appear in the quasicrystal. }%]$
+\caption{Example of the Voronois tiles with their domains from the quasicrystal for $\beta_8 = 1+\sqrt{2}$, $n=4$ and window $\Omega = \left[-\frac{3+2\sqrt{2}}{6},\frac{3+2\sqrt{2}}{6}\right)$ with \textbf{two extra} Voronoi tiles that do not appear in the quasicrystal. }%]$
 \label{fig_VoronoiCellsExampleArtificial}
 \end{figure}
 
@@ -1477,25 +1477,25 @@ $$a = \frac{A_1-A_2}{x_1-x_2} \qquad d=\frac{A_1}{a}-x_1$$
 
 Now to get $\omega_1$ we calculate the area $A((\omega\Omega)|_V)$ for two different values of $\omega$ and use the formulas above: 
 \begin{align*}
-x_1&=\frac{\beta_8}{3} & A_1&=\frac{13\beta_8-30}{3} \\
-x_2&=\frac{\beta_8-1}{2} & A_2&=\frac{9\beta_8-21}{2} \\
+x_1&=1 & A_1&=5-2\beta_8 \\
+x_2&=\beta_8-1 & A_2&=3-\beta_8 \\
 \end{align*}
-$$a = \frac{26\beta_8-60-27\beta_8+63}{2\beta_8-3\beta_8+3} = 1$$
-$$d = \frac{13\beta_8-30}{3}-\frac{\beta_8}{3} = \frac{12\beta_8-30}{3}$$
+$$a = \frac{5-2\beta_8-3+\beta_8}{1-\beta_8+1\beta_8+3} = 1$$
+$$d = 5-2\beta_8-1 = 4-2\beta_8$$
 We are looking for the area $A((\omega\Omega)|_V)$ to be zero:
-$$\omega_1+d=0\quad\Rightarrow\quad \omega_1 = 10-4\beta_8$$
+$$\omega_1+d=0\quad\Rightarrow\quad \omega_1 = 2\beta_8-4$$
 
 To get $\omega_2$ we calculate the area $A(\Phi(V))$ for two different values of $\omega$ and again use the formulas above: 
 \begin{align*}
-x_1&=\frac{\beta_8}{3} & A_1&=\frac{5\beta_8-12}{3} \\
-x_2&=\frac{\beta_8-1}{2} & A_2&=\frac{3\beta_8-7}{2} \\
+x_1&=\frac{2\beta_8}{3} & A_1&=\frac{6-2\beta_8}{3} \\
+x_2&=\frac{\beta_8+3}{3} & A_2&=\frac{3-\beta_8}{3} \\
 \end{align*}
-$$a = \frac{10\beta_8-24-9\beta_8+21}{2\beta_8-3\beta_8+3} = -1$$
-$$d = \frac{-5\beta_8+12}{3}-\frac{\beta_8}{3} = 4-2\beta_8$$
+$$a = \frac{6-2\beta_8+\beta_8-3}{2\beta_8-\beta_8-3} = -1$$
+$$d = \frac{2\beta_8-6}{3}-\frac{2\beta_8}{3} = -2$$
 Again we are looking for the area $A(\Phi(V))$ to be zero:
-$$\omega_2+d=0\quad\Rightarrow\quad \omega_2 = 2\beta_8-4$$
+$$\omega_2+d=0\quad\Rightarrow\quad \omega_2 = 2$$
 
-Thus according to our method the Voronoi tile $V$ first appears in quasicrystals with windows greater than $\omega_1\Omega = [-5+2\beta_8, 5-2\beta_8)$ and disappears just before window $\omega_2\Omega = [2-\beta_8, -2+\beta_8)$. Which is also in accordance with the second method we will show, that is however only applicable to one dimensional quasicrystals. 
+Thus according to our method the Voronoi tile $V$ first appears in quasicrystals with windows greater than $\omega_1\Omega = [\beta_8-2, \beta_8-2)$ and disappears just before window $\omega_2\Omega = [1,1)$. Which is also in accordance with the second method we will show, that is however only applicable to one dimensional quasicrystals. 
 
 \begin{figure}[h!]
 \centering
@@ -1538,14 +1538,14 @@ Thus according to our method the Voronoi tile $V$ first appears in quasicrystals
 %\draw ($(-0.29289,0)+2*(trans02)$) -- ($(-0.08579,0)+2*(trans04)$);
 %\draw ($(0.29289,0)+2*(trans02)$) -- ($(0.08579,0)+2*(trans04)$);
 
-\node [right] at ($(0.55000,-0.34315)$) {$10-4\beta_8$};
+\node [right] at ($(0.55000,-0.34315)$) {$2\beta_8-4$};
 
-\node [right] at ($(0.55000,0)+2*(trans01)$) {$\frac{1}{\beta_8}$};
-\node [right] at ($(0.55000,0)+2*(trans03)$) {$2\beta_8-4$};
-\node [right] at ($(0.55000,0)+2*(trans04)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans01)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans03)$) {$2$};
+\node [right] at ($(0.55000,0)+2*(trans04)$) {$\beta_8$};
 
 \end{tikzpicture} 
-\caption{The section $\Phi(V)$ for Voronoi tile in Figure \ref{fig_calculatingPeriodExample01} for window sizes in $[10-4\beta_8, 1]$. Horizontal slices represent the window of each size and the rhombus show the increasing and decreasing size of the section $\Phi(V)$. Note that $10-4\beta_8$ is outside the interval $(\frac{1}{\beta_8},1]$. }
+\caption{The section $\Phi(V)$ for Voronoi tile in Figure \ref{fig_calculatingPeriodExample01} for window sizes in $[2\beta_8-4, \beta_8]$. Horizontal slices represent the window of each size and the rhombus show the increasing and decreasing size of the section $\Phi(V)$. Note that $2\beta_8-4$ is outside the interval $(1,\beta_8]$. }
 \label{fig_calculatingPeriodExample02}
 \end{figure}
 
@@ -1618,20 +1618,20 @@ If we plot the points of discontinuity as a function of the size of the window (
 \draw ($(-0.29289,0)+2*(trans02)$) -- ($(-0.08579,0)+2*(trans04)$);
 \draw ($(0.29289,0)+2*(trans02)$) -- ($(0.08579,0)+2*(trans04)$);
 
+\node [right] at ($(0.55000,0)+2*(trans01)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans02)$) {$\beta_8-1$};
+\node [right] at ($(0.55000,0)+2*(trans03)$) {$2$};
+\node [right] at ($(0.55000,0)+2*(trans04)$) {$\beta_8$};
 
-\node [right] at ($(0.55000,0)+2*(trans01)$) {$\frac{1}{\beta_8}$};
-\node [right] at ($(0.55000,0)+2*(trans02)$) {$3-\beta_8$};
-\node [right] at ($(0.55000,0)+2*(trans03)$) {$2\beta_8-4$};
-\node [right] at ($(0.55000,0)+2*(trans04)$) {$1$};
 
 \node [right] at (0.3,-0.05) {$f^\Omega$};
 \node [right] at (1.5,-0.05) {$(f^\Omega)^2$};
 \end{tikzpicture} 
-\caption{Discontinuities of the stepping function $f^\Omega$ and its second iteration $(f^\Omega)^2$ as a function of the size of the window $\Omega$ for window size in $(1/\beta,1]$ where $\beta_8 = 1+\sqrt{2}$. }
+\caption{Discontinuities of the stepping function $f^\Omega$ and its second iteration $(f^\Omega)^2$ as a function of the size of the window $\Omega$ for window size in $(1,\beta_8]$ where $\beta_8 = 1+\sqrt{2}$. }
 \label{fig_steppingFunctionDiscontinuities}
 \end{figure}
 
-Now we describe the concept a bit more formally. Let us denote $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ the points discontinuity of the $n$th iteration of the stepping function $(f^{\omega\Omega})^n$ as functions of the window size $\omega\in(1/\beta,1]$, where $|\Omega|=1$. As we see in Figure \ref{fig_steppingFunctionDiscontinuityFunctions}, these functions also have discontinuities and are also piece-wise linear. (In Figure \ref{fig_steppingFunctionDiscontinuityFunctions} the linear segments are divided by $3-\beta_8$ and for the second iteration also $2\beta_8-4$.) 
+Now we describe the concept a bit more formally. Let us denote $d_{n,1}(\omega)\leq\dots\leq d_{n,k}(\omega)$ the points discontinuity of the $n$th iteration of the stepping function $(f^{\omega\Omega})^n$ as functions of the window size $\omega\in(1,\beta]$, where $|\Omega|=1$. As we see in Figure \ref{fig_steppingFunctionDiscontinuityFunctions}, these functions also have discontinuities and are also piece-wise linear. (In Figure \ref{fig_steppingFunctionDiscontinuityFunctions} the linear segments are divided by $\beta_8-1$ and for the second iteration also $2$.) 
 
 \begin{figure}[h!]
 \centering
@@ -1682,11 +1682,10 @@ Now we describe the concept a bit more formally. Let us denote $d_{n,1}(\omega)\
 \draw [decorate, decoration={coil,amplitude=1pt,segment length=4pt}] ($(0.12132,0)+2*(trans02)$) -- ($(0.20711,0)+2*(trans01)$) node [midway,left] {\tiny $d_{2,5}$};
 \draw [decorate, decoration={coil,amplitude=1pt,segment length=4pt}] ($(0.08579,0)+2*(trans04)$) -- ($(0.29289,0)+2*(trans02)$) node [midway,left] {\tiny $d_{2,5}$};
 
-
-\node [right] at ($(0.55000,0)+2*(trans01)$) {$\frac{1}{\beta_8}$};
-\node [right] at ($(0.55000,0)+2*(trans02)$) {$3-\beta_8$};
-\node [right] at ($(0.55000,0)+2*(trans03)$) {$2\beta_8-4$};
-\node [right] at ($(0.55000,0)+2*(trans04)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans01)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans02)$) {$\beta_8-1$};
+\node [right] at ($(0.55000,0)+2*(trans03)$) {$2$};
+\node [right] at ($(0.55000,0)+2*(trans04)$) {$\beta_8$};
 
 \node [right] at (0.3,-0.05) {$n=1$};
 \node [right] at (1.5,-0.05) {$n=2$};
@@ -1703,7 +1702,7 @@ The point of this confusing exercise is the following:
 \item the windows of sizes where at least one of the functions $d_{n,1}(\omega),\dots, d_{n,k}(\omega)$ ends its segment of linearity are divided in smaller number of sections corresponding to unique list of sequences of distances
 \end{itemize} 
 
-As we have observed in our examples in previous section, each Voronoi tile corresponds uniquely to only a pair of distances (i.e.\ a sequence of distances of length two). Thus it is sufficient to only do one iteration of the stepping function $(f^\Omega)^2$ and the ends of linear segments of $d_{2,1}(\omega),\dots, d_{2,k}(\omega)$ are a union of the $\omega_1$s and $\omega_2$s for each Voronoi tile that appears in a quasicrystal with sindow size in $(1/\beta,1]$. 
+As we have observed in our examples in previous section, each Voronoi tile corresponds uniquely to only a pair of distances (i.e.\ a sequence of distances of length two). Thus it is sufficient to only do one iteration of the stepping function $(f^\Omega)^2$ and the ends of linear segments of $d_{2,1}(\omega),\dots, d_{2,k}(\omega)$ are a union of the $\omega_1$s and $\omega_2$s for each Voronoi tile that appears in a quasicrystal with sindow size in $(1,\beta]$. 
 
 That concludes our analysis of one dimensional quasicrystals. Next we will continue with the analysis of quasicrystals with two dimensional windows. Results of our analysis applied to one dimensional quasicrystals can be seen in Chapter \ref{cha_results}. 
 \end{document}

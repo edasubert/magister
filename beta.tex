@@ -27,13 +27,13 @@ $\frac{1}{\beta_{12}} = 4-\beta_{12}$, $\frac{\beta_{12} - 2}{\beta_{12}} = 2\be
 \begin{tabular}{c|ccccccc}
 	\toprule
 		%\begin{tabular}[x]{@{}c@{}}Window\\size\end{tabular}&\footnotesize $4-\beta_{12}$	&\footnotesize	$(4-\beta_{12}, 2\beta_{12}-7)$	&\footnotesize	$2\beta_{12}-7$	&\footnotesize	$(2\beta_{12}-7, \beta_{12}-3)$	&\footnotesize	$\beta_{12}-3$	&\footnotesize	$(\beta_{12}-3, 1)$	&\footnotesize	$1$\\
-    \begin{tabular}[x]{@{}c@{}}Window\\size\end{tabular}&$\frac{1}{\beta_{12}}$	&\scriptsize	$\left( \frac{1}{\beta_{12}}, \frac{\beta_{12} - 2}{\beta_{12}} \right)$	&	$\frac{\beta_{12}-2}{\beta_{12}}$	&\scriptsize	$\left( \frac{\beta_{12}-2}{\beta_{12}}, \frac{\beta_{12}-1}{\beta_{12}} \right)$	&	$\frac{\beta_{12}-1}{\beta_{12}}$	&\scriptsize	$\left( \frac{\beta_{12}-1}{\beta_{12}}, 1 \right)$	&	$1$\\
+    \begin{tabular}[x]{@{}c@{}}Window\\size\end{tabular}&$1$	&\scriptsize	$(1, \beta_{12}-2)$	&	$\beta_{12}-2$	&\scriptsize	$(\beta_{12}-2, \beta_{12}-1)$	&	$\beta_{12}-1$	&\scriptsize	$(\beta_{12}-1, \beta_{12})$	&	$\beta_{12}$\\
 	\midrule
-		&\small$4\beta_{12}-1$ 	&\small	$4\beta_{12}-1$	&\small				&\small				&\small				&\small				&\small			 	\\ 
-		&\small$3\beta_{12}-1$	&\small	$3\beta_{12}-1$	&\small	$3\beta_{12}-1$	&\small	$3\beta_{12}-1$	&\small				&\small				&\small			 	\\
-		Distances&\small			&\small				&\small				&\small	$2\beta_{12}-1$	&\small	$2\beta_{12}-1$	&\small	$2\beta_{12}-1$	&\small				\\
-		&\small			&\small	$\beta_{12}$		&\small	$\beta_{12}$		&\small	$\beta_{12}$		&\small	$\beta_{12}$		&\small	$\beta_{12}$		&\small	$\beta_{12}$		\\
-		&\small			&\small				&\small				&\small				&\small				&\small	$\beta_{12}-1$	&\small	$\beta_{12}-1$	\\
+		&\small$\beta_{12}$ 	&\small	$\beta_{12}$	&\small				&\small				&\small				&\small				&\small			 	\\ 
+		&\small$\beta_{12}-1$	&\small	$\beta_{12}-1$	&\small	$\beta_{12}-1$	&\small	$\beta_{12}-1$	&\small				&\small				&\small			 	\\
+		Distances&\small			&\small				&\small				&\small	$\beta_{12}-2$	&\small	$\beta_{12}-2$	&\small	$\beta_{12}-2$	&\small				\\
+		&\small			&\small	$1$		&\small	$1$		&\small	$1$		&\small	$1$		&\small	$1$		&\small	$1$		\\
+		&\small			&\small				&\small				&\small				&\small				&\small	$\beta_{12}-3$	&\small	$\beta_{12}-3$	\\
 	\bottomrule
 \end{tabular}\normalsize
 %\caption{All possible distances between two consecutive points of the sequence of the quasicrystal with a window of the given size.}
@@ -55,17 +55,17 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 \draw (0.13397,-0.26794) -- (0.50000,-1);
 
 \coordinate (trans01) at (0,-0.13397);
-\draw [dotted]  ($(-0.13397,0)+2*(trans01)$) -- ($(0.75000,0)+2*(trans01)$);
+\draw [dotted]  ($(-0.13397,0)+2*(trans01)$) -- ($(0.55000,0)+2*(trans01)$);
 \coordinate (trans02) at (0,-0.19615);
-\draw [dotted]  ($(-0.19615,0)+2*(trans02)$) -- ($(0.75000,0)+2*(trans02)$);
-\draw [dotted]  ($0.5*(-0.13397,0)+0.5*(-0.19615,0)+(trans01)+(trans02)$) -- ($(0.55000,0)+(trans01)+(trans02)$);
+\draw [dotted]  ($(-0.19615,0)+2*(trans02)$) -- ($(0.55000,0)+2*(trans02)$);
+\draw [dotted]  ($0.5*(-0.13397,0)+0.5*(-0.19615,0)+(trans01)+(trans02)$) -- ($(0.80000,0)+(trans01)+(trans02)$);
 
 \coordinate (trans03) at (0,-0.23205);
-\draw [dotted]  ($(-0.23205,0)+2*(trans03)$) -- ($(0.75000,0)+2*(trans03)$);
-\draw [dotted]  ($0.5*(-0.19615,0)+0.5*(-0.23205,0)+(trans02)+(trans03)$) -- ($(0.55000,0)+(trans02)+(trans03)$);
+\draw [dotted]  ($(-0.23205,0)+2*(trans03)$) -- ($(0.55000,0)+2*(trans03)$);
+\draw [dotted]  ($0.5*(-0.19615,0)+0.5*(-0.23205,0)+(trans02)+(trans03)$) -- ($(0.80000,0)+(trans02)+(trans03)$);
 \coordinate (trans04) at (0,-0.26795);
-\draw [dotted]  ($(-0.26795,0)+2*(trans04)$) -- ($(0.75000,0)+2*(trans04)$);
-\draw [dotted]  ($0.5*(-0.23205,0)+0.5*(-0.26795,0)+(trans03)+(trans04)$) -- ($(0.55000,0)+(trans03)+(trans04)$);
+\draw [dotted]  ($(-0.26795,0)+2*(trans04)$) -- ($(0.55000,0)+2*(trans04)$);
+\draw [dotted]  ($0.5*(-0.23205,0)+0.5*(-0.26795,0)+(trans03)+(trans04)$) -- ($(0.80000,0)+(trans03)+(trans04)$);
 
 \coordinate (trans05) at (0,-0.36603);
 \draw [dotted]  ($(-0.36603,0)+2*(trans05)$) -- ($(0.55000,0)+2*(trans05)$);
@@ -89,17 +89,17 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 \draw ($(0.36603,0)+2*(trans05)$) -- ($(0.23205,0)+2*(trans06)$);
 
 
-\node [right] at ($(0.75000,0)+2*(trans01)$) {$4-\beta_{12}$};
-\node [right] at ($(0.55000,0)+(trans01)+(trans02)$) {$\frac{5\beta_{12}-18}{2}$};
-\node [right] at ($(0.75000,0)+2*(trans02)$) {$6\beta_{12}-22$};
-\node [right] at ($(0.55000,0)+(trans02)+(trans03)$) {$\frac{8\beta_{12}-29}{2}$};
-\node [right] at ($(0.75000,0)+2*(trans03)$) {$2\beta_{12}-7$};
-\node [right] at ($(0.55000,0)+(trans03)+(trans04)$) {$\frac{1}{2}$};
-\node [right] at ($(0.75000,0)+2*(trans04)$) {$8-2\beta_{12}$};
-\node [right] at ($(0.55000,0)+(trans04)+(trans05)$) {$\frac{5-\beta_{12}}{2}$};
-\node [right] at ($(0.55000,0)+2*(trans05)$) {$\beta_{12}-3$};
-\node [right] at ($(0.55000,0)+(trans05)+(trans06)$) {$\frac{\beta_{12}-2}{2}$};
-\node [right] at ($(0.55000,0)+2*(trans06)$) {$1$};
+\node [right] at ($(0.55000,0)+2*(trans01)$) {$1$};
+\node [right] at ($(0.80000,0)+(trans01)+(trans02)$) {$\frac{2\beta_{12}-5}{2}$};
+\node [right] at ($(0.55000,0)+2*(trans02)$) {$2\beta_{12}-6$};
+\node [right] at ($(0.80000,0)+(trans02)+(trans03)$) {$\frac{3\beta_{12}-8}{2}$};
+\node [right] at ($(0.55000,0)+2*(trans03)$) {$\beta_{12}-2$};
+\node [right] at ($(0.80000,0)+(trans03)+(trans04)$) {$\frac{\beta_{12}}{2}$};
+\node [right] at ($(0.55000,0)+2*(trans04)$) {$2$};
+\node [right] at ($(0.55000,0)+(trans04)+(trans05)$) {$\frac{\beta_{12}+1}{2}$};
+\node [right] at ($(0.55000,0)+2*(trans05)$) {$\beta_{12}-1$};
+\node [right] at ($(0.55000,0)+(trans05)+(trans06)$) {$\frac{2\beta_{12}-1}{2}$};
+\node [right] at ($(0.55000,0)+2*(trans06)$) {$\beta_{12}$};
 \end{tikzpicture} 
 \caption{Division of window into sections corresponding to different Voronoi tiles. Each vertical slice of the trapezoid represents a single window of size in $[\beta_8-2,1]$. The diagonal lines divide each window into the sections corresponding to different Voronoi tiles. }
 \label{fig_12fold1DWindow}
@@ -110,7 +110,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 \begin{figure}[h!]
 
 % 4-b -----------------------------------------------------------------------------
-{$4-\beta_{12}$}:
+{$1$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -157,7 +157,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % (5b-18)/2 -----------------------------------------------------------------------------
-{$\frac{4-\beta_{12}+6\beta_{12}-22}{2}=\frac{5\beta_{12}-18}{2}$}:
+{$\frac{2\beta_{12}-5}{2}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -234,7 +234,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % 6b-22 -----------------------------------------------------------------------------
-{$6\beta_{12}-22$}:
+{$2\beta_{12}-6$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -293,7 +293,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % (8b-29)/2 -----------------------------------------------------------------------------
-{$\frac{6\beta_{12}-22+2\beta_{12}-7}{2} = \frac{8\beta_{12}-29}{2}$}:
+{$\frac{3\beta_{12}-8}{2}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -370,7 +370,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % 2b-7 -----------------------------------------------------------------------------
-{$2\beta_{12}-7$}:
+{$\beta_{12}-2$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -417,7 +417,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % 1/2 -----------------------------------------------------------------------------
-{$\frac{2\beta_{12}-7+8-2\beta_{12}}{2}=\frac{1}{2}$}:
+{$\frac{\beta_{12}}{2}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -494,7 +494,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % 8-2b -----------------------------------------------------------------------------
-{$8-2\beta_{12}$}:
+{$2$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -553,7 +553,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % (5-b)2 -----------------------------------------------------------------------------
-{$\frac{8-2\beta_{12}+\beta_{12}-3}{2}=\frac{5-\beta_{12}}{2}$}:
+{$\frac{\beta_{12}+1}{2}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -629,7 +629,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % b-3 -----------------------------------------------------------------------------
-{$\beta_{12}-3$}:
+{$\beta_{12}-1$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -676,7 +676,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 \vspace{0.25cm}
 % (b-2)/2 -----------------------------------------------------------------------------
-{$\frac{\beta_{12}-3+1}{2}=\frac{\beta_{12}-2}{2}$}:
+{$\frac{2\beta_{12}-1}{2}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]
@@ -752,7 +752,7 @@ Figure \ref{fig_12fold1DWindow} shows division of all windows by different Voron
 
 
 % 1 -----------------------------------------------------------------------------
-{$1$}:
+{$\beta_{12}$}:
 
 \centering
 \begin{tikzpicture}[scale=0.08]

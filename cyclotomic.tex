@@ -140,9 +140,9 @@ And now to validate our model.
 \begin{enumerate}
 \item uniform discreteness: $$\exists\,r_1>0,\; \forall z_1,z_2\in\Lambda, z_1\neq z_2:\; |z_1-z_2|>r_1$$
 \item relative density: $$\exists\,r_2>0,\; \forall z\in\CC:\; B(z,r_2)\cap\Lambda \neq \emptyset$$
-The result of the cut-and-project scheme is a Delone set \cite{Lagarias} if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
+The result of the cut-and-project scheme is a Delone set \cite{lagarias} if the window $\Omega$ is bounded with nonempty interior, which is how we defined it. 
 \item finite local complexity: $$\big|\{V(x)-x\,|\, x\in \Lambda\}\big|<\infty$$
-It has been shown \cite{Lagarias} that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
+It has been shown \cite{lagarias} that our model has even this property, however since our work explores the list of Voronoi tiles we essentially prove this in the process. 
 \item rotational symmetry: $$\exists\,\zeta = e^{2\pi \i/n}:\; \zeta\Lambda^\CC = \Lambda^\CC$$
 Rotational symmetry appears in quasicrystal if the window $\Omega$ has the same rotational symmetry.
 \item dilation: $$\exists\,b\in\RR\setminus\{-1,1\}:\; b\Lambda\subset \Lambda$$
@@ -196,19 +196,19 @@ Further thanks to the translation property we can limit our scope to convex boun
 $$\big\{\Omega-C_\Omega\,|\, \Omega\subset N ,\;\text{convex bounded with nonempty interior}\big\}$$
 where $C_\Omega$ is the centroid or geometric center of the window $\Omega$. 
 
-Lastly thanks to the scaling property we can limit our scope to convex bounded windows with nonempty interior centered around the origin of diameter in $(1/\beta,1]$:
-$$\big\{\Omega-C_\Omega\\,|\, \Omega\subset N ,\; d(\Omega)\in (1/\beta,1] ,\;\text{convex bounded with nonempty interior}\big\}$$
+Lastly thanks to the scaling property we can limit our scope to convex bounded windows with nonempty interior centered around the origin of diameter in $(1,\beta]$:
+$$\big\{\Omega-C_\Omega\\,|\, \Omega\subset N ,\; d(\Omega)\in (1,\beta] ,\;\text{convex bounded with nonempty interior}\big\}$$
 where $d(\Omega)$ is the set diameter $d(\Omega) = \sup\{d(x,y)\,|\,x,y\in\Omega\}$, where $d(x,y)$ is the distance between $x$ and $y$. 
 
 \begin{remark}
-We could of course also pick any other $\beta$ multiple of $(1/\beta,1]$. 
+We could of course also pick any other $\beta$ multiple of $(1,\beta]$. 
 \end{remark}
 
 Of course even after all this limiting, the set of windows is still infinite. Therefore we will further limit our scope to three basic window shapes: rhombus, regular $n$-gon and a circle. The rhombus is not really a valid window since it is not sufficiently rotationally symmetrical, it is however fundamental to our method, more on this later. The regular $n$-gon represents the simplest window with sufficient rotational symmetry and the circle is interesting for its circular symmetry. 
 
-To summarize we will analyze quasicrystals for windows in shape of rhombus, regular $n$-gon and a circle centered around the origin of diameter in $(1/\beta,1]$. Technically there is an infinite amount of these windows as well however as we will see later it is already manageable. 
+To summarize we will analyze quasicrystals for windows in shape of rhombus, regular $n$-gon and a circle centered around the origin of diameter in $(1,\beta]$. Technically there is an infinite amount of these windows as well however as we will see later it is already manageable. 
 
-Finally we need to discuss the boundaries of the windows. Generally we will assume open windows i.e.\ we will exclude the boundary. The exception is the rhombus for reasons we will also explain later. 
+Finally we need to discuss the boundaries of the windows. Generally we will assume closed windows i.e.\ we will include the boundary. The exception is the rhombus for reasons we will also explain later. 
 
 Now we have quasicrystal defined, model explored and windows limited. In the next chapter we will finally start the analysis. 
 \end{document}

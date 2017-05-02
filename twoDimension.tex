@@ -34,8 +34,8 @@ As we hinted before we will analyze two dimensional quasicrystals just for sever
 \begin{definition}
 Let $\Omega\subset\RR^2$:\\
 $\Omega = Iv_1^\ast+Iv_2^\ast$ where $I$ is a left-closed right-open interval is a \textbf{rhombic window}. \\
-$\Omega$ equal to the convex hull of $\big\{\big(\cos(2k\pi/n),\sin(2k\pi/n)\big)\big| k = 0,\dots,n-1 \big\}$ for $n\in\NN$ is a \textbf{$n$-gonal window}. \\ 
-$\Omega = \{x\in\RR^2\,|\,\lVert x \rVert < R\}$ where $R>0$ is a \textbf{circular window}.
+$\Omega$ equal to closed convex hull of $\big\{\big(\cos(2k\pi/n),\sin(2k\pi/n)\big)\big| k = 0,\dots,n-1 \big\}$ for $n\in\NN$ is a \textbf{$n$-gonal window}. \\ 
+$\Omega = \{x\in\RR^2\,|\,\lVert x \rVert \leq R\}$ where $R>0$ is a \textbf{circular window}.
 \end{definition}
 
 \begin{figure}[h!]
@@ -63,6 +63,8 @@ $\Omega = \{x\in\RR^2\,|\,\lVert x \rVert < R\}$ where $R>0$ is a \textbf{circul
 
 Now we explain why we did analyze the one dimensional quasicrystal first. Since we used cut-and-project scheme for our model of a quasicrystal it is possible to decompose a quasicrystal with rhombic window into two quasicrystals with one dimensional windows. 
 $$\quasi{Iv_1^\ast+Iv_2^\ast} = \quasi{I}v_1+\quasi{I}v_2$$
+Here we see why a rhombic window has different closeness to the other windows we consider, it stems right from this decomposition and the left-closed right-open intervals.
+
 Equipped with this very handy decomposition we are ready to start the analysis of two dimensional quasicrystal with the first step. 
 
 \subsection{Arbitrary finite section}
@@ -213,7 +215,7 @@ The algorithm should now be quite clear. For each $V_i\in\{V_1,\dots,V_m\}$ and 
 \end{figure}
 
 \subsection{Filter the superset to the final list of Voronoi tiles}
-This step is not at all different from what we did for the quasicrystal with one dimensional window. We follow the same three filters that work for the same reasons: 
+This step is not at all different from what we did for the quasicrystal with one dimensional window. We follow the same three filters: 
 \begin{enumerate}
 \item Eliminate duplicate Voronoi tiles. 
 \item Eliminate Voronoi tiles whose intersection $\Omega|_{V} = \bigcap\limits_{i\in\hat{k}}(\Omega-q_i^\ast)\cap\Omega$ is empty. 
@@ -221,6 +223,12 @@ This step is not at all different from what we did for the quasicrystal with one
 \end{enumerate}
 
 There might be a technical difficulty with verifying whether $\Phi(V)$ is empty. Here we again turn to the inclusion--exclusion principle we described in Section \ref{sec_1DperiodOfVoronoiTile}. 
+
+Unlike with one dimensional quasicrystals where we have picked left-closed right-open interval to avoid configurations that appear only once in the entire quasicrystal (i.e.\ have zero density), here we simply can't avoid zero density configurations. 
+
+First what exactly are these zero density configurations and where do they come from. For a particular window $\Omega$ and a particular Voronoi tile $V$ it may happen that the intersection $\Omega|_V$ is just a single point. Such Voronoi tile would appear in the quasicrystal $\quasi{\Omega}$ only once. Additionally for the $n$-gonal window it may happen that a particular Voronoi tile has the intersection of a line segment. Such Voronoi tile would appear in the quasicrystal only countably infinitely many times along a line. Such Voronoi tiles are called Voronoi tiles of zero density and their domains are the zero density configurations. 
+
+Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only after add the rest them to the list of Voronoi tiles. 
 
 \subsection{Establish the period of each Voronoi tile}
 Here we also use the general method described in Section \ref{sec_1DperiodOfVoronoiTile}. It differs only in the rate of growth of the area of the window, so we only illustrate the process with an example. 
