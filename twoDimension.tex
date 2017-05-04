@@ -231,7 +231,7 @@ First what exactly are these zero density configurations and where do they come 
 Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 (Section \ref{sec_2DsupersetFiniteSections}) and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only after add the rest them to the list of Voronoi tiles. 
 
 \subsection{Establish the period of each Voronoi tile}
-Here we also use the general method described in Section \ref{sec_1DperiodOfVoronoiTile}. It differs only in the rate of growth of the area of the window, so we only illustrate the process with an example. 
+Here we also use the general method described in Section \ref{sec_1DperiodOfVoronoiTile}. It differs only in the rate of growth of the area of the window, so we only illustrate the process with an example. This method however can not be used on circular windows, we deal with those separately. 
 \subsubsection{Example}
 As an example we are going to establish a period of the Voronoi tile $V$ with domain $D$ from Figure \ref{fig_quasicrystalExampleIntersection02} (shown again in Figure \ref{fig_example2D_tile}). We will assume an octagonal window $\Omega$, such that $|\Omega| = 1$, and again we will use $\beta_8 = 1+\sqrt{2}$ to denote the Pisot-cyclotomic number that the quasicrystal is associated to. 
 
@@ -259,10 +259,8 @@ $$d = \frac{15-7\beta_8}{2}$$
 We are looking for the area $A((\omega\Omega)|_V)$ to be zero:
 $$\omega_1+d=0\quad\Rightarrow\quad \omega_1 = \frac{7\beta_8-15}{2}\doteq 0.94975$$
 
-To get $\omega_2$ we calculate the area $A(\Phi(V))$ for two different values of $\omega$ and again use the formulas above: 
+Even though this method seems to be theoretically sound, we could not get reliable results for $\omega_2$ this way. We presume that our precise arithmetic (Chapter \ref{cha_computation}) suffered from buffer overflow and thus we were not able to acquire $\omega_2$. That however is not a deal breaker for our overall analysis and we will explain what limitations it brings when we present our results. 
 
-
-
-
-
+\subsubsection{Circular window}
+The approach we have just described is not really usable for a circular window since there is no way to calculate an area if disc intersection in $\field$. There is however a direct way to calculate at least $\omega_1$. Essentially we are looking for a disc radius for which the intersection $\Omega|_V$ is a single point. After some consideration we arrive to the realization that $\Omega|_V$ is a single point the radius is half of the distance between the centers of two furthest discs. Thus we can directly calculate $\omega_1$. It however is not necessarily in $\field$. 
 \end{document}

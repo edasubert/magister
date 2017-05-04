@@ -86,23 +86,6 @@
 
 \begin{document}
 
-%\thispagestyle{empty}
-
-%\begin{center}
-
-%{\Large ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V~PRAZE} \\[3.5mm]
-%{\Large Fakulta jaderná a fyzikálně inženýrská}
-
-%\vspace{\stretch{1}}
-
-%{\Huge\textbf{VÝZKUMNÝ ÚKOL}}
-
-%\vspace{\stretch{1}}
-
-%{\Large \hspace*{1cm} 2016 \hfill Eduard Šubert \hspace*{1cm}}
-
-%\end{center}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% TITULNÍ STRANA PRÁCE
 %\clearpage
@@ -119,18 +102,18 @@
 
 %\vspace{\stretch{0.75}}
 
-%{\Large BAKALÁŘSKÁ PRÁCE}
+%{\Large DIPLOMOVÁ PRÁCE}
 
 %\vspace{\stretch{0.5}}
 
 %{\LARGE
-%\textbf{Voronoiova dláždění a Cut-and-Project množiny}
+%\textbf{Voronoiova dláždění kvazikrystalů}
 %\par}
 
 %\vspace{1cm}
 
 %{\LARGE
-%\textbf{Voronoi Tiling and Cut-and-Project Sets}
+%\textbf{Voronoi tessellation of quasicrystals}
 %\par}
 
 %\vspace{\stretch{1.25}}
@@ -140,7 +123,7 @@
 %\begin{tabular}{ll} 
 %{\Large Vypracoval:} & {\Large Eduard Šubert} \\[1mm]
 %{\Large \v{S}kolitel:} & {\Large Ing. Petr Ambrož, Ph.D.} \\[2mm]
-%{\Large Akademický rok:}     & {\Large 2013/2014}
+%{\Large Akademický rok:}     & {\Large 2016/2017}
 %\end{tabular}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,7 +186,7 @@
 
 %\vspace*{\stretch{1}}
 
-%Děkuji Ing. Petrovi Ambrožovi, Ph.D. za příkladné vedení mé bakalářské práce a za podnětné návrhy. Také děkuji doc. Ing. Zuzaně Masákové, Ph.D. ze rady v teoretické části práce.
+%Děkuji Ing. Petrovi Ambrožovi, Ph.D. a prof. Ing. Zuzaně Masákové, Ph.D. za příkladné vedení mé diplomové práce a za podnětné návrhy. 
 
 %\vspace*{2cm}
 
@@ -220,15 +203,13 @@
 %\setlength{\parindent}{0pt}
 
 %\textit{Název práce:}
-%\textbf{Voronoiova dláždění a Cut-and-Project množiny} \\
+%\textbf{Voronoiova dláždění kvazikrystalů} \\
 
 %\textit{Autor:} Eduard Šubert \\
 
-%\textit{Obor:} Inženýrská informatika \\
+%\textit{Obor:} Matematická informatika \\
 
-%\textit{Zaměření:} Softwarové inženýrství a matematická informatika \\
-
-%\textit{Druh práce:} Bakalářská práce \\
+%\textit{Druh práce:} Diplomová práce \\
 
 %\textit{Vedoucí práce:}  Ing. Petr Ambrož Ph.D., Katedra matematiky, FJFI ČVUT v~Praze \\
 
@@ -238,7 +219,7 @@
 %\vspace{1.5cm}
 
 %\textit{Title:}
-%\textbf{Voronoi Tiling and Cut-and-Project Sets} \\
+%\textbf{Voronoi tessellation of quasicrystals} \\
 
 %\textit{Author:} Eduard Šubert\\
 
@@ -261,37 +242,36 @@
 %%\thispagestyle{empty}
 %%\cleardoublepage
 
-%\section*{Úvod}
-%V polovině minulého století byly objeveny slitiny s~difrakčními obrazy, které neměly krystalografickou symetrii \cite{metallic}. Rychle byl zahájen experimentální i teoretický výzkum takových struktur. Díky zdánlivé podobnosti s~krystaly vznikl název kvazikrystal.
-
-%Dnes bylo již o~kvazikrystalech, jako o~matematické struktuře, odvozeno a dokázáno mnoho tvrzení. Většina prací se zabývá kvazikrystaly definovanými pomocí iracionální konstanty $\tau = \frac{1+\sqrt{5}}{2}$ známější jako zlatý řez. V~této práci budeme studovat kvazikrystaly definované pomocí iracionality $2+\sqrt{3}$.
-
-%V~sekci \ref{sec:oneDimension} definujeme jednorozměrné kvazikrystaly a analyzujeme jejich strukturu. Sekce \ref{sec:oneDimensionAlg} shrnuje algoritmy požité při analýze jednorozměrných kvazikrystalů. V~sekci \ref{sec:twoDimension} definujeme dvourozměrné kvazikrystaly a ukážeme jejich souvislost s~jednorozměrnými. Sekce \ref{sec:graphics} shrnuje nabyté poznatky grafickou formou.
+\chapter*{Introduction}
+\subfile{introduction}
 
 \chapter{Preliminaries}
 \subfile{preliminaries}
 %
-\cleardoublepage
+\clearpage
 \chapter{Quasicrystal}
 \subfile{cyclotomic}
 
-\cleardoublepage
+\clearpage
 \chapter{Analysis}
 \subfile{oneDimension}
 \pagebreak
 \subfile{twoDimension}
 
-\cleardoublepage
+\clearpage
 \chapter{Results}\label{cha_results}
 \subfile{results}
-\pagebreak
+\clearpage
 \subfile{alpha}
-\pagebreak
+\clearpage
 \subfile{beta}
 
-\cleardoublepage
-\chapter{Computation}
+\clearpage
+\chapter{Computation}\label{cha_computation}
 \subfile{computation}
+
+\chapter*{Conclusions}
+\subfile{conclusion}
 
 \subfile{cite}
 \end{document}
