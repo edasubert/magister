@@ -68,7 +68,7 @@ Here we see why a rhombic window has different closeness to the other windows we
 Equipped with this very handy decomposition we are ready to start the analysis of two dimensional quasicrystal with the first step. 
 
 \subsection{Arbitrary finite section}
-There are two concepts vitally important to this step. The decomposition we just saw and the inclusion property. First how to acquire arbitrary finite section of a quasicrystal with a rhombic window. 
+There are two concepts vitally important to this step. The decomposition we just saw and the inclusion property. First let us explain how to acquire arbitrary finite section of a quasicrystal with a rhombic window. 
 
 \begin{enumerate}
 \item[Input:] rhombic window $Iv_1^\ast+Iv_2^\ast$; finite intervals $[x_1,x_2]$, $[y_1,y_2]$
@@ -78,7 +78,7 @@ There are two concepts vitally important to this step. The decomposition we just
 \item[Output:] the list \texttt{quasicrystal}
 \end{enumerate}
 
-This algorithm however might not work as we expect. Since $v_1$ and $v_2$ are not perpendicular the returned finite section is not the intersection of the quasicrystal with a rectangle $\quasi{Iv_1^\ast+Iv_2^\ast}\cap[x_1,x_2]\times[y_1,y_2]$ but is also rhombus like. This is simply solved by acquiring larger finite section and cropping it to fit a desired rectangle. There is an example of such finite section in Figure \ref{fig_quasicrystalExampleRhombus}. 
+This algorithm however might not work as we expect. Since $v_1$ and $v_2$ are not perpendicular the returned finite section is not the intersection of the quasicrystal with a rectangle (i.e.\ $\quasi{Iv_1^\ast+Iv_2^\ast}\cap[x_1,x_2]\times[y_1,y_2]$) but is also of the shape of a rhombus. This is simply solved by acquiring larger finite section and cropping it to fit the desired rectangle. There is an example of such finite section in Figure \ref{fig_quasicrystalExampleRhombus}. 
 
 \begin{figure}[h!]
 \centering
@@ -112,11 +112,11 @@ $$R_C = \inf\left\{ r_2>0\,\left|\, \forall\, z\in\RR^2:\; B(z,r_2)\cap D \neq \
 By Theorem \ref{the_voronoiCoveringRadius} we also have a way to calculate the covering radius from a Voronoi diagram:
 $$R_C = \sup_{x\in D}\left\{\sup_{y\in V(x)}\lVert y-x\rVert\right\}$$
 
-Here we run in a bit of a problem, while we are in the process of acquiring the list of Voronoi tiles we would like to use the list to calculate the covering radius. But of course, there is a workaround. We do not actually need the full list of Voronoi tiles, just the one Voronoi tile that has the largest radius and there is a way to ensure we have the one tile without knowing the full list of Voronoi tiles. 
+Here we run in a bit of a problem. The formula we suggested requires the list of Voronoi tiles that we do not know yet. In fact we want to use the covering radius estimate to acquire the list of Voronoi tiles. Luckily, there is a workaround. We do not actually need the complete list of Voronoi tiles to use the formula, just the one Voronoi tile that has the largest radius. There is a way to ensure we have the one tile without knowing the complete list of Voronoi tiles. 
 
-But first, how do we acquire even an incomplete list of Voronoi tiles? By constructing a Voronoi diagram of a finite section of the quasicrystal from previous step. That will result in possibly incomplete list of Voronoi tiles, the completeness depends on the size of the finite section. 
+First we need a way to acquire even an incomplete list of Voronoi tiles. We construct a Voronoi diagram of a finite section of the quasicrystal (described in previous step). That will result in possibly incomplete list of Voronoi tiles, the completeness depends on the size of the finite section. 
 
-Now to make sure our incomplete list of Voronoi tiles contains the one Voronoi tile with the largest radius. We can quiet easily ensure, that any Voronoi tile that is missing has smaller radius than at least one Voronoi tile already on the list. We recall the analysis of quasicrystals with one dimensional windows. There we have divided a window into sections corresponding to various Voronoi tiles. We can attempt to divide the window even with an incomplete list of Voronoi tiles and if we succeed, our list of Voronoi tiles is sufficient for covering radius estimation. Now we look at this idea in greater detail. 
+Now we need to make sure our possibly incomplete list of Voronoi tiles contains the one Voronoi tile with the largest radius. There is a way to show that any Voronoi tile that might be missing has smaller radius than at least one Voronoi tile already on the list. We recall the analysis of quasicrystals with one dimensional windows. There we have divided a window into sections corresponding to various Voronoi tiles. We can create the division of the window even with an incomplete list of Voronoi tiles. If the union of the sections $\Omega|_V$ is the entire window $\Omega$, our list of Voronoi tiles is sufficient for covering radius estimation. Now we look at this idea in greater detail. 
 
 Assume a list of Voronoi tiles $\{V_1,\dots,V_m\}$, that may be incomplete. For each of the Voronoi tiles with domains $D_i = \{q_{i,1},\dots,q_{i,k_i}\}$ construct the following intersection: 
 $$\Omega|_{V_i} = \bigcap\limits_{j\in\hat{k_i}}(\Omega-q_{i,j}^\ast)\cap\Omega$$
@@ -168,15 +168,15 @@ any missing Voronoi tile's intersections would overlap the current ones and thus
 \label{fig_quasicrystalExampleIntersection02}
 \end{figure}
 
-To summarize, assume a list of Voronoi tiles $\{V_1,\dots,V_m\}$, that may be incomplete, with domains $D_i = \{q_{i,1},\dots,q_{i,k_i}\}$. 
-$$\Omega = \bigcup\limits_{i\in\hat{m}}\Omega|_{V_i} \qquad\Rightarrow\qquad \hat{R}_C = R_C = \max_{i\in\hat{m}}\left\{\sup_{y\in V_i}\lVert y\rVert\right\}$$
+To summarize, assume a list of Voronoi tiles $\{V_1,\dots,V_m\}$, that may be incomplete, with domains $D_i = \{q_{i,1},\dots,q_{i,k_i}\}$. Then given another condition the estimate $\hat{R}_C$ of covering radius $R_C$ is obtained as:
+$$\Omega = \bigcup\limits_{i\in\hat{m}}\Omega|_{V_i} \qquad\Rightarrow\qquad \hat{R}_C \overset{\text{def}}{=} R_C = \max_{i\in\hat{m}}\left\{\sup_{y\in V_i}\lVert y\rVert\right\}$$
 
-Improving the covering radius estimate in this way was absolutely vital to our work. 
+The series of articles \cite{classification}, \cite{classificationII} and \cite{classificationIII} that our work is based upon, used an easier method for covering radius estimation that results in a worse estimate than the method we have just described. Since the quasicrystals we are analyzing have higher complexity, improving the covering radius estimate in this way was absolutely vital to completion of our analysis. 
 
 \subsection{Generate superset of all finite sections spanning $B(2\hat{R}_C)$}\label{sec_2DsupersetFiniteSections}
 This step is also solved by the rhombus decomposition and the inclusion property. Previously we have developed an algorithm to acquire all possible finite sections of a quasicrystal with one dimensional window spanning a given length. If we compose each pair of these into finite sections of a quasicrystal with rhombic window, we acquire a list of all possible finite sections spanning a rhombic area. Thus the length given to the algorithm to acquire all possible finite sections of a quasicrystal with one dimensional window must be the length of an edge of a rhombus circumscribed to $B(2\hat{R}_C)$. 
 
-Finding a formula to calculate the length of an edge of the rhombus $a$ circumscribed to $B(2\hat{R}_C)$ from $\hat{R}_C$ is just a trigonometric exercise and we won't cover it here. The formula is: 
+Finding a formula to calculate the length of an edge of the rhombus $a$ circumscribed to $B(2\hat{R}_C)$ from $\hat{R}_C$ is just a trigonometric exercise and we will not cover it here. The formula is: 
 $$a^2 = \frac{16\hat{R}_C^2}{\left(1+\frac{\rho}{2}\right)\left(1-\frac{\rho}{2}\right)}$$
 where $\rho$ is the $\rho=2\cos\left(2\pi/n\right)$ to which $\beta$ is associated. 
 
@@ -189,9 +189,9 @@ Once we calculate $a$ we can acquire all possible finite sections of a quasicrys
 \label{fig_quasicrystalExampleComposition}
 \end{figure}
 
-That completes acquiring a list of all possible finite sections of a qusicrystal with a rhombic window, the easy part of this step. Now we have to use the inclusion property to somehow turn this list of all possible finite sections of a qusicrystal with a rhombic window to a list of all possible finite sections of a qusicrystal with any window. 
+That completes the task of acquiring a list of all possible finite sections of a qusicrystal with a rhombic window, the easy part of this step. Now we have to use the inclusion property to somehow turn this list of all possible finite sections of a qusicrystal with a rhombic window to a list of all possible finite sections of a qusicrystal with any window. 
 
-We can not use the same method we used in the first step of this analysis since the finite sections are centered around the origin, in the actual quasicrystal they may be almost arbitrarily translated. 
+We cannot use the same method we used in the first step of this analysis since the finite sections are centered around the origin, whereas in the actual quasicrystal they may be almost arbitrarily translated. 
 
 The inclusion property only tells us that there can be no more points in the finite sections of the quasicrystal with any window inscribed to a rhombic window than in the finite sections of the quasicrystal with the rhombic window. 
 
@@ -203,14 +203,14 @@ Just as in the previous step we are going to use a possibly incomplete list of V
 $$\Omega = \bigcup\limits_{i\in\hat{m}}\bigcap\limits_{j\in\hat{k}_i}(\Omega-q_{i,j}^\ast)\cap\Omega$$ 
 Now assume a Voronoi tile $V$ with domain $D = \{q_1,\dots,q_k\}$ that appears in the quasicrystal but is missing from the list $\{V_1,\dots,V_m\}$. Its intersection $\bigcap_{j\in\hat{k}}(\Omega-q_j^\ast)\cap\Omega$ has to overlap with at least one intersection of a Voronoi tile on the list, let us denote this Voronoi tile as $V_p$. 
 
-A point of the quasicrystal whose star map image fits both in the intersection of $V$ and the intersection of $V_p$ is surrounded by both the points of $D$ as well as the points of $D_p$. In other words the Voronoi tile $V$  is a subset of $V_p$ and its domain $D$ is a subset of $D_p\cup F$, where $F$ is a finite section of the quasicrystal with the rhombic window. 
+A point of the quasicrystal whose star map image fits both in the intersection of $V$ and the intersection of $V_p$ is surrounded by the points of $D$ as well as the points of $D_p$. In other words the Voronoi tile $V$  is a subset of $V_p$ and its domain $D$ is a subset of $D_p\cup F$, where $F$ is a finite section of the quasicrystal with the rhombic window. 
 
 The algorithm should now be quite clear. For each $V_i\in\{V_1,\dots,V_m\}$ and for each finite section of the quasicrystal with the rhombic window we add points of the finite section to the domain $D_i$ and save the domain of any new Voronoi tile that is thusly created. As stated before, this creates a superset of domains of Voronoi tiles that appear in the quasicrystal. 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.24\textwidth]{img/2D/cropByFiniteSection}
-\caption{Example of how a new Voronoi tile is created from the incomplete list of Voronoi tiles and the list of finite sections. The first Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection} and the finite sections from Figure \ref{fig_quasicrystalExampleComposition} to create the Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection02} by adding two points of the finite section. }
+\includegraphics[width=0.4\textwidth]{img/2D/cropByFiniteSection}
+\caption{Example of how a new Voronoi tile is created from the incomplete list of Voronoi tiles and the list of finite sections. The first Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection} and the finite section from Figure \ref{fig_quasicrystalExampleComposition} are used to create the Voronoi tile from Figure \ref{fig_quasicrystalExampleIntersection02} by adding two points $\odot$ of the finite section. }
 \label{fig_quasicrystalExampleNewTile}
 \end{figure}
 
@@ -224,11 +224,11 @@ This step is not at all different from what we did for the quasicrystal with one
 
 There might be a technical difficulty with verifying whether $\Phi(V)$ is empty. Here we again turn to the inclusion--exclusion principle we described in Section \ref{sec_1DperiodOfVoronoiTile}. 
 
-Unlike with one dimensional quasicrystals where we have picked left-closed right-open interval to avoid configurations that appear only once in the entire quasicrystal (i.e.\ have zero density), here we simply can't avoid zero density configurations. 
+Unlike with one dimensional quasicrystals where we have picked left-closed right-open interval to avoid configurations that appear only once in the entire quasicrystal (i.e.\ have zero density), here we simply cannot avoid zero density configurations. 
 
-First what exactly are these zero density configurations and where do they come from. For a particular window $\Omega$ and a particular Voronoi tile $V$ it may happen that the intersection $\Omega|_V$ is just a single point. Such Voronoi tile would appear in the quasicrystal $\quasi{\Omega}$ only once. Additionally for the $n$-gonal window it may happen that a particular Voronoi tile has the intersection of a line segment. Such Voronoi tile would appear in the quasicrystal only countably infinitely many times along a line. Such Voronoi tiles are called Voronoi tiles of zero density and their domains are the zero density configurations. 
+First let us explain what exactly are these zero density configurations and where do they come from. For a particular window $\Omega$ and a particular Voronoi tile $V$ it may happen that the intersection $\Omega|_V$ is just a single point. Such Voronoi tile would appear in the quasicrystal $\quasi{\Omega}$ only once. Additionally for the $n$-gonal window it may happen that a particular Voronoi tile has the intersection of a line segment. Such Voronoi tile would appear in the quasicrystal only countably infinitely many times along a line. Such Voronoi tiles are called Voronoi tiles of zero density and their domains are the zero density configurations. 
 
-Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 (Section \ref{sec_2DsupersetFiniteSections}) and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only after add the rest them to the list of Voronoi tiles. 
+Special care needs to be taken when handling these since they are present in the superset of Voronoi tiles from step 3 (Section \ref{sec_2DsupersetFiniteSections}) and their intersections $\Omega|_V$ technically have zero area but are not empty. We apply the filters from this step to the Voronoi tiles of zero density separately and only thereafter add the rest of them to the list of Voronoi tiles. 
 
 \subsection{Establish the period of each Voronoi tile}
 Here we also use the general method described in Section \ref{sec_1DperiodOfVoronoiTile}. It differs only in the rate of growth of the area of the window, so we only illustrate the process with an example. This method however can not be used on circular windows, we deal with those separately. 
@@ -262,5 +262,5 @@ $$\omega_1+d=0\quad\Rightarrow\quad \omega_1 = \frac{7\beta_8-15}{2}\doteq 0.949
 Even though this method seems to be theoretically sound, we could not get reliable results for $\omega_2$ this way. We presume that our precise arithmetic (Chapter \ref{cha_computation}) suffered from buffer overflow and thus we were not able to acquire $\omega_2$. That however is not a deal breaker for our overall analysis and we will explain what limitations it brings when we present our results. 
 
 \subsubsection{Circular window}
-The approach we have just described is not really usable for a circular window since there is no way to calculate an area if disc intersection in $\field$. There is however a direct way to calculate at least $\omega_1$. Essentially we are looking for a disc radius for which the intersection $\Omega|_V$ is a single point. After some consideration we arrive to the realization that $\Omega|_V$ is a single point the radius is half of the distance between the centers of two furthest discs. Thus we can directly calculate $\omega_1$. It however is not necessarily in $\field$. 
+We could not use the approach we have just described for a circular window. Our program can do precise calculations only in $\field$ (Chapter \ref{cha_computation}) and we have not found a way to calculate an area of disc intersection in $\field$. There is however a direct way to calculate at least $\omega_1$. Essentially we are looking for a disc radius for which the intersection $\Omega|_V$ is a single point. After some consideration we arrive to the realization that $\Omega|_V$ is a single point if the radius is half of the distance between the centers of two furthest discs. Thus we can directly calculate $\omega_1$. 
 \end{document}

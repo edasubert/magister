@@ -49,7 +49,7 @@
 % Definition Styles
 %\theoremstyle{definition}
 %\newtheorem{definition}[theorem]{Definition}
-\declaretheorem[style=definition,qed=$\lrcorner$,numberwithin=chapter]{definition}
+\declaretheorem[style=definition,qed=$\lrcorner$,numberlike=theorem]{definition}
 
 
 \newtheorem{example}[theorem]{Example}
@@ -86,157 +86,162 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% TITULNÍ STRANA PRÁCE
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITULNÍ STRANA PRÁCE
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
 
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
-%\begin{center}
+\begin{center}
 
-%{\Large ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V~PRAZE} \\[3.5mm]
-%{\Large Fakulta jaderná a fyzikálně inženýrská} \\[3.5mm]
-%{\Large Katedra matematiky}
+{\Large ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V~PRAZE} \\[3.5mm]
+{\Large Fakulta jaderná a fyzikálně inženýrská} \\[3.5mm]
+{\Large Katedra matematiky}
 
-%\vspace{\stretch{0.75}}
+\vspace{\stretch{0.75}}
 
-%{\Large DIPLOMOVÁ PRÁCE}
+{\Large DIPLOMOVÁ PRÁCE}
 
-%\vspace{\stretch{0.5}}
+\vspace{\stretch{0.5}}
 
-%{\LARGE
-%\textbf{Voronoiova dláždění kvazikrystalů}
-%\par}
+{\LARGE
+\textbf{Voronoiova dláždění kvazikrystalů}
+\par}
 
-%\vspace{1cm}
+\vspace{1cm}
 
-%{\LARGE
-%\textbf{Voronoi tessellation of quasicrystals}
-%\par}
+{\LARGE
+\textbf{Voronoi tessellation of quasicrystals}
+\par}
 
-%\vspace{\stretch{1.25}}
+\vspace{\stretch{1.25}}
 
-%\end{center}
+\end{center}
 
-%\begin{tabular}{ll} 
-%{\Large Vypracoval:} & {\Large Eduard Šubert} \\[1mm]
-%{\Large \v{S}kolitel:} & {\Large Ing. Petr Ambrož, Ph.D.} \\[2mm]
-%{\Large Akademický rok:}     & {\Large 2016/2017}
-%\end{tabular}
+\begin{tabular}{ll} 
+{\Large Vypracoval:} & {\Large Eduard Šubert} \\[1mm]
+{\Large \v{S}kolitel:} & {\Large Ing. Petr Ambrož, Ph.D.} \\[2mm]
+{\Large Akademický rok:}     & {\Large 2016/2017}
+\end{tabular}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ZADÁNÍ PRÁCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ZADÁNÍ PRÁCE
 
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
 
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
-%\noindent
-%{\Large
-%Na toto místo přijde svázat \textbf{zadání diplomové práce}!\\
-%V~jednom z~výtisků musí být \textbf{originál} zadání, v~ostatních kopie.\par}
-%\newpage
-%prázdná strana pro zadání
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ČESTNÉ PROHLÁŠENÍ
+\noindent
+{\Large
+Na toto místo přijde svázat \textbf{zadání diplomové práce}!\\
+V~jednom z~výtisků musí být \textbf{originál} zadání, v~ostatních kopie.\par}
+\newpage
+prázdná strana pro zadání
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ČESTNÉ PROHLÁŠENÍ
 
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
 
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
-%\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
 
-%\noindent{\bf Čestné prohlášení}
+\noindent{\bf Čestné prohlášení}
 
-%\vspace{0.5cm}
+\vspace{0.5cm}
 
-%Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatně 
-%a že jsem uvedl veškerou použitou literaturu.
+Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatně 
+a že jsem uvedl veškerou použitou literaturu.
 
-%\vspace{1.5cm}
+\vspace{1.5cm}
 
-%\noindent
-%\begin{minipage}[b]{5cm}
-%V~Praze dne \today
-%\end{minipage}
-%\hfill
-%\begin{minipage}[t]{5cm}
-%\begin{center}
-%\dotfill\\
-%Eduard Šubert
-%\end{center}
-%\end{minipage}
+\noindent
+\begin{minipage}[b]{5cm}
+V~Praze dne \today
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5cm}
+\begin{center}
+\dotfill\\
+Eduard Šubert
+\end{center}
+\end{minipage}
 
-%\vspace*{2cm}
+\vspace*{2cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% PODĚKOVÁNÍ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PODĚKOVÁNÍ
 
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
 
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
-%\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
 
-%Děkuji Ing. Petrovi Ambrožovi, Ph.D. a prof. Ing. Zuzaně Masákové, Ph.D. za příkladné vedení mé diplomové práce a za podnětné návrhy. 
+Děkuji Ing. Petrovi Ambrožovi, Ph.D. a prof. Ing. Zuzaně Masákové, Ph.D. za příkladné vedení mé diplomové práce a za podnětné návrhy. 
 
-%\vspace*{2cm}
+\vspace*{2cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CZ/EN ABSTRAKTY A KLÍČOVÁ SLOVA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CZ/EN ABSTRAKTY A KLÍČOVÁ SLOVA
 
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
 
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
-%{
-%\setlength{\parindent}{0pt}
+{
+\setlength{\parindent}{0pt}
 
-%\textit{Název práce:}
-%\textbf{Voronoiova dláždění kvazikrystalů} \\
+\textit{Název práce:}
+\textbf{Voronoiova dláždění kvazikrystalů} \\
 
-%\textit{Autor:} Eduard Šubert \\
+\textit{Autor:} Eduard Šubert \\
 
-%\textit{Obor:} Matematická informatika \\
+\textit{Obor:} Matematická informatika \\
 
-%\textit{Druh práce:} Diplomová práce \\
+\textit{Druh práce:} Diplomová práce \\
 
-%\textit{Vedoucí práce:}  Ing. Petr Ambrož Ph.D., Katedra matematiky, FJFI ČVUT v~Praze \\
+\textit{Vedoucí práce:}  Ing. Petr Ambrož Ph.D., Katedra matematiky, FJFI ČVUT v~Praze \\
 
-%\textit{Abstrakt:} 
-%Práce se zabývá kvazikrystaly definovanými iracionalitou $2+\sqrt{3}$. Jsou rozebrány jednorozměrné kvazikrystaly především s okny ve tvaru $(c,d]$, ale uvádíme metody, jak výsledky zobecnit na libovolné okno. Dále poznatky aplikujeme na dvourozměrné kvazikrystaly a analyzujeme jejich strukturu pomocí Voronoiova okolí. Na závěr uvádíme všechny možné tvary Voronoiových okolí, které se vyskytují na studovaných kvazikrystalech. \\
+\textit{Abstrakt:} 
+Představujeme novou vylepšenou metodu pro hledání všech různých Voronoiových polygonů v kvazikrystalu. Naše vylepšení snižuje nutné teoretické znalosti a v některý případech umožňuje najít i Voronoiovy polygony, které se vyskytují s nulovou hustotou. Naše metoda užívá přesné výpočtů, a tak naše výsledky nejsou přibližné, ale jsou přesné. 
 
-%\vspace{1.5cm}
+Jak je obvykle i náš model kvazikrystalu užívá schéma Cut-and-project. Nejdříve popisujeme naší metodu obecně, a pak ji aplikujeme na kvazikrystaly s osmi a dvanácti četnou rotační symetrií pro kruhová a osmiúhelníková/dvanáctiúhelníková okna. 
 
-%\textit{Title:}
-%\textbf{Voronoi tessellation of quasicrystals} \\
+\vspace{1.5cm}
 
-%\textit{Author:} Eduard Šubert\\
+\textit{Title:}
+\textbf{Voronoi tessellation of quasicrystals} \\
 
-%\textit{Abstract:} 
-%Main focus of the thesis are quasicrystals defined by irrationality $2+\sqrt{3}$. One dimensional case is analysed primarily for windows as intervals $(c,d]$, however methods for generalization are presented. Next foundings are applied to Two dimensional case and the structure is investigated with the aid of Voronoi  tessellation. In conclusion all different shapes of observed Voronoi tiles are listed.\\
+\textit{Author:} Eduard Šubert\\
 
-%}
+\textit{Abstract:} 
+A new improved method for finding all distinct Voronoi tiles in any quasicrystal is presented. Our improvement cuts down on necessary theoretical background and in certain cases allows one to find even the Voronoi tiles that appear with zero density. Our method uses precise arithmetic and so our results are not approximations, they are exact. 
+
+As per usual our quasicrystal model is based on the Cut-and-project scheme. First we describe our method in general terms and then apply it to two dimensional quasicrystals with $8$-fold and $12$-fold rotational symmetries for circular and octagonal/dodecagonal windows. 
+
+
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Konec uvodnich stran
 
-%\clearpage
-%\thispagestyle{empty}
-%\cleardoublepage
-%\thispagestyle{empty}
+\clearpage
+\thispagestyle{empty}
+\cleardoublepage
+\thispagestyle{empty}
 
-%\tableofcontents
+\tableofcontents
 
 %\clearpage
 %%\thispagestyle{empty}
