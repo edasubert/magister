@@ -259,7 +259,7 @@ $$d = \frac{15-7\beta_8}{2}$$
 We are looking for the area $A((\omega\Omega)|_V)$ to be zero:
 $$\omega_1+d=0\quad\Rightarrow\quad \omega_1 = \frac{7\beta_8-15}{2}\doteq 0.94975$$
 
-Even though this method seems to be theoretically sound, we could not get reliable results for $\omega_2$ this way. We presume that our precise arithmetic (Chapter \ref{cha_computation}) suffered from buffer overflow and thus we were not able to acquire $\omega_2$. That however is not a deal breaker for our overall analysis and we will explain what limitations it brings when we present our results. 
+Even though this method seems to be theoretically sound, we could not get reliable results for $\omega_2$ this way. We presume that our precise arithmetic (Chapter \ref{cha_computation}) suffered from buffer overflow and thus we were not able to acquire $\omega_2$. That however is not a deal breaker for our overall analysis. 
 
 \subsubsection{Circular window}
 We could not use the approach we have just described for a circular window. Our program can do precise calculations only in $\field$ (Chapter \ref{cha_computation}) and we have not found a way to calculate an area of disc intersection in $\field$. There is however a direct way to calculate at least $\omega_1$. Essentially we are looking for a disc radius for which the intersection $\Omega|_V$ is a single point. After some consideration we arrive to the realization that $\Omega|_V$ is a single point if the radius is half of the distance between the centers of two furthest discs. Thus we can directly calculate $\omega_1$. 

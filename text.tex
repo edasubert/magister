@@ -214,9 +214,9 @@ Děkuji Ing. Petrovi Ambrožovi, Ph.D. a prof. Ing. Zuzaně Masákové, Ph.D. za
 \textit{Vedoucí práce:}  Ing. Petr Ambrož Ph.D., Katedra matematiky, FJFI ČVUT v~Praze \\
 
 \textit{Abstrakt:} 
-Představujeme novou vylepšenou metodu pro hledání všech různých Voronoiových polygonů v kvazikrystalu. Naše vylepšení snižuje nutné teoretické znalosti a v některý případech umožňuje najít i Voronoiovy polygony, které se vyskytují s nulovou hustotou. Naše metoda užívá přesné výpočtů, a tak naše výsledky nejsou přibližné, ale jsou přesné. 
+Představujeme novou vylepšenou metodu pro hledání všech různých Voronoiových polygonů v kvazikrystalu. Naše vylepšení snižuje nutné teoretické znalosti a v některý případech umožňuje najít i Voronoiovy polygony, které se vyskytují s nulovou hustotou. Naše metoda užívá přesných výpočtů, a tak naše výsledky nejsou přibližné, ale jsou přesné. 
 
-Jak je obvykle i náš model kvazikrystalu užívá schéma Cut-and-project. Nejdříve popisujeme naší metodu obecně, a pak ji aplikujeme na kvazikrystaly s osmi a dvanácti četnou rotační symetrií pro kruhová a osmiúhelníková/dvanáctiúhelníková okna. 
+Jako je obvyklé i náš model kvazikrystalu užívá schéma Cut-and-project. Nejdříve popisujeme naší metodu obecně, a pak ji aplikujeme na kvazikrystaly s osmi a dvanácti četnou rotační symetrií pro kruhová a osmiúhelníková/dvanáctiúhelníková okna. 
 
 \vspace{1.5cm}
 
@@ -247,9 +247,10 @@ As per usual our quasicrystal model is based on the Cut-and-project scheme. Firs
 %%\thispagestyle{empty}
 %%\cleardoublepage
 
-\chapter*{Introduction}
+\chapter*{Introduction}\addcontentsline{toc}{chapter}{Introduction}
 \subfile{introduction}
 
+\cleardoublepage
 \chapter{Preliminaries}
 \subfile{preliminaries}
 %
@@ -270,12 +271,13 @@ As per usual our quasicrystal model is based on the Cut-and-project scheme. Firs
 \subfile{alpha}
 \clearpage
 \subfile{beta}
+\subfile{octagon_concat}
 
 \clearpage
 \chapter{Computation}\label{cha_computation}
 \subfile{computation}
 
-\chapter*{Conclusions}
+\chapter*{Conclusions}\addcontentsline{toc}{chapter}{Conclusions}
 \subfile{conclusion}
 
 \subfile{cite}
